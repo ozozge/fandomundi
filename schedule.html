@@ -196,9 +196,9 @@
       <table id="scheduleTable" style="width:100%; border-collapse: collapse;">
         <thead>
           <tr>
-            <th style="text-align:left; padding:10px; border-bottom:2px solid #D46A1F; color:#ffffff;">Date</th>
+            <th style="text-align:left; padding:10px; border-bottom:2px solid #D46A1F; color:#ffffff;">Date/Time (BKK)</th>
+            <th style="text-align:left; padding:10px; border-bottom:2px solid #D46A1F; color:#ffffff;">Your Local Time</th>
             <th style="text-align:left; padding:10px; border-bottom:2px solid #D46A1F; color:#ffffff;">Event</th>
-            <th style="text-align:left; padding:10px; border-bottom:2px solid #D46A1F; color:#ffffff;">Time</th>
             <th style="text-align:left; padding:10px; border-bottom:2px solid #D46A1F; color:#ffffff;">Artists</th>
           </tr>
         </thead>
@@ -235,6 +235,33 @@
 
     <script>
       let scheduleData = [];
+      function toLocalTime(dateStr, timeStr) {
+  try {
+    // dateStr is MM/DD/YYYY, timeStr could be like "3:30 PM" or "2 PM / 7 PM"
+    const firstTime = timeStr.split('/')[0].trim();
+    const [month, day, year] = dateStr.split('/');
+    
+    const match = firstTime.match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+    if (!match) return '';
+    
+    let hours = parseInt(match[1]);
+    const minutes = match[2] ? parseInt(match[2]) : 0;
+    const period = match[3].toUpperCase();
+    
+    if (period === 'PM' && hours !== 12) hours += 12;
+    if (period === 'AM' && hours === 12) hours = 0;
+    
+    // Bangkok is UTC+7
+    const bangkokDate = new Date(Date.UTC(year, month - 1, day, hours - 7, minutes));
+    
+    return bangkokDate.toLocaleString('en-US', {
+      month: 'short', day: 'numeric',
+      hour: 'numeric', minute: '2-digit', hour12: true
+    });
+  } catch (e) {
+    return '';
+  }
+}
       let currentMonth, currentYear;
 
       fetch('schedule.json')
@@ -301,9 +328,9 @@
             ? e.artists.map(a => `<img src="artists/${a.trim()}.jpg" onerror="this.style.display='none'" style="width:30px;height:30px;border-radius:50%;object-fit:cover;margin-right:6px;vertical-align:middle;">${a.trim()}`).join(', ')
             : `<img src="artists/${e.artists}.jpg" onerror="this.style.display='none'" style="width:30px;height:30px;border-radius:50%;object-fit:cover;margin-right:6px;vertical-align:middle;">${e.artists}`;
           tbody.innerHTML += `<tr>
-            <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.15);color:#ffffff;">${e.date}</td>
+            <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.15);color:#ffffff;">${e.date} ${e.time}</td>
+            <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.15);color:#ffffff;">${toLocalTime(e.date, e.time)}</td>
             <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.15);color:#ffffff;">${e.event}</td>
-            <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.15);color:#ffffff;">${e.time}</td>
             <td style="padding:10px;border-bottom:1px solid rgba(255,255,255,0.15);color:#ffffff;">${artistStr}</td>
           </tr>`;
         });
