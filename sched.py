@@ -1,9 +1,9 @@
 import anthropic
 import base64
-import re
+#import re
 import requests
 import json
-from datetime import datetime
+#from datetime import datetime
 from Scweet import Scweet
 from dotenv import load_dotenv
 import os
@@ -29,25 +29,13 @@ def correct_names(artists):
     if isinstance(artists, list):
         return [name_corrections.get(a.strip(), a.strip()) for a in artists]
     return name_corrections.get(artists.strip(), artists.strip())
-
 s = Scweet(auth_token=auth_token)
-tweets = s.search("#DMDschedule", from_users=["DomundiTV"], limit=20)
+profile_tweets = s.get_profile_tweets(["DomundiTV"], limit=5)
 
-schedule_tweets = []
-for tweet in tweets:
-    text = tweet.get("text", "")
-    match = re.search(r'(\d{1,2}-\d{1,2}\s+\w+\s+\d{4})', text)
-    if match:
-        date_str = match.group(1)
-        end_day = re.search(r'-(\d{1,2})', date_str).group(1)
-        month_year = re.search(r'\w+\s+\d{4}', date_str).group(0)
-        parsed = datetime.strptime(f"{end_day} {month_year}", "%d %B %Y")
-        schedule_tweets.append((parsed, tweet))
-
-if not schedule_tweets:
-    print("No schedule tweets found.")
+if not profile_tweets:
+    print("No tweets found.")
 else:
-    latest_tweet = max(schedule_tweets, key=lambda x: x[0])[1]
+    latest_tweet = profile_tweets[0]
     print("Latest schedule tweet:", latest_tweet.get("text", ""))
 
     image_links = latest_tweet.get("media", {}).get("image_links", [])
@@ -69,7 +57,7 @@ else:
 
             response = client.messages.create(
                 model="claude-sonnet-4-6",
-                max_tokens=1000,
+                max_tokens=4000,
                 messages=[{
                     "role": "user",
                     "content": [
