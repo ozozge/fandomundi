@@ -1,0 +1,33 @@
+name: Update Schedule
+
+on:
+  schedule:
+    - cron: '0 10 1,16 * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install scweet anthropic requests python-dotenv
+
+      - name: Run script
+        env:
+          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          ANTHROPIC_KEY: ${{ secrets.ANTHROPIC_KEY }}
+        run: python sched.py
+
+      - name: Commit updated schedule
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add schedule.json
+          git diff --staged --quiet || git commit -m "Update schedule"
+          git push
