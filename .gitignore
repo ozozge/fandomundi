@@ -1,0 +1,5 @@
+.env
+__pycache__/
+*.pyc
+scweet_state.db
+schedule_*.jpg

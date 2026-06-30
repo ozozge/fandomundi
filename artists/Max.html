@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F4J4BBXV1C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F4J4BBXV1C');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Max – Fandomundi</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Page variables ── */
+    :root {
+      --orange: #D46A1F;
+      --orange-bright: #f26a00;
+      --black: #1a1008;
+      --cream: #fffaf5;
+      --card-bg: #fff8f0;
+      --border: #f0d8c0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--cream);
+      color: var(--black);
+    }
+
+    /* ── HERO BANNER ── */
+    .artist-hero {
+      position: relative;
+      width: 100%;
+      min-height: 420px;
+      background: linear-gradient(135deg, #1a1008 60%, #D46A1F 100%);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: flex;
+      align-items: flex-end;
+      gap: 40px;
+      padding: 0 60px 10px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .artist-photo-wrap {
+      flex-shrink: 0;
+    }
+
+    .artist-photo {
+      width: 440px;
+      height: 550px;
+      object-fit: cover;
+      object-position: center center;
+      border-radius: 4px;
+      border: none;
+      display: block;
+    }
+
+    .drama-poster {
+      width: 45px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    /* placeholder shown until real photo is added */
+    .photo-placeholder {
+      width: 220px;
+      height: 280px;
+      border-radius: 4px;
+      border: 4px solid var(--orange);
+      background: #2a1a08;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--orange);
+      font-size: 13px;
+      gap: 8px;
+    }
+
+    .photo-placeholder svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.5;
+    }
+
+    .hero-text {
+      flex: 1;
+    }
+
+    .gen-badge {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 12px;
+    }
+
+    .artist-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 90px;
+      color: #fff;
+      line-height: 0.9;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      color: rgba(255,255,255,0.65);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .meta-item span {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+      margin-top: 2px;
+    }
+
+    /* ── SOCIALS ── */
+    .socials-bar {
+      background: var(--black);
+      padding: 14px 60px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .socials-label {
+      color: rgba(255,255,255,0.4);
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-right: 6px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .social-link:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .social-link svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
+    /* ── MAIN CONTENT GRID ── */
+    .artist-body {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 30px;
+    }
+
+    .section-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      color: var(--orange);
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* ── DRAMAS ── */
+    .drama-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .drama-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: border-color 0.2s;
+    }
+
+    .drama-item:hover {
+      border-color: var(--orange);
+    }
+
+    .drama-title {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .drama-role {
+      font-size: 12px;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    .drama-year {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      color: var(--orange);
+      letter-spacing: 1px;
+    }
+
+    .drama-upcoming {
+      display: inline-block;
+      background: var(--orange);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border-radius: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ── SONGS ── */
+    .song-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .song-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: border-color 0.2s;
+    }
+
+    .song-item:hover {
+      border-color: var(--orange);
+    }
+
+    .song-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      color: var(--border);
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .song-info {
+      flex: 1;
+    }
+
+    .song-title {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .songs-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .col-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      color: var(--black);
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .hero-content { flex-direction: column; align-items: flex-start; padding: 24px 24px 36px; }
+      .artist-name { font-size: 56px; }
+      .artist-body { grid-template-columns: 1fr; padding: 30px 20px; }
+      .socials-bar { padding: 12px 24px; flex-wrap: wrap; }
+      .artist-hero::before { font-size: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER (same as index) ── -->
+  <header>
+    <div class="logo-title">
+      <a href="../index.html">
+        <img src="../fandomundi_logo.png" alt="Fandomundi Logo" class="logo" />
+      </a>
+    </div>
+  </header>
+
+  <!-- ── NAV (same as index) ── -->
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="../artists.html">Artists</a>
+        <ul class="dropdown">
+          <li class="dropdown-item">
+            <a href="#">Alphabetical</a>
+            <ul class="submenu" id="artistList">
+              <li><a href="Mark.html">Mark</a></li>
+              <li><a href="Park.html">Park</a></li>
+              <li><a href="Zee.html">Zee</a></li>
+              <li><a href="Jimmy.html">Jimmy</a></li>
+              <li><a href="Max.html">Max</a></li>
+              <li><a href="Tommy.html">Tommy</a></li>
+              <li><a href="Net.html">Net</a></li>
+              <li><a href="Yim.html">Yim</a></li>
+              <li><a href="Nunew.html">Nunew</a></li>
+              <li><a href="Jamessu.html">Jamessu</a></li>
+              <li><a href="Tutor.html">Tutor</a></li>
+              <li><a href="Nat.html">Nat</a></li>
+              <li><a href="Kongjiro.html">Kongjiro</a></li>
+              <li><a href="Teetee.html">Teetee</a></li>
+              <li><a href="Latte.html">Latte</a></li>
+              <li><a href="Thomas.html">Thomas</a></li>
+              <li><a href="Gems.html">Gems</a></li>
+              <li><a href="Kim.html">Kim</a></li>
+              <li><a href="Ohm.html">Ohm</a></li>
+              <li><a href="Por.html">Por</a></li>
+              <li><a href="Ryujin.html">Ryujin</a></li>
+              <li><a href="Patji.html">Patji</a></li>
+              <li><a href="JJ.html">JJ</a></li>
+              <li><a href="Auau.html">Auau</a></li>
+              <li><a href="Save.html">Save</a></li>
+              <li><a href="Porsche.html">Porsche</a></li>
+              <li><a href="Copper.html">Copper</a></li>
+              <li><a href="Otto.html">Otto</a></li>
+              <li><a href="Fifa.html">Fifa</a></li>
+              <li><a href="Pete.html">Pete</a></li>
+              <li><a href="Phupa.html">Phupa</a></li>
+              <li><a href="Pung.html">Pung</a></li>
+              <li><a href="North.html">North</a></li>
+              <li><a href="Wave.html">Wave</a></li>
+              <li><a href="Few.html">Few</a></li>
+              <li><a href="Nan.html">Nan</a></li>
+              <li><a href="Matthis.html">Matthis</a></li>
+              <li><a href="Reeonn.html">Reeonn</a></li>
+              <li><a href="Nick.html">Nick</a></li>
+              <li><a href="Tle.html">Tle</a></li>
+              <li><a href="FirstOne.html">FirstOne</a></li>
+              <li><a href="Keng.html">Keng</a></li>
+              <li><a href="Namping.html">Namping</a></li>
+              <li><a href="Poppy.html">Poppy</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#">By Gen</a>
+            <ul class="submenu">
+              <li class="dropdown-item">
+                <a href="#">Gen 1</a>
+                <ul class="submenu">
+                  <li><a href="artists/Jimmy.html">Jimmy</a></li>
+                  <li><a href="artists/Mark.html">Mark</a></li>
+                  <li><a href="artists/Max.html">Max</a></li>
+                  <li><a href="artists/Park.html">Park</a></li>
+                  <li><a href="artists/Poppy.html">Poppy</a></li>
+                  <li><a href="artists/Tommy.html">Tommy</a></li>
+                  <li><a href="artists/Zee.html">Zee</a></li>  
+                </ul>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Gen 2</a>
+                <ul class="submenu">
+                  <li><a href="artists/Jamessu.html">Jamessu</a></li>
+                  <li><a href="artists/Nat.html">Nat</a></li>
+                  <li><a href="artists/Net.html">Net</a></li>
+                  <li><a href="artists/Nunew.html">Nunew</a></li>
+                  <li><a href="artists/Tutor.html">Tutor</a></li>
+                  <li><a href="artists/Yim.html">Yim</a></li>                      
+                </ul>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Gen 3</a>
+                <ul class="submenu">
+                  <li><a href="artists/FirstOne.html">FirstOne</a></li>  
+                  <li><a href="artists/Gems.html">Gems</a></li>
+                  <li><a href="artists/Keng.html">Keng</a></li>
+                  <li><a href="artists/Kim.html">Kim</a></li>
+                  <li><a href="artists/Kong.html">Kong</a></li>
+                  <li><a href="artists/Latte.html">Latte</a></li>
+                  <li><a href="artists/Namping.html">Namping</a></li>
+                  <li><a href="artists/Ohm.html">Ohm</a></li>
+                  <li><a href="artists/Teetee.html">Teetee</a></li>
+                  <li><a href="artists/Tle.html">Tle</a></li>
+                  <li><a href="artists/Thomas.html">Thomas</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Gen 4</a>
+                <ul class="submenu">
+                    <li><a href="artists/Auau.html">Auau</a></li>
+                    <li><a href="artists/JJ.html">JJ</a></li>
+                    <li><a href="artists/Kim.html">Kim</a></li>
+                    <li><a href="artists/Ohm.html">Ohm</a></li>
+                    <li><a href="artists/Patji.html">Patji</a></li>
+                    <li><a href="artists/Por.html">Por</a></li>
+                    <li><a href="artists/Ryujin.html">Ryujin</a></li>
+                    <li><a href="artists/Save.html">Save</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Gen 5</a>
+                <ul class="submenu">
+                    <li><a href="artists/Copper.html">Copper</a></li>
+                    <li><a href="artists/Fifa.html">Fifa</a></li>
+                    <li><a href="artists/North.html">North</a></li>
+                    <li><a href="artists/Otto.html">Otto</a></li>
+                    <li><a href="artists/Pete.html">Pete</a></li>
+                    <li><a href="artists/Phupha.html">Phupha</a></li>
+                    <li><a href="artists/Porsche.html">Porsche</a></li>
+                    <li><a href="artists/Pung.html">Pung</a></li>
+                    <li><a href="artists/Wave.html">Wave</a></li>
+                </ul>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="#">Gen 6</a>
+                <ul class="submenu">
+                    <li><a href="artists/Few.html">Few</a></li>
+                    <li><a href="artists/Matthis.html">Matthis</a></li>
+                    <li><a href="artists/Nan.html">Nan</a></li>
+                    <li><a href="artists/Nick.html">Nick</a></li>
+                    <li><a href="artists/Reeonn.html">Reeonn</a></li>
+                    <li><a href="artists/Thee.html">Thee</a></li>
+                    <li><a href="artists/Ton.html">Ton</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item"><a href="../schedule.html">Events/Schedule</a></li>
+      <li class="menu-item"><a href="../dramas.html">Dramas</a></li>
+      <li class="menu-item"><a href="../music.html">Music</a></li>
+      <li class="menu-item"><a href="../staff.html">Staff</a></li>
+      <li class="menu-item"><a href="../fanevents.html">Fan Events</a></li>
+      <li class="menu-item"><a href="../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── ARTIST HERO ── -->
+  <section class="artist-hero">
+    <div class="hero-content">
+
+        <div class="artist-photo-wrap">
+            <img src="Max.jpg" alt="Max" class="artist-photo" />
+        </div>
+
+      <div class="hero-text">
+        <div class="gen-badge">Gen 1 · Domundi</div>
+        <h1 class="artist-name">Max</h1>
+        <div class="hero-meta">
+          <div class="meta-item">
+            Full Name
+            <span>Kornthas Rujeerattanavorapan</span>
+          </div>
+          <div class="meta-item">
+            Birthdate
+            <span>
+                Oct 25, 1993</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SOCIALS BAR ── -->
+  <div class="socials-bar">
+    <span class="socials-label">Follow</span>
+
+    <a href="https://www.tiktok.com/@mmaxmaxxxx" target="_blank" class="social-link">
+      <!-- TikTok icon -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.19 8.19 0 004.79 1.53V6.77a4.85 4.85 0 01-1.02-.08z"/>
+      </svg>
+      TikTok
+    </a>
+
+    <a href="https://www.instagram.com/mmaxmax/?hl=en" target="_blank" class="social-link">
+      <!-- Instagram icon -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+      Instagram
+    </a>
+
+    <a href="https://x.com/mmaxmaxxxx" target="_blank" class="social-link">
+      <!-- X/Twitter icon -->
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      </svg>
+      Twitter / X
+    </a>
+  </div>
+
+  <!-- ── MAIN CONTENT ── -->
+  <div class="artist-body">
+
+    <!-- Past Dramas -->
+    <div class="section-card">
+      <h2 class="section-title">Past Dramas</h2>
+      <ul class="drama-list">
+        <li class="drama-item">
+          <img src="../posters/whyru.jpg" alt="Why R U" class="drama-poster" />
+          <div>
+            <div class="drama-title">Why R U?</div>
+          </div>
+          <div class="drama-year">2020</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/ydestiny.jpg" alt="y destiny" class="drama-poster" />
+          <div>
+            <div class="drama-title">Y-Destiny</div>
+
+            <a href="https://www.youtube.com/watch?v=ZuDQxrfZVps" target="_blank" class="drama-link">
+              ▶ Available on AIS Play
+            </a>
+          </div>
+          <div class="drama-year">2021</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/cutie.jpg" alt="cutie" class="drama-poster" />
+          <div>
+            <div class="drama-title">Cutie Pie</div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+            <a href="https://www.iq.com/album/cutie-pie-2022-1yb4ckr8p0d">
+              ▶ Available on iQIYI
+            </a>
+            <a href="https://www.viki.com/tv/38416c-cutie-pie#episodes">
+              ▶ Available on Viki
+            </a>
+            </div>  
+          </div>
+          <div class="drama-year">2022</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/loveme.jpg" alt="loveme" class="drama-poster" />
+          <div>
+            <div class="drama-title">Love Me Again</div>
+          </div>
+          <div class="drama-year">2023</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/naughtybabe.jpg" alt="naughtybabe" class="drama-poster" />
+          <div>
+            <div class="drama-title">Naughty Babe</div>
+            <a href="https://www.iq.com/album/naughty-babe-un-cut-2023-282ww9bznwd">
+              ▶ Available on iQIYI
+            </a>
+          </div>
+          <div class="drama-year">2023</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/yjourney.jpg" alt="yjourney" class="drama-poster" />
+          <div>
+            <div class="drama-title">Y Journey: Stay Like a Local</div>
+            <a href="https://www.youtube.com/playlist?list=PL6jUaCqlEcp2g2V622ZpPYL6NXgclFxmP">
+              ▶ Available on YouTube
+            </a>
+          </div>
+          <div class="drama-year">2023</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/marry.jpg" alt="marry" class="drama-poster" />
+          <div>
+            <div class="drama-title">Marry’s Mission</div>
+          </div>
+          <div class="drama-year">2023</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/twoworlds.jpg" alt="twoworlds" class="drama-poster" />
+          <div>
+            <div class="drama-title">Two Worlds</div>
+            <div style="display: flex; flex-direction: column; gap: 4px;">
+            <a href="https://www.iq.com/album/two-worlds-2023-1ft91z782gp">
+              ▶ Available on iQIYI
+            </a>
+            <a href="https://www.viki.com/tv/41076c-two-worlds-the-series#episodes">
+              ▶ Available on Viki
+            </a>
+            </div>
+            </div>
+            <div class="drama-year">2024</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/suntiny.jpg" alt="suntiny" class="drama-poster" />
+          <div>
+            <div class="drama-title">Suntiny</div>
+            <a href="https://www.iq.com/album/suntiny-2025-1fxheaek5it?lang=en_us">
+              ▶ Available on iQIYI
+            </a>
+          </div>
+          <div class="drama-year">2025</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/zomvivor.jpg" alt="zomvivor" class="drama-poster" />
+          <div>
+            <div class="drama-title">Zomvivor</div>
+            <a href="https://www.netflix.com/title/82132596">
+              ▶ Available on Netflix
+            </a>
+          </div>
+          <div class="drama-year">2025</div>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Upcoming Dramas -->
+    <div class="section-card">
+      <h2 class="section-title">Upcoming Dramas</h2>
+      <ul class="drama-list">
+        <li class="drama-item">
+          <img src="../posters/restart.jpg" alt="restart" class="drama-poster" />
+          <div>
+            <div class="drama-title">Restart</div>
+          </div>
+          <div class="drama-year">2026</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/yourthird.jpg" alt="yourthird" class="drama-poster" />
+          <div>
+            <div class="drama-title">Your Third</div>
+          </div>
+          <div class="drama-year">2026</div>
+        </li>
+        <li class="drama-item">
+          <img src="../posters/ddorm.jpg" alt="The D Dorm" class="drama-poster" />
+          <div>
+            <div class="drama-title">The D Dorm</div>
+          </div>
+          <div class="drama-year">2026</div>
+        </li>
+      </ul>
+    </div>
+
+      
+
+
+
+  </div>
+
+  <script>
+    // Auto-sort alphabetical artist list
+    const artistList = document.getElementById("artistList");
+    if (artistList) {
+      const artists = Array.from(artistList.querySelectorAll("li"));
+      artists.sort((a, b) => a.textContent.trim().toLowerCase().localeCompare(b.textContent.trim().toLowerCase()));
+      artists.forEach(a => artistList.appendChild(a));
+    }
+  </script>
+
+</body>
+</html>

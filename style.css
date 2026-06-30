@@ -1,0 +1,425 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #1a1008 60%, #D46A1F 100%);
+  background-attachment: fixed;
+  color: #333;
+}
+
+/* Header */
+header {
+  height: 160px;
+  display: flex;
+  justify-content: center; /* moved logo/title to the left */
+  align-items: center;
+  padding: 0 40px;
+  background-color: #fffaf5;
+  border-bottom: 1px solid #f0d8c0;
+}
+
+main {
+  background: linear-gradient(135deg, #1a1008 60%, #D46A1F 100%);
+  min-height: 100vh;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 400px;
+  height: auto;
+  object-fit: contain;
+}
+
+.logo-title h1 {
+  font-size: 30px;
+  color: #f26a00; /* closer to the logo orange */
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #1a1008;
+  padding: 0 40px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  padding: 8px 12px;
+  gap: 4px;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item a,
+.dropdown-item a,
+.submenu a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #f0d8c0;
+  white-space: nowrap;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu-item a:hover,
+.dropdown-item a:hover,
+.submenu a:hover {
+  background-color: #f26a00;
+  color: #fff;
+}
+
+.upcoming-header {
+  padding: 30px 60px 10px;
+}
+.upcoming-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 42px;
+  color: #D46A1F;
+  letter-spacing: 3px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 40px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #D46A1F;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 1px solid #f0d8c0;
+  border-radius: 6px;
+  background: #fff8f0;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1a1008;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #D46A1F;
+}
+
+.submit-btn {
+  background: #D46A1F;
+  color: #fff;
+  border: none;
+  padding: 14px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #f26a00;
+}
+
+/*carousel*/
+.carousel-peek {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0 40px;
+  background: transparent;
+}
+
+.peek-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transition: transform 0.6s ease;
+}
+
+.peek-slide {
+  height: 420px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  opacity: 0.45;
+  transform: scale(0.88);
+  transition: opacity 0.35s, transform 0.35s;
+  filter: brightness(0.7);
+}
+
+.peek-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  filter: brightness(1);
+  border: 2px solid #D46A1F;
+  box-shadow: 0 0 30px rgba(212,106,31,0.25);
+}
+
+.peek-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(26,16,8,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: border-color 0.2s;
+  line-height: 1;
+  padding: 0;
+}
+
+.peek-btn:hover { border-color: #D46A1F; color: #D46A1F; }
+.peek-prev { left: 20px; }
+.peek-next { right: 20px; }
+
+.peek-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.peek-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.peek-dot.active { background: #D46A1F; }
+
+/* First dropdown */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  background-color:  #1a1008;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.menu-item:hover > .dropdown {
+  display: block;
+}
+
+/* Side submenus */
+.dropdown-item {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  list-style: none;
+  background-color:  #1a1008;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+.dropdown-item:hover > .submenu {
+  display: block;
+}
+
+/* Main content */
+.hero {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 42px;
+  color: #f26a00; /* same orange as title */
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+
+  /* ── HEADER ── */
+  .logo {
+    height: 40px;
+  }
+
+  /* ── HERO ── */
+  .artist-hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    padding: 16px 20px 24px;
+    gap: 16px;
+  }
+
+  .artist-photo {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .artist-name {
+    font-size: 48px;
+  }
+
+  .hero-meta {
+    gap: 16px;
+  }
+
+  /* ── SOCIALS BAR ── */
+  .socials-bar {
+    padding: 10px 16px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .social-link {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  /* ── BODY GRID ── */
+  .artist-body {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+    gap: 20px;
+  }
+
+  .section-card {
+    padding: 18px;
+  }
+
+  /* ── DRAMA ITEMS ── */
+  .drama-item {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  /* ── NAV ── */
+  .navbar {
+    overflow-x: auto;
+  }
+
+  .menu {
+    flex-wrap: nowrap;
+    font-size: 12px;
+  }
+  /* ── DRAMAS GRID ── */
+  .drama-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 16px 16px 40px;
+    gap: 12px;
+  }
+
+  .dramas-header {
+    padding: 30px 16px 16px;
+  }
+
+  .dramas-header h1 {
+    font-size: 52px;
+  }
+
+  .filters-wrap {
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .filter-group {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding-bottom: 4px;
+  }
+
+  .search-wrap {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #actorSearch {
+    width: 100%;
+  }
+
+  #sortSelect {
+    width: 100%;
+  }
+
+  .results-bar {
+    padding: 10px 16px 0;
+  }
+
+
+}
+
+#scheduleTable th,
+#scheduleTable td {
+  color: #ffffff;
+}
+
+#scheduleTable th {
+  border-bottom: 2px solid #D46A1F !important;
+}
+
+#scheduleTable td {
+  border-bottom: 1px solid rgba(255,255,255,0.15) !important;
+}
+
+#scheduleTable tr:hover td {
+  background: rgba(212, 106, 31, 0.15);
+}
+
+label[for="artistFilter"] {
+  color: #ffffff;
+}

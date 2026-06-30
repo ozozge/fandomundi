@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F4J4BBXV1C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F4J4BBXV1C');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dramas – Fandomundi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #D46A1F;
+      --orange-bright: #f26a00;
+      --black: #1a1008;
+      --cream: #fffaf5;
+      --card-bg: #fff8f0;
+      --border: #f0d8c0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #1a1008 60%, #D46A1F 100%);
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── PAGE HEADER ── */
+    .dramas-header {
+      padding: 60px 60px 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .dramas-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 90px;
+      color: var(--orange);
+      letter-spacing: 4px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .dramas-header p {
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    /* ── FILTERS ── */
+    .filters-wrap {
+      padding: 28px 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-right: 2px;
+    }
+
+    .filter-btn {
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+      color: rgba(255,255,255,0.65);
+      cursor: pointer;
+      transition: all 0.18s;
+      letter-spacing: 0.5px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .filter-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+    }
+
+    .search-wrap {
+      margin-left: auto;
+      position: relative;
+    }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: rgba(255,255,255,0.4);
+      stroke-width: 2;
+      stroke-linecap: round;
+      pointer-events: none;
+    }
+
+    #actorSearch {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      padding: 7px 14px 7px 34px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      width: 200px;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+
+    #actorSearch::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    #actorSearch:focus {
+      border-color: var(--orange);
+    }
+
+    #sortSelect {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      padding: 7px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.18s;
+    }
+
+    #sortSelect:focus {
+      border-color: var(--orange);
+    }
+
+    #sortSelect option {
+      background: #1a1008;
+      color: #fff;
+    }
+
+    /* ── RESULTS COUNT ── */
+    .results-bar {
+      padding: 16px 60px 0;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+    }
+
+    /* ── DRAMA GRID ── */
+    .drama-grid {
+      padding: 24px 60px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── DRAMA CARD ── */
+    .drama-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .drama-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-3px);
+    }
+
+    .poster-wrap {
+      position: relative;
+      aspect-ratio: 2/3;
+      background: rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+
+    .poster-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .drama-card:hover .poster-wrap img {
+      transform: scale(1.04);
+    }
+
+    .poster-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 13px;
+    }
+
+    .year-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── CARD BODY ── */
+    .card-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .drama-name {
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    /* ── SCORES ── */
+    .scores {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .score-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .score-imdb {
+      background: #f5c518;
+      color: #1a1a1a;
+    }
+
+    .score-mdl {
+      background: #2a6ab5;
+      color: #fff;
+    }
+
+    .score-na {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.4);
+      font-weight: 400;
+    }
+
+    /* ── CAST ── */
+    .cast-section {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .cast-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cast-label {
+      font-size: 9px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .cast-names {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    .cast-names .main-cast {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ── WATCH LINKS ── */
+    .watch-links {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: auto;
+    }
+
+    .watch-link {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s;
+    }
+
+    .watch-link:hover {
+      color: var(--orange-bright);
+    }
+
+    .watch-link svg {
+      width: 10px;
+      height: 10px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── NO RESULTS ── */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255,255,255,0.3);
+      font-size: 15px;
+    }
+
+    .no-results strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: rgba(255,255,255,0.15);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .dramas-header { padding: 30px 16px 16px; }
+      .dramas-header h1 { font-size: 52px; }
+      .results-bar { padding: 10px 16px 0; }
+
+      .filters-wrap {
+        padding: 16px;
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .filter-group {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding-bottom: 4px;
+      }
+
+      .search-wrap {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      #actorSearch { width: 100%; }
+
+      #sortSelect { width: 100%; }
+
+      .drama-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 16px 12px 40px;
+        gap: 10px;
+      }
+
+      .card-body {
+        padding: 8px 10px 10px;
+        gap: 6px;
+      }
+
+      .drama-name { font-size: 11px; }
+
+      .score-pill { font-size: 10px; padding: 2px 6px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="logo-title">
+      <a href="index.html">
+        <img src="fandomundi_logo.png" alt="Fandomundi Logo" class="logo" />
+      </a>
+    </div>
+  </header>
+
+  <!-- ── NAV ── -->
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="artists.html">Artists</a>
+        <ul class="dropdown">
+          <li class="dropdown-item">
+            <a href="#">Alphabetical</a>
+            <ul class="submenu" id="artistList">
+              <li><a href="artists/Mark.html">Mark</a></li>
+              <li><a href="artists/Park.html">Park</a></li>
+              <li><a href="artists/Zee.html">Zee</a></li>
+              <li><a href="artists/Jimmy.html">Jimmy</a></li>
+              <li><a href="artists/Max.html">Max</a></li>
+              <li><a href="artists/Tommy.html">Tommy</a></li>
+              <li><a href="artists/Net.html">Net</a></li>
+              <li><a href="artists/Yim.html">Yim</a></li>
+              <li><a href="artists/Nunew.html">Nunew</a></li>
+              <li><a href="artists/Jamessu.html">Jamessu</a></li>
+              <li><a href="artists/Tutor.html">Tutor</a></li>
+              <li><a href="artists/Nat.html">Nat</a></li>
+              <li><a href="artists/Kongjiro.html">Kongjiro</a></li>
+              <li><a href="artists/Teetee.html">Teetee</a></li>
+              <li><a href="artists/Latte.html">Latte</a></li>
+              <li><a href="artists/Thomas.html">Thomas</a></li>
+              <li><a href="artists/Gems.html">Gems</a></li>
+              <li><a href="artists/Kim.html">Kim</a></li>
+              <li><a href="artists/Ohm.html">Ohm</a></li>
+              <li><a href="artists/Por.html">Por</a></li>
+              <li><a href="artists/Ryujin.html">Ryujin</a></li>
+              <li><a href="artists/Patji.html">Patji</a></li>
+              <li><a href="artists/JJ.html">JJ</a></li>
+              <li><a href="artists/Auau.html">Auau</a></li>
+              <li><a href="artists/Save.html">Save</a></li>
+              <li><a href="artists/Porsche.html">Porsche</a></li>
+              <li><a href="artists/Copper.html">Copper</a></li>
+              <li><a href="artists/Otto.html">Otto</a></li>
+              <li><a href="artists/Fifa.html">Fifa</a></li>
+              <li><a href="artists/Pete.html">Pete</a></li>
+              <li><a href="artists/Phupa.html">Phupa</a></li>
+              <li><a href="artists/Pung.html">Pung</a></li>
+              <li><a href="artists/North.html">North</a></li>
+              <li><a href="artists/Wave.html">Wave</a></li>
+              <li><a href="artists/Few.html">Few</a></li>
+              <li><a href="artists/Nan.html">Nan</a></li>
+              <li><a href="artists/Matthis.html">Matthis</a></li>
+              <li><a href="artists/Reeonn.html">Reeonn</a></li>
+              <li><a href="artists/Nick.html">Nick</a></li>
+              <li><a href="artists/Tle.html">Tle</a></li>
+              <li><a href="artists/FirstOne.html">FirstOne</a></li>
+              <li><a href="artists/Keng.html">Keng</a></li>
+              <li><a href="artists/Namping.html">Namping</a></li>
+              <li><a href="artists/Poppy.html">Poppy</a></li>
+            </ul>
+          </li>
+          <li class="dropdown-item">
+            <a href="#">By Gen</a>
+            <ul class="submenu">
+              <li class="dropdown-item">
+                <a href="#">Gen 1</a>
+                <ul class="submenu">
+                  <li><a href="artists/Jimmy.html">Jimmy</a></li>
+                  <li><a href="artists/Mark.html">Mark</a></li>
+                  <li><a href="artists/Max.html">Max</a></li>
+                  <li><a href="artists/Park.html">Park</a></li>
+                  <li><a href="artists/Poppy.html">Poppy</a></li>
+                  <li><a href="artists/Tommy.html">Tommy</a></li>
+                  <li><a href="artists/Zee.html">Zee</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Gen 2</a>
+                <ul class="submenu">
+                  <li><a href="artists/Jamessu.html">Jamessu</a></li>
+                  <li><a href="artists/Nat.html">Nat</a></li>
+                  <li><a href="artists/Net.html">Net</a></li>
+                  <li><a href="artists/Nunew.html">Nunew</a></li>
+                  <li><a href="artists/Tutor.html">Tutor</a></li>
+                  <li><a href="artists/Yim.html">Yim</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Gen 3</a>
+                <ul class="submenu">
+                  <li><a href="artists/FirstOne.html">FirstOne</a></li>
+                  <li><a href="artists/Gems.html">Gems</a></li>
+                  <li><a href="artists/Keng.html">Keng</a></li>
+                  <li><a href="artists/Kim.html">Kim</a></li>
+                  <li><a href="artists/Kong.html">Kong</a></li>
+                  <li><a href="artists/Latte.html">Latte</a></li>
+                  <li><a href="artists/Namping.html">Namping</a></li>
+                  <li><a href="artists/Ohm.html">Ohm</a></li>
+                  <li><a href="artists/Teetee.html">Teetee</a></li>
+                  <li><a href="artists/Tle.html">Tle</a></li>
+                  <li><a href="artists/Thomas.html">Thomas</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Gen 4</a>
+                <ul class="submenu">
+                  <li><a href="artists/Auau.html">Auau</a></li>
+                  <li><a href="artists/JJ.html">JJ</a></li>
+                  <li><a href="artists/Kim.html">Kim</a></li>
+                  <li><a href="artists/Ohm.html">Ohm</a></li>
+                  <li><a href="artists/Patji.html">Patji</a></li>
+                  <li><a href="artists/Por.html">Por</a></li>
+                  <li><a href="artists/Ryujin.html">Ryujin</a></li>
+                  <li><a href="artists/Save.html">Save</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Gen 5</a>
+                <ul class="submenu">
+                  <li><a href="artists/Copper.html">Copper</a></li>
+                  <li><a href="artists/Fifa.html">Fifa</a></li>
+                  <li><a href="artists/North.html">North</a></li>
+                  <li><a href="artists/Otto.html">Otto</a></li>
+                  <li><a href="artists/Pete.html">Pete</a></li>
+                  <li><a href="artists/Phupha.html">Phupha</a></li>
+                  <li><a href="artists/Porsche.html">Porsche</a></li>
+                  <li><a href="artists/Pung.html">Pung</a></li>
+                  <li><a href="artists/Wave.html">Wave</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Gen 6</a>
+                <ul class="submenu">
+                  <li><a href="artists/Few.html">Few</a></li>
+                  <li><a href="artists/Matthis.html">Matthis</a></li>
+                  <li><a href="artists/Nan.html">Nan</a></li>
+                  <li><a href="artists/Nick.html">Nick</a></li>
+                  <li><a href="artists/Reeonn.html">Reeonn</a></li>
+                  <li><a href="artists/Thee.html">Thee</a></li>
+                  <li><a href="artists/Ton.html">Ton</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item"><a href="schedule.html">Events/Schedule</a></li>
+      <li class="menu-item"><a href="dramas.html">Dramas</a></li>
+      <li class="menu-item"><a href="music.html">Music</a></li>
+      <li class="menu-item"><a href="staff.html">Staff</a></li>
+      <li class="menu-item"><a href="fanevents.html">Fan Events</a></li>
+      <li class="menu-item"><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="dramas-header">
+    <h1>Dramas</h1>
+    <p id="totalCount">Loading...</p>
+  </div>
+
+  <!-- ── FILTERS ── -->
+  <div class="filters-wrap">
+    <div class="filter-group">
+      <span class="filter-label">Year</span>
+      <button class="filter-btn active" data-year="all">All</button>
+      <!-- year buttons injected by JS -->
+    </div>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="actorSearch" placeholder="Search..." />
+    </div>
+    <select id="sortSelect">
+      <option value="default">Sort by...</option>
+      <option value="year">Year </option>
+      <option value="imdb">IMDB Score</option>
+      <option value="mdl">MDL Score</option>
+    </select>
+  </div>
+
+  <p class="results-bar" id="resultsCount"></p>
+
+  <!-- ── DRAMA GRID ── -->
+  <div class="drama-grid" id="dramaGrid"></div>
+
+  <script>
+    // ─────────────────────────────────────────────
+    // DRAMA DATA — add/edit dramas here
+    // poster: path relative to root (same folder as this file)
+    // imdb/mdl: number, or null if not available yet
+    // main: array of main cast names
+    // supporting: array of supporting cast (can be empty [])
+    // links: array of { label, url } — leave empty [] if not streaming yet
+    // ─────────────────────────────────────────────
+    const dramas = [
+      {
+        title: "The Middleman's Love",
+        year: 2023,
+        poster: "posters/middleman.jpg",
+        imdb: 5.8,
+        mdl: 6.4,
+        main: ["Yim", "Tutor"],
+        supporting: ["Net", "Jamessu","Thomas", "Park","Mark"],
+        links: [
+          { label: "iQIYI", url: "https://www.iq.com/play/the-middleman-s-love-uncut-episode-1-emjucxl280?lang=en_us" },
+          { label: "YouTube", url: "https://www.youtube.com/playlist?list=PLrUEXgucMM0_g4XbKZuWzW4NspH_VDVF5" }
+        ]
+      },
+      {
+        title: "Battle of the Writers",
+        year: 2024,
+        poster: "posters/battle.jpg",
+        imdb: 6.6,
+        mdl: 7.6,
+        main: ["Yim", "Tutor"],
+        supporting: ["Gems", "Mark", "Patji", "Jamessu","Poppy"],
+        links: [
+          { label: "iQIYI", url: "https://www.iq.com/album/battle-of-the-writers-uncut-2024-1zkze0tbskl?lang=en_us" }
+        ]
+      },
+      {
+        title: "Night Dream",
+        year: 2023,
+        poster: "posters/nightdream.jpg",
+        imdb: 6.4,
+        mdl: 6.9,
+        main: ["Ohm"],
+        supporting: [],
+        links: [
+          { label: "Youku", url: "https://www.youku.tv/v/v_show/id_XNjIzMDY3MzE4OA==.html?s=acbfc1fe6bf948f7a3f7" }
+        ]
+      },
+      {
+        title: "The Next Prince",
+        year: 2025,
+        poster: "posters/nextprince.jpg",
+        imdb: 7.2,
+        mdl: 7.6,
+        main: ["Nunew", "Zee"],
+        supporting: ["Ohm", "Net", "Jimmy","JJ"],
+        links: [
+          { label: "iQIYI", url: "https://www.iq.com/short/the-next-prince-1ywdaruts6w?lang=en_us" }
+        ]
+      },
+      {
+        title: "Magic Lover",
+        year: "TBA",
+        poster: "posters/magiclover.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Ohm","Namping","Keng","Kong","Thomas"],
+        links: []
+      },
+      {
+        title: "Your Third",
+        year: 2026,
+        poster: "posters/yourthird.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Nat", "Max"],
+        supporting: ["Ohm", "Gems", "Mark"],
+        links: []
+      },
+      {
+        title: "The D Dorm",
+        year: 2026,
+        poster: "posters/ddorm.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Poppy","Zee"],
+        supporting: ["Max","Yim","Tutor","JJ", "Net"],
+        links: []
+      },
+      {
+        title: "Uke",
+        year: "TBA",
+        poster: "posters/uke.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Namping"],
+        supporting: ["Kim","Otto","Ohm"],
+        links: []
+      },
+      {
+        title: "Buddy Line Y Animal",
+        year: "TBA",
+        poster: "posters/buddyline.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["...drama main cast..."],
+        supporting: ["Ohm","Park"],
+        links: []
+      },
+      {
+        title: "Into Racha",
+        year: "TBA",
+        poster: "posters/racha.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Otto","North"],
+        supporting: ["Ohm"],
+        links: []
+      },
+      {
+        title: "Bed Friend",
+        year: 2023,
+        poster: "posters/bedfriend.jpg",
+        imdb: 7.4,
+        mdl: 7.6,
+        main: ["Jamessu","Net"],
+        supporting: ["Yim","Thomas","Mark","Park","Tutor"],
+        links: [
+            { label: "Viki", url: "https://www.viki.com/tv/39898c-bed-friend?locale=en#episodes" },
+            { label: "iQIYI", url: "https://www.iq.com/play/bed-friend-uncut-episode-1-1eurmquul7s?lang=en_us" }
+        ]
+
+      },
+      {
+        title: "Duang with You",
+        year: 2026,
+        poster: "posters/duang.jpg",
+        imdb: 8.6,
+        mdl: 8.9,
+        main: ["Teetee","Por"],
+        supporting: ["North","Otto","Wave","Thee"],
+        links: [
+            { label: "iQIYI", url: "https://www.iq.com/play/136evsn4yb1"}
+        ]
+      },
+      {
+        title: "Friend Benefit",
+        year: "TBA",
+        poster: "posters/friendbenefit.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Teetee","Por"],
+        supporting: ["Auau","Save","Tutor","Yim","Jamessu"],
+        links: [
+        ]
+      },
+      {
+        title: "Khemjira",
+        year: 2025,
+        poster: "posters/khemjira.jpg",
+        imdb: 8.2,
+        mdl: 8.6,
+        main: ["Namping","Keng"],
+        supporting: ["Firstone","Tle","Net","Pung","Patji"],
+        links: [
+            { label: "iQIYI", url: "https://www.iq.com/album/khemjira-2025-27gzbsazvb5?lang=en_us"},
+            { label: "Netflix", url: "https://www.netflix.com/title/82755470"}
+        ]
+      },
+      {
+        title: "Love upon a Time",
+        year: 2026,
+        poster: "posters/luat.jpg",
+        imdb: 8.5,
+        mdl: 8.6,
+        main: ["Net","JJ"],
+        supporting: ["Kim","Latte"],
+        links: [
+            { label: "iQIYI", url: "https://www.iq.com/album/love-upon-a-time-2026-1ngjhe8ojoh?lang=en_us"}
+        ]
+      },
+      {
+        title: "My Merman",
+        year: "TBA",
+        poster: "posters/merman.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Firstone","Tle"],
+        supporting: ["Kim","Latte"],
+        links: []  
+      },
+      {
+        title: "Still Holding up like the Moon",
+        year: "TBA",
+        poster: "posters/moon.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Namping","Keng"],
+        links: []  
+      },
+      {
+        title: "Naughty Babe",
+        year: 2023,
+        poster: "posters/naughtybabe.jpg",
+        imdb: 6.9,
+        mdl: 7.2,
+        main: ["Nat","Max"],
+        supporting: ["Nunew","Zee","Yim","Tutor"],
+        links: [
+            { label: "iQIYI", url: "https://www.iq.com/album/naughty-babe-un-cut-2023-282ww9bznwd"}
+        ]
+      },
+      {
+        title: "Restart",
+        year: 2026,
+        poster: "posters/restart.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Tommy","Jimmy","JJ","Poppy","Mark","Tutor","Yim","Net","Kim","Park","Pung" ],
+        links: []
+       
+      },
+      {
+        title: "The Scent of Sorrow",
+        year: "TBA",
+        poster: "posters/scent.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Yim","Tutor"],
+        supporting: ["Firstone","Tle"],
+        links: []
+       
+      },
+      {
+        title: "Secret Love",
+        year: 2024,
+        poster: "posters/secretlove.jpg",
+        imdb: null,
+        mdl: 7.2,
+        main: ["Firstone","Tle"],
+        links: [{ label: "Qustory", url: "https://www.youtube.com/watch?v=PWCEQqwXttM&list=PL5_PMFw47xBieBpMmyDUqFP8XBtX2xwsP" }]
+      },
+      {
+        title: "Unknown Lover",
+        year: "TBA",
+        poster: "posters/unknown.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Kong","Thomas"],
+        links: []
+      },
+      {
+        title: "Your Sky",
+        year: 2024,
+        poster: "posters/yoursky.jpg",
+        imdb: 7.6,
+        mdl: 8.2,
+        main: ["Kong","Thomas"],
+        supporting: ["Por","Teetee","Auau","Save","Patji"],
+        links: [
+            { label: "iQIYI", url: "https://www.iq.com/album/your-sky-2024-fau577dkn9" }
+        ]
+      },
+      {
+        title: "You(r)tuber",
+        year: 2026,
+        poster: "posters/yourtuber.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Firstone","Tle"],
+        supporting: ["Gems"],
+        links: []
+      },
+      {
+        title: "Zomvivor",
+        year: 2025,
+        poster: "posters/zomvivor.jpg",
+        imdb: 6.4,
+        mdl: 8.2,
+        main: ["Tommy","Nunew","Zee","Jimmy","Max","Yim"],
+        supporting: ["Nat","Tutor","Mark","Net","Park","Poppy","Jamessu","Namping","Keng"],
+        links: [
+            { label: "Netflix", url: "https://www.netflix.com/title/82132596" }
+        ]
+      },
+      {
+        title: "Why R U?",
+        year: 2020,
+        poster: "posters/whyru.jpg",
+        imdb: 7.3,
+        mdl: 7.6,
+        main: ["Tommy","Zee","Jimmy"],
+        supporting: ["Nat","Max","Mark","Park","Poppy"],
+        links: [
+        ]
+      },
+      {
+        title: "Peach of Time",
+        year: 2021,
+        poster: "posters/peach.jpg",
+        imdb: 7.1,
+        mdl: 7.3,
+        main: ["Jimmy","Tommy"],
+        links: [
+            { label: "Wavve", url: "https://www.wavve.com/player/vod?programid=J4202_J42000000002&landing=season" }
+        ]
+      },
+      {
+        title: "Remember 15",
+        year: 2022,
+        poster: "posters/remember.jpg",
+        imdb: 8.0,
+        mdl: 7.1 ,
+        main: ["Zee","Jimmy","Tommy"],
+        links: [
+               ]
+      },
+      {
+        title: "Cutie Pie",
+        year: 2022,
+        poster: "posters/cutie.jpg",
+        imdb: 7.5,
+        mdl: 8.2,
+        main: ["Nunew","Zee"],
+        supporting: ["Nat","Max","Yim","Tutor","Poppy"],
+        links: [
+            { label: "iQIYI", url: "https://www.iq.com/album/cutie-pie-2022-1yb4ckr8p0d" },
+              { label: "Viki", url: "https://www.viki.com/tv/38416c-cutie-pie#episodes" }
+        ]
+      },
+      {
+        title: "Y-Destiny",
+        year: 2021,
+        poster: "posters/ydestiny.jpg",
+        imdb: 6.7,
+        mdl: 6.9,
+        main: ["Max","Nat"],
+        links: [
+            { label: "AIS Play", url: "https://www.youtube.com/watch?v=ZuDQxrfZVps" }
+        ]
+      },
+      {
+        title: "Y Journey: Stay Like a Local",
+        year: 2023,
+        poster: "posters/yjourney.jpg",
+        imdb: 4.9,
+        mdl: 6.8,
+        main: ["Jamessu","Net","Max","Nat"],
+        links: [
+            { label: "YouTube", url: "https://www.youtube.com/playlist?list=PL6jUaCqlEcp2g2V622ZpPYL6NXgclFxmP" }
+        ]
+      },
+      {
+        title: "Marry’s Mission",
+        year: 2023,
+        poster: "posters/marry.jpg",
+        imdb: null,
+        mdl: 4.9,
+        main: ["...drama main cast..."],
+        supporting: ["Poppy","Max"],
+        links: [
+        ]
+      },
+      {
+        title: "Two Worlds",
+        year: 2024,
+        poster: "posters/twoworlds.jpg",
+        imdb: 7.2,
+        mdl: 7.4,
+        main: ["Max","Nat"],
+        links: [
+            { label: "iQIYI", url: "https://www.iq.com/album/two-worlds-2023-1ft91z782gp" },
+              { label: "Viki", url: "https://www.viki.com/tv/41076c-two-worlds-the-series#episodes" }
+        ]
+      },
+      {
+        title: "Suntiny",
+        year: 2025,
+        poster: "posters/suntiny.jpg",
+        imdb: 5.5,
+        mdl: 6.3,
+        main: ["Max","Nat"],
+        links: [
+            { label: "iQIYI", url: "https://www.iq.com/album/suntiny-2025-1fxheaek5it?lang=en_us" }
+        ]
+      },
+      {
+        title: "Me and Who",
+        year: 2025,
+        poster: "posters/meandwho.jpg",
+        imdb: 7.8,
+        mdl: 8.3,
+        main: ["...drama main cast..."],
+        supporting: ["Tommy","Park"],
+        links: [
+          { label: "WeTV", url: "https://wetv.vip/en/album/ev770x3txo1kfou" }
+        ]
+      },
+      {
+        title: "Hug E-Lhee the Musical",
+        year: 2026,
+        poster: "posters/huge.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Nunew","Zee"],
+        supporting: ["Poppy"],
+        links: [
+        ]
+      },
+      {
+        title: "Love Smart",
+        year: 2015,
+        poster: "posters/lovesmart.jpg",
+        imdb: null,
+        mdl: 7.4,
+        main: ["Tommy"],
+        links: [
+        ]
+      },
+      {
+        title: "Love Songs Love Series: Final Day of Friendship",
+        year: 2018,
+        poster: "posters/lovesongs.jpg",
+        imdb: null,
+        mdl: 7.4,
+        main: ["Tommy"],
+        links: [
+        ]
+      },
+      {
+        title: "Rose In Da House",
+        year: 2022,
+        poster: "posters/rose.jpg",
+        imdb: null,
+        mdl: 7.7,
+        main: ["Zee","Tommy"],
+        links: [
+        ]
+      },
+      {
+        title: "Zomvivor Chapter 2",
+        year: "TBA",
+        poster: "posters/zom2.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Zee","Nunew","Tommy","Phupha","Thomas","Kong","JJ","Ohm","Namping","Yim"],
+        links: [
+        ]
+      },
+      {
+        title: "You Never Eat Alone",
+        year: 2020,
+        poster: "posters/younever.jpg",
+        imdb: 7.3,
+        mdl: 6.4,
+        main: ["Zee","Jimmy","Max","Nat"],
+        links: [
+          { label: "YouTube", url: "https://www.youtube.com/watch?v=knyu5K9eeAI&list=PLDslooiusPMRBIRIKejDwSFjSroJaMESh&index=1" }
+        ]
+      },
+      {
+        title: "Spice and Spell",
+        year: 2023,
+        poster: "posters/spice.jpg",
+        imdb: 8.4,
+        mdl: 7.3,
+        main: ["Zee"],
+        links: [
+        ]
+      },
+      {
+        title: "Passenger Seat Number X",
+        year: "TBA",
+        poster: "posters/passenger.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Zee","Nunew"],
+        links: [
+        ]
+      },
+      {
+        title: "Catch Me Baby",
+        year: 2022,
+        poster: "posters/catch.jpg",
+        imdb: 8.3,
+        mdl: 7.3,
+        main: ["...drama main cast..."],
+        supporting: ["Jamessu","Net"],
+        links: [
+          { label: "WeTV", url: "https://wetv.vip/en/play/j88wrxf75vggf9p-Catch-Me-Baby/c0044wmoshf-EP1(1/2)-Catch-Me-Baby"}
+        ]
+      },
+      {
+        title: "Lie Yan",
+        year: 2025,
+        poster: "posters/lieyan.jpg",
+        imdb: null,
+        mdl: 7.2,
+        main: ["Jamessu"],
+        links: [
+          { label: "Tencent Video", url: "https://v.qq.com/x/cover/mzc003vp6njqwtn/t3182xpxdp2.html" }
+        ]
+      },
+      {
+        title: "Mr. Fanboy",
+        year: "TBA",
+        poster: "posters/fanboy.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Save","Auau", "Jamessu"],
+        supporting: ["Ryujin","Patji"],
+        links: [
+        ]
+      },
+      {
+        title: "Black Valentine",
+        year: 2025,
+        poster: "posters/black.jpg",
+        imdb: null,
+        mdl: 6.5,
+        main: ["Net","JJ"],
+        links: [
+        ]
+      },
+      {
+        title: "30 Days of Us",
+        year: "TBA",
+        poster: "posters/thirtydays.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Net","JJ"],
+        links: [
+        ]
+      },
+      {
+        title: "Mission Fan-Possible",
+        year: 2023,
+        poster: "posters/mission.jpg",
+        imdb: 7.8,
+        mdl: 7.5,
+        main: ["Nunew","Tutor"],
+        links: [
+          { label: "YouTube", url: "https://www.youtube.com/playlist?list=PLDGcbVm1sBhFd6T0XDJYWB6WW7XmGlILm" }
+        ]
+      },
+      {
+        title: "Our Winter",
+        year: 2023,
+        poster: "posters/winter.jpg",
+        imdb: 6.9,
+        mdl: 7.0,
+        main: ["Yim","Tutor"],
+        links: [
+
+        ]
+      },
+      {
+        title: "Crush on You",
+        year: 2023,
+        poster: "posters/crush.jpg",
+        imdb: 6.5,
+        mdl: 6.9,
+        main: ["Yim","Tutor"],
+        links: [
+          
+        ]
+      },
+      {
+        title: "ChermChey",
+        year: 2026,
+        poster: "posters/cherm.jpg",
+        imdb: 7.7,
+        mdl: 7.7,
+        main: ["Tutor","Yim"],
+        links: [
+          { label: "GagaOOLala", url: "https://www.gagaoolala.com/en/videos/7398/chermchey-2026" }
+        ]
+      },
+      {
+        title: "20 Lists",
+        year: "TBA",
+        poster: "posters/twenty.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Ryujin","Patji"],
+        supporting: ["Wave","Thee","Phupha","Pete"],
+        links: [
+                ]
+      },
+      {
+        title: "Dead Friend Forever - DFF",
+        year: 2023,
+        poster: "posters/dff.jpg",
+        imdb: 7.6,
+        mdl: 7.6,
+        main: ["Copper"],
+        links: [
+          { label: "iQIYI", url: "https://www.iq.com/play/dead-friend-forever-dff-uncovered-version-episode-1-1c6oy8uyb2w?lang=en_us"}
+                ]
+      },
+      {
+        title: "No.1 Student",
+        year: "TBA",
+        poster: "posters/no1.jpg",
+        imdb: null,
+        mdl: null,
+        main: ["Copper","Fifa"],
+        supporting: ["Ton"],
+        links: [
+                ]
+      },
+      {
+        title: "My Universe",
+        year: 2023,
+        poster: "posters/myuniverse.jpg",
+        imdb: 6.2,
+        mdl: 6.7,
+        main: ["North"],
+        links: [
+          { label: "iQIYI", url: "https://www.iq.com/play/1hg1p4ipt1g?user=lishan"}
+                ]
+      },
+      {
+        title: "Prime Tour",
+        year: 2025,
+        poster: "posters/prime.jpg",
+        imdb: null,
+        mdl: 6.4,
+        main: ["Otto"],
+        links: [
+          { label: "GagaOOLala", url: "https://www.gagaoolala.com/en/verticals/6644/prime-tour-2025" }
+        ]
+      },
+      {
+        title: "City of Stars",
+        year: 2024,
+        poster: "posters/myuniverse.jpg",
+        imdb: 6.8,
+        mdl: 7.4,
+        main: ["Porsche"],
+        links: [
+          { label: "iQIYI", url: "https://www.iq.com/short/city-of-stars-13wvkv60ko8?lang=en_us"}
+                ]
+      },
+      {
+        title: "Unforgotten Night",
+        year: 2022,
+        poster: "posters/unforgotten.jpg",
+        imdb: 6.2,
+        mdl: 6.7,
+        main: ["Ton"],
+        links: [
+          { label: "iQIYI", url: "https://www.iq.com/play/175kgah613t?sh_pltf=4&lang=en_us"}
+                ]
+      },
+
+      
+        
+
+      // ── ADD MORE DRAMAS BELOW ──
+      // {
+      //   title: "Drama Title",
+      //   year: 2024,           // number or "TBA"
+      //   poster: "posters/filename.jpg",
+      //   imdb: 8.2,            // number or null
+      //   mdl: 8.9,             // number or null
+      //   main: ["Actor1", "Actor2"],
+      //   supporting: ["Actor3", "Actor4"],
+      //   links: [
+      //     { label: "Netflix", url: "https://..." }
+      //   ]
+      // },
+    ];
+
+    // ─────────────────────────────────────────────
+    // BUILD YEAR FILTERS
+    // ─────────────────────────────────────────────
+    const years = [...new Set(
+      dramas.map(d => d.year).filter(y => y !== "TBA")
+    )].sort((a, b) => b - a);
+
+    const filterGroup = document.querySelector('.filter-group');
+    years.forEach(yr => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.dataset.year = yr;
+      btn.textContent = yr;
+      filterGroup.appendChild(btn);
+    });
+
+    // Add TBA button if any
+    if (dramas.some(d => d.year === "TBA")) {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.dataset.year = 'TBA';
+      btn.textContent = 'TBA';
+      filterGroup.appendChild(btn);
+    }
+
+    // ─────────────────────────────────────────────
+    // RENDER + FILTER
+    // ─────────────────────────────────────────────
+    let activeYear = 'all';
+    let searchQuery = '';
+    let sortBy = 'default';
+
+    function buildCard(drama) {
+      const supporting = drama.supporting || [];
+      const allCast = [...drama.main, ...supporting];
+
+      const scoreHTML = (() => {
+        const parts = [];
+        if (drama.imdb !== null) parts.push(`<span class="score-pill score-imdb">⭑ ${drama.imdb}</span>`);
+        if (drama.mdl !== null)  parts.push(`<span class="score-pill score-mdl">MDL ${drama.mdl}</span>`);
+        if (parts.length === 0)  parts.push(`<span class="score-pill score-na">Scores TBA</span>`);
+        return parts.join('');
+      })();
+
+      const mainHTML = drama.main.map(n => `<span class="main-cast">${n}</span>`).join(', ');
+      const supHTML  = supporting.length
+        ? `<div class="cast-row"><div class="cast-label">Supporting</div><div class="cast-names">${supporting.join(', ')}</div></div>`
+        : '';
+
+      const linksHTML = drama.links.length
+        ? `<div class="watch-links">${drama.links.map(l =>
+            `<a href="${l.url}" target="_blank" class="watch-link">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              ${l.label}
+            </a>`
+          ).join('')}</div>`
+        : '';
+
+      const posterHTML = `<img src="${drama.poster}" alt="${drama.title}" onerror="this.parentElement.innerHTML='<div class=\\'poster-placeholder\\'>No poster</div>'" />`;
+
+      return `
+        <div class="drama-card" data-year="${drama.year}" data-cast="${allCast.join(',').toLowerCase()}">
+          <div class="poster-wrap">
+            ${posterHTML}
+            <span class="year-badge">${drama.year}</span>
+          </div>
+          <div class="card-body">
+            <div class="drama-name">${drama.title}</div>
+            <div class="scores">${scoreHTML}</div>
+            <div class="cast-section">
+              <div class="cast-row">
+                <div class="cast-label">Main cast</div>
+                <div class="cast-names">${mainHTML}</div>
+              </div>
+              ${supHTML}
+            </div>
+            ${linksHTML}
+          </div>
+        </div>`;
+    }
+
+    function render() {
+      const grid = document.getElementById('dramaGrid');
+      const query = searchQuery.trim().toLowerCase();
+
+      const filtered = dramas.filter(d => {
+        const yearMatch = activeYear === 'all' || String(d.year) === String(activeYear);
+        const allCast = [...d.main, ...(d.supporting || [])].join(' ').toLowerCase();
+        const castMatch = !query || allCast.includes(query) || d.title.toLowerCase().includes(query);
+        return yearMatch && castMatch;
+      });
+      filtered.sort((a, b) => {
+        if (sortBy === 'year') {
+          const ya = a.year === 'TBA' ? 0 : a.year;
+          const yb = b.year === 'TBA' ? 0 : b.year;
+          return yb - ya;
+        }
+        if (sortBy === 'imdb') return (b.imdb ?? -1) - (a.imdb ?? -1);
+        if (sortBy === 'mdl')  return (b.mdl ?? -1) - (a.mdl ?? -1);
+        return 0;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="no-results"><strong>No results</strong>Try a different filter or actor name</div>`;
+      } else {
+        grid.innerHTML = filtered.map(buildCard).join('');
+      }
+
+      document.getElementById('resultsCount').textContent =
+        filtered.length === dramas.length
+          ? `${dramas.length} dramas`
+          : `${filtered.length} of ${dramas.length} dramas`;
+
+      document.getElementById('totalCount').textContent =
+        `${dramas.length} dramas · Domundi artists`;
+    }
+
+    // Year filter clicks
+    document.querySelector('.filter-group').addEventListener('click', e => {
+      if (!e.target.matches('.filter-btn')) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      activeYear = e.target.dataset.year;
+      render();
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', e => {
+      sortBy = e.target.value;
+      render();
+    });
+
+    // Actor search
+    document.getElementById('actorSearch').addEventListener('input', e => {
+      searchQuery = e.target.value;
+      render();
+    });
+
+    // Auto-sort alphabetical artist list
+    const artistList = document.getElementById('artistList');
+    if (artistList) {
+      const items = Array.from(artistList.querySelectorAll('li'));
+      items.sort((a, b) => a.textContent.trim().toLowerCase().localeCompare(b.textContent.trim().toLowerCase()));
+      items.forEach(i => artistList.appendChild(i));
+    }
+
+    // Initial render
+    render();
+  </script>
+
+</body>
+</html>

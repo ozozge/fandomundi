@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F4J4BBXV1C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F4J4BBXV1C');
+  </script>
+  <style>
+    .artists-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+    }
+
+    .page-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 52px;
+      color: #D46A1F;
+      letter-spacing: 3px;
+      margin-bottom: 50px;
+    }
+
+    .gen-block {
+      margin-bottom: 60px;
+    }
+
+    .gen-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: #f0d8c0;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(212,106,31,0.4);
+    }
+
+    .artist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 24px;
+    }
+
+    .artist-card {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: transform 0.2s;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .artist-thumb {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(212,106,31,0.4);
+      transition: border-color 0.2s;
+      background: #2a1a08;
+    }
+
+    .artist-card:hover .artist-thumb {
+      border-color: #D46A1F;
+    }
+
+    .artist-card-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: #f0d8c0;
+      text-align: center;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artists - Fandomundi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="logo-title">
+      <a href="index.html">
+        <img src="fandomundi_logo.png" alt="Fandomundi Logo" class="logo" />
+      </a>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="menu-item">
+        <a href="artists.html">Artists</a>
+        <ul class="dropdown">
+          <li class="dropdown-item">
+            <a href="#">By Gen</a>
+            <ul class="submenu">
+              <li class="dropdown-item"><a href="#">Gen 1</a>
+                <ul class="submenu">
+                  <li><a href="artists/Jimmy.html">Jimmy</a></li>
+                  <li><a href="artists/Mark.html">Mark</a></li>
+                  <li><a href="artists/Max.html">Max</a></li>
+                  <li><a href="artists/Park.html">Park</a></li>
+                  <li><a href="artists/Poppy.html">Poppy</a></li>
+                  <li><a href="artists/Tommy.html">Tommy</a></li>
+                  <li><a href="artists/Zee.html">Zee</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item"><a href="#">Gen 2</a>
+                <ul class="submenu">
+                  <li><a href="artists/Jamessu.html">Jamessu</a></li>
+                  <li><a href="artists/Nat.html">Nat</a></li>
+                  <li><a href="artists/Net.html">Net</a></li>
+                  <li><a href="artists/Nunew.html">Nunew</a></li>
+                  <li><a href="artists/Tutor.html">Tutor</a></li>
+                  <li><a href="artists/Yim.html">Yim</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item"><a href="#">Gen 3</a>
+                <ul class="submenu">
+                  <li><a href="artists/FirstOne.html">FirstOne</a></li>
+                  <li><a href="artists/Gems.html">Gems</a></li>
+                  <li><a href="artists/Keng.html">Keng</a></li>
+                  <li><a href="artists/Kim.html">Kim</a></li>
+                  <li><a href="artists/Kong.html">Kong</a></li>
+                  <li><a href="artists/Latte.html">Latte</a></li>
+                  <li><a href="artists/Namping.html">Namping</a></li>
+                  <li><a href="artists/Teetee.html">Teetee</a></li>
+                  <li><a href="artists/Tle.html">Tle</a></li>
+                  <li><a href="artists/Thomas.html">Thomas</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item"><a href="#">Gen 4</a>
+                <ul class="submenu">
+                  <li><a href="artists/Auau.html">Auau</a></li>
+                  <li><a href="artists/JJ.html">JJ</a></li>
+                  <li><a href="artists/Ohm.html">Ohm</a></li>
+                  <li><a href="artists/Patji.html">Patji</a></li>
+                  <li><a href="artists/Por.html">Por</a></li>
+                  <li><a href="artists/Ryujin.html">Ryujin</a></li>
+                  <li><a href="artists/Save.html">Save</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item"><a href="#">Gen 5</a>
+                <ul class="submenu">
+                  <li><a href="artists/Copper.html">Copper</a></li>
+                  <li><a href="artists/Fifa.html">Fifa</a></li>
+                  <li><a href="artists/North.html">North</a></li>
+                  <li><a href="artists/Otto.html">Otto</a></li>
+                  <li><a href="artists/Pete.html">Pete</a></li>
+                  <li><a href="artists/Phupha.html">Phupha</a></li>
+                  <li><a href="artists/Porsche.html">Porsche</a></li>
+                  <li><a href="artists/Pung.html">Pung</a></li>
+                  <li><a href="artists/Wave.html">Wave</a></li>
+                </ul>
+              </li>
+              <li class="dropdown-item"><a href="#">Gen 6</a>
+                <ul class="submenu">
+                  <li><a href="artists/Few.html">Few</a></li>
+                  <li><a href="artists/Matthis.html">Matthis</a></li>
+                  <li><a href="artists/Nan.html">Nan</a></li>
+                  <li><a href="artists/Nick.html">Nick</a></li>
+                  <li><a href="artists/Reeonn.html">Reeonn</a></li>
+                  <li><a href="artists/Thee.html">Thee</a></li>
+                  <li><a href="artists/Ton.html">Ton</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item"><a href="schedule.html">Events/Schedule</a></li>
+      <li class="menu-item"><a href="dramas.html">Dramas</a></li>
+      <li class="menu-item"><a href="music.html">Music</a></li>
+      <li class="menu-item"><a href="staff.html">Staff</a></li>
+      <li class="menu-item"><a href="fanevents.html">Fan Events</a></li>
+      <li class="menu-item"><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="artists-section">
+      <h1 class="page-title">Artists</h1>
+
+      <div class="gen-block">
+        <h2 class="gen-title">Gen 1</h2>
+        <div class="artist-grid">
+          <a href="artists/Jimmy.html" class="artist-card"><img src="artists/Jimmy.jpg" alt="Jimmy" class="artist-thumb" /><span class="artist-card-name">Jimmy</span></a>
+          <a href="artists/Mark.html" class="artist-card"><img src="artists/Mark.jpg" alt="Mark" class="artist-thumb" /><span class="artist-card-name">Mark</span></a>
+          <a href="artists/Max.html" class="artist-card"><img src="artists/Max.jpg" alt="Max" class="artist-thumb" /><span class="artist-card-name">Max</span></a>
+          <a href="artists/Park.html" class="artist-card"><img src="artists/Park.jpg" alt="Park" class="artist-thumb" /><span class="artist-card-name">Park</span></a>
+          <a href="artists/Poppy.html" class="artist-card"><img src="artists/Poppy.jpg" alt="Poppy" class="artist-thumb" /><span class="artist-card-name">Poppy</span></a>
+          <a href="artists/Tommy.html" class="artist-card"><img src="artists/Tommy.jpg" alt="Tommy" class="artist-thumb" /><span class="artist-card-name">Tommy</span></a>
+          <a href="artists/Zee.html" class="artist-card"><img src="artists/Zee.jpg" alt="Zee" class="artist-thumb" /><span class="artist-card-name">Zee</span></a>
+        </div>
+      </div>
+
+      <div class="gen-block">
+        <h2 class="gen-title">Gen 2</h2>
+        <div class="artist-grid">
+          <a href="artists/Jamessu.html" class="artist-card"><img src="artists/Jamessu.jpg" alt="Jamessu" class="artist-thumb" /><span class="artist-card-name">Jamessu</span></a>
+          <a href="artists/Nat.html" class="artist-card"><img src="artists/Nat.jpg" alt="Nat" class="artist-thumb" /><span class="artist-card-name">Nat</span></a>
+          <a href="artists/Net.html" class="artist-card"><img src="artists/Net.jpg" alt="Net" class="artist-thumb" /><span class="artist-card-name">Net</span></a>
+          <a href="artists/Nunew.html" class="artist-card"><img src="artists/Nunew.jpg" alt="Nunew" class="artist-thumb" /><span class="artist-card-name">Nunew</span></a>
+          <a href="artists/Tutor.html" class="artist-card"><img src="artists/Tutor.jpg" alt="Tutor" class="artist-thumb" /><span class="artist-card-name">Tutor</span></a>
+          <a href="artists/Yim.html" class="artist-card"><img src="artists/Yim.jpg" alt="Yim" class="artist-thumb" /><span class="artist-card-name">Yim</span></a>
+        </div>
+      </div>
+
+      <div class="gen-block">
+        <h2 class="gen-title">Gen 3</h2>
+        <div class="artist-grid">
+          <a href="artists/FirstOne.html" class="artist-card"><img src="artists/Firstone.jpg" alt="FirstOne" class="artist-thumb" /><span class="artist-card-name">FirstOne</span></a>
+          <a href="artists/Gems.html" class="artist-card"><img src="artists/gems.jpg" alt="Gems" class="artist-thumb" /><span class="artist-card-name">Gems</span></a>
+          <a href="artists/Keng.html" class="artist-card"><img src="artists/keng.jpg" alt="Keng" class="artist-thumb" /><span class="artist-card-name">Keng</span></a>
+          <a href="artists/Kong.html" class="artist-card"><img src="artists/Kong.jpg" alt="Kong" class="artist-thumb" /><span class="artist-card-name">Kong</span></a>
+          <a href="artists/Latte.html" class="artist-card"><img src="artists/Latte.jpg" alt="Latte" class="artist-thumb" /><span class="artist-card-name">Latte</span></a>
+          <a href="artists/Namping.html" class="artist-card"><img src="artists/Namping.jpg" alt="Namping" class="artist-thumb" /><span class="artist-card-name">Namping</span></a>
+          <a href="artists/Teetee.html" class="artist-card"><img src="artists/teetee.jpg" alt="Teetee" class="artist-thumb" /><span class="artist-card-name">Teetee</span></a>
+          <a href="artists/Tle.html" class="artist-card"><img src="artists/tle.jpg" alt="Tle" class="artist-thumb" /><span class="artist-card-name">Tle</span></a>
+          <a href="artists/Thomas.html" class="artist-card"><img src="artists/Thomas.jpg" alt="Thomas" class="artist-thumb" /><span class="artist-card-name">Thomas</span></a>
+        </div>
+      </div>
+
+      <div class="gen-block">
+        <h2 class="gen-title">Gen 4</h2>
+        <div class="artist-grid">
+          <a href="artists/Auau.html" class="artist-card"><img src="artists/Auau.jpg" alt="Auau" class="artist-thumb" /><span class="artist-card-name">Auau</span></a>
+          <a href="artists/JJ.html" class="artist-card"><img src="artists/JJ.jpg" alt="JJ" class="artist-thumb" /><span class="artist-card-name">JJ</span></a>
+          <a href="artists/Kim.html" class="artist-card"><img src="artists/kim.jpg" alt="Kim" class="artist-thumb" /><span class="artist-card-name">Kim</span></a>
+          <a href="artists/Ohm.html" class="artist-card"><img src="artists/Ohm.jpg" alt="Ohm" class="artist-thumb" /><span class="artist-card-name">Ohm</span></a>
+          <a href="artists/Patji.html" class="artist-card"><img src="artists/Patji.jpg" alt="Patji" class="artist-thumb" /><span class="artist-card-name">Patji</span></a>
+          <a href="artists/Por.html" class="artist-card"><img src="artists/Por.jpg" alt="Por" class="artist-thumb" /><span class="artist-card-name">Por</span></a>
+          <a href="artists/Ryujin.html" class="artist-card"><img src="artists/Ryujin.jpg" alt="Ryujin" class="artist-thumb" /><span class="artist-card-name">Ryujin</span></a>
+          <a href="artists/Save.html" class="artist-card"><img src="artists/Save.jpg" alt="Save" class="artist-thumb" /><span class="artist-card-name">Save</span></a>
+        </div>
+      </div>
+
+      <div class="gen-block">
+        <h2 class="gen-title">Gen 5</h2>
+        <div class="artist-grid">
+          <a href="artists/Copper.html" class="artist-card"><img src="artists/Copper.jpg" alt="Copper" class="artist-thumb" /><span class="artist-card-name">Copper</span></a>
+          <a href="artists/Fifa.html" class="artist-card"><img src="artists/Fifa.jpg" alt="Fifa" class="artist-thumb" /><span class="artist-card-name">Fifa</span></a>
+          <a href="artists/North.html" class="artist-card"><img src="artists/North.jpg" alt="North" class="artist-thumb" /><span class="artist-card-name">North</span></a>
+          <a href="artists/Otto.html" class="artist-card"><img src="artists/Otto.jpg" alt="Otto" class="artist-thumb" /><span class="artist-card-name">Otto</span></a>
+          <a href="artists/Pete.html" class="artist-card"><img src="artists/Pete.jpg" alt="Pete" class="artist-thumb" /><span class="artist-card-name">Pete</span></a>
+          <a href="artists/Phupha.html" class="artist-card"><img src="artists/Phupha.jpg" alt="Phupha" class="artist-thumb" /><span class="artist-card-name">Phupha</span></a>
+          <a href="artists/Porsche.html" class="artist-card"><img src="artists/Porsche.jpg" alt="Porsche" class="artist-thumb" /><span class="artist-card-name">Porsche</span></a>
+          <a href="artists/Pung.html" class="artist-card"><img src="artists/Pung.jpg" alt="Pung" class="artist-thumb" /><span class="artist-card-name">Pung</span></a>
+          <a href="artists/Wave.html" class="artist-card"><img src="artists/Wave.jpg" alt="Wave" class="artist-thumb" /><span class="artist-card-name">Wave</span></a>
+        </div>
+      </div>
+
+      <div class="gen-block">
+        <h2 class="gen-title">Gen 6</h2>
+        <div class="artist-grid">
+          <a href="artists/Few.html" class="artist-card"><img src="artists/Few.jpg" alt="Few" class="artist-thumb" /><span class="artist-card-name">Few</span></a>
+          <a href="artists/Matthis.html" class="artist-card"><img src="artists/Matthis.jpg" alt="Matthis" class="artist-thumb" /><span class="artist-card-name">Matthis</span></a>
+          <a href="artists/Nan.html" class="artist-card"><img src="artists/Nan.jpg" alt="Nan" class="artist-thumb" /><span class="artist-card-name">Nan</span></a>
+          <a href="artists/Nick.html" class="artist-card"><img src="artists/Nick.jpg" alt="Nick" class="artist-thumb" /><span class="artist-card-name">Nick</span></a>
+          <a href="artists/Reeonn.html" class="artist-card"><img src="artists/Reeonn.jpg" alt="Reeonn" class="artist-thumb" /><span class="artist-card-name">Reeonn</span></a>
+          <a href="artists/Thee.html" class="artist-card"><img src="artists/Thee.jpg" alt="Thee" class="artist-thumb" /><span class="artist-card-name">Thee</span></a>
+          <a href="artists/Ton.html" class="artist-card"><img src="artists/Ton.jpg" alt="Ton" class="artist-thumb" /><span class="artist-card-name">Ton</span></a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const artistList = document.getElementById("artistList");
+    if (artistList) {
+      const artists = Array.from(artistList.querySelectorAll("li"));
+      artists.sort((a, b) => a.textContent.trim().toLowerCase().localeCompare(b.textContent.trim().toLowerCase()));
+      artists.forEach(a => artistList.appendChild(a));
+    }
+  </script>
+</body>
+</html>
