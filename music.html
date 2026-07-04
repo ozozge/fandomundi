@@ -7,7 +7,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-F4J4BBXV1C');
   </script>
   <meta charset="UTF-8" />
@@ -15,10 +14,117 @@
   <title>DMD Music</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    .music-header {
+      padding: 60px 60px 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .music-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 90px;
+      color: #D46A1F;
+      letter-spacing: 4px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .music-header p {
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px 60px 80px;
+    }
+    .video-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .video-card:hover {
+      border-color: #D46A1F;
+      transform: translateY(-3px);
+    }
+    .thumb-wrap {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: #000;
+    }
+    .thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+    .video-card:hover .thumb-wrap img {
+      transform: scale(1.04);
+    }
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(212,106,31,0.85);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .video-card:hover .play-icon {
+      opacity: 1;
+    }
+    .play-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: white;
+      margin-left: 3px;
+    }
+    .video-info {
+      padding: 12px 14px 14px;
+    }
+    .video-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .video-date {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+    }
+    .loading-msg {
+      padding: 60px;
+      color: rgba(255,255,255,0.4);
+      font-size: 15px;
+    }
+    @media (max-width: 768px) {
+      .music-header { padding: 30px 16px 16px; }
+      .music-header h1 { font-size: 52px; }
+      .video-grid { padding: 20px 16px 40px; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
+  <header>
     <div class="logo-title">
       <a href="index.html">
         <img src="fandomundi_logo.png" alt="Fandomundi Logo" class="logo" />
@@ -28,14 +134,11 @@
 
   <nav class="navbar">
     <ul class="menu">
-
       <li class="menu-item">
         <a href="artists.html">Artists</a>
-
         <ul class="dropdown">
           <li class="dropdown-item">
             <a href="#">Alphabetical</a>
-
             <ul class="submenu" id="artistList">
               <li><a href="artists/Mark.html">Mark</a></li>
               <li><a href="artists/Park.html">Park</a></li>
@@ -81,13 +184,10 @@
               <li><a href="artists/Keng.html">Keng</a></li>
               <li><a href="artists/Namping.html">Namping</a></li>
               <li><a href="artists/Poppy.html">Poppy</a></li>
-              
             </ul>
           </li>
-
           <li class="dropdown-item">
             <a href="#">By Gen</a>
-
             <ul class="submenu">
               <li class="dropdown-item">
                 <a href="#">Gen 1</a>
@@ -98,7 +198,7 @@
                   <li><a href="artists/Park.html">Park</a></li>
                   <li><a href="artists/Poppy.html">Poppy</a></li>
                   <li><a href="artists/Tommy.html">Tommy</a></li>
-                  <li><a href="artists/Zee.html">Zee</a></li>  
+                  <li><a href="artists/Zee.html">Zee</a></li>
                 </ul>
               </li>
               <li class="dropdown-item">
@@ -109,13 +209,13 @@
                   <li><a href="artists/Net.html">Net</a></li>
                   <li><a href="artists/Nunew.html">Nunew</a></li>
                   <li><a href="artists/Tutor.html">Tutor</a></li>
-                  <li><a href="artists/Yim.html">Yim</a></li>                      
+                  <li><a href="artists/Yim.html">Yim</a></li>
                 </ul>
               </li>
               <li class="dropdown-item">
                 <a href="#">Gen 3</a>
                 <ul class="submenu">
-                  <li><a href="artists/FirstOne.html">FirstOne</a></li>  
+                  <li><a href="artists/FirstOne.html">FirstOne</a></li>
                   <li><a href="artists/Gems.html">Gems</a></li>
                   <li><a href="artists/Keng.html">Keng</a></li>
                   <li><a href="artists/Kim.html">Kim</a></li>
@@ -128,82 +228,119 @@
                   <li><a href="artists/Thomas.html">Thomas</a></li>
                 </ul>
               </li>
-
               <li class="dropdown-item">
                 <a href="#">Gen 4</a>
                 <ul class="submenu">
-                    <li><a href="artists/Auau.html">Auau</a></li>
-                    <li><a href="artists/JJ.html">JJ</a></li>
-                    <li><a href="artists/Kim.html">Kim</a></li>
-                    <li><a href="artists/Ohm.html">Ohm</a></li>
-                    <li><a href="artists/Patji.html">Patji</a></li>
-                    <li><a href="artists/Por.html">Por</a></li>
-                    <li><a href="artists/Ryujin.html">Ryujin</a></li>
-                    <li><a href="artists/Save.html">Save</a></li>
+                  <li><a href="artists/Auau.html">Auau</a></li>
+                  <li><a href="artists/JJ.html">JJ</a></li>
+                  <li><a href="artists/Kim.html">Kim</a></li>
+                  <li><a href="artists/Ohm.html">Ohm</a></li>
+                  <li><a href="artists/Patji.html">Patji</a></li>
+                  <li><a href="artists/Por.html">Por</a></li>
+                  <li><a href="artists/Ryujin.html">Ryujin</a></li>
+                  <li><a href="artists/Save.html">Save</a></li>
                 </ul>
               </li>
-
               <li class="dropdown-item">
                 <a href="#">Gen 5</a>
                 <ul class="submenu">
-                    <li><a href="artists/Copper.html">Copper</a></li>
-                    <li><a href="artists/Fifa.html">Fifa</a></li>
-                    <li><a href="artists/North.html">North</a></li>
-                    <li><a href="artists/Otto.html">Otto</a></li>
-                    <li><a href="artists/Pete.html">Pete</a></li>
-                    <li><a href="artists/Phupha.html">Phupha</a></li>
-                    <li><a href="artists/Porsche.html">Porsche</a></li>
-                    <li><a href="artists/Pung.html">Pung</a></li>
-                    <li><a href="artists/Wave.html">Wave</a></li>
+                  <li><a href="artists/Copper.html">Copper</a></li>
+                  <li><a href="artists/Fifa.html">Fifa</a></li>
+                  <li><a href="artists/North.html">North</a></li>
+                  <li><a href="artists/Otto.html">Otto</a></li>
+                  <li><a href="artists/Pete.html">Pete</a></li>
+                  <li><a href="artists/Phupha.html">Phupha</a></li>
+                  <li><a href="artists/Porsche.html">Porsche</a></li>
+                  <li><a href="artists/Pung.html">Pung</a></li>
+                  <li><a href="artists/Wave.html">Wave</a></li>
                 </ul>
               </li>
-
               <li class="dropdown-item">
                 <a href="#">Gen 6</a>
                 <ul class="submenu">
-                    <li><a href="artists/Few.html">Few</a></li>
-                    <li><a href="artists/Matthis.html">Matthis</a></li>
-                    <li><a href="artists/Nan.html">Nan</a></li>
-                    <li><a href="artists/Nick.html">Nick</a></li>
-                    <li><a href="artists/Reeonn.html">Reeonn</a></li>
-                    <li><a href="artists/Thee.html">Thee</a></li>
-                    <li><a href="artists/Ton.html">Ton</a></li>
+                  <li><a href="artists/Few.html">Few</a></li>
+                  <li><a href="artists/Matthis.html">Matthis</a></li>
+                  <li><a href="artists/Nan.html">Nan</a></li>
+                  <li><a href="artists/Nick.html">Nick</a></li>
+                  <li><a href="artists/Reeonn.html">Reeonn</a></li>
+                  <li><a href="artists/Thee.html">Thee</a></li>
+                  <li><a href="artists/Ton.html">Ton</a></li>
                 </ul>
               </li>
             </ul>
           </li>
         </ul>
       </li>
-
       <li class="menu-item"><a href="schedule.html">Events/Schedule</a></li>
       <li class="menu-item"><a href="dramas.html">Dramas</a></li>
       <li class="menu-item"><a href="music.html">Music</a></li>
       <li class="menu-item"><a href="staff.html">Staff</a></li>
       <li class="menu-item"><a href="fanevents.html">Fan Events</a></li>
       <li class="menu-item"><a href="contact.html">Contact</a></li>
-
     </ul>
-
   </nav>
+
   <main>
-    <div class="upcoming-header">
-      <h2 class="upcoming-title">Under Construction :)</h2>
+    <div class="music-header">
+      <h1>Music</h1>
+      <p id="videoCount">Loading latest releases...</p>
     </div>
-    
+
+    <div class="video-grid" id="videoGrid">
+      <p class="loading-msg">Loading...</p>
+    </div>
   </main>
+
   <script>
+    const API_KEY = 'AIzaSyCGE0KDhQDh0l4TuRkWIRZu0Gg1D13E_aw';
+    const CHANNEL_ID = 'UCCzlWaddjsIzIyIbhI4vGdQ';
+    const MAX_RESULTS = 12;
+
+    function formatDate(iso) {
+      return new Date(iso).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&order=date&maxResults=${MAX_RESULTS}&type=video`)
+      .then(r => r.json())
+      .then(data => {
+        const grid = document.getElementById('videoGrid');
+        if (!data.items || data.items.length === 0) {
+          grid.innerHTML = '<p class="loading-msg">No videos found.</p>';
+          return;
+        }
+
+        document.getElementById('videoCount').textContent = `Latest ${data.items.length} releases from DMD Music`;
+
+        grid.innerHTML = data.items.map(video => {
+          const id = video.id.videoId;
+          const title = video.snippet.title;
+          const thumb = video.snippet.thumbnails.high.url;
+          const date = formatDate(video.snippet.publishedAt);
+          return `
+            <a class="video-card" href="https://www.youtube.com/watch?v=${id}" target="_blank">
+              <div class="thumb-wrap">
+                <img src="${thumb}" alt="${title}" loading="lazy" />
+                <div class="play-icon">
+                  <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                </div>
+              </div>
+              <div class="video-info">
+                <div class="video-title">${title}</div>
+                <div class="video-date">${date}</div>
+              </div>
+            </a>`;
+        }).join('');
+      })
+      .catch(err => {
+        document.getElementById('videoGrid').innerHTML = '<p class="loading-msg">Could not load videos.</p>';
+        console.error(err);
+      });
+
     const artistList = document.getElementById("artistList");
-
     const artists = Array.from(artistList.querySelectorAll("li"));
-
-    artists.sort((a, b) => {
-      const nameA = a.textContent.trim().toLowerCase();
-      const nameB = b.textContent.trim().toLowerCase();
-      return nameA.localeCompare(nameB);
-    });
-
+    artists.sort((a, b) => a.textContent.trim().toLowerCase().localeCompare(b.textContent.trim().toLowerCase()));
     artists.forEach(artist => artistList.appendChild(artist));
   </script>
-  
+
 </body>
 </html>
