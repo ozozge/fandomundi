@@ -22,6 +22,7 @@ name_corrections = {
     "Tie": "Tle",
     "Tia": "Tle",
     "TIe": "Tle",
+    "TeeToe": "TeeTee",
     "James":"Jamessu",
 }
 
