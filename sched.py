@@ -1,6 +1,7 @@
 import anthropic
 import base64
 #import re
+import re
 import requests
 import json
 #from datetime import datetime
@@ -14,32 +15,58 @@ for old_file in glob.glob("schedule_*.jpg"):
     print(f"Removed {old_file}")
 
 load_dotenv()
-
 auth_token = os.getenv("AUTH_TOKEN")
 anthropic_key = os.getenv("ANTHROPIC_KEY")
+
+# --- Change this URL biweekly to point at the tweet with the current schedule ---
+TARGET_TWEET_URL = "https://x.com/DomundiTV/status/2083194010144014429"
 
 name_corrections = {
     "Tie": "Tle",
     "Tia": "Tle",
     "TIe": "Tle",
     "TeeToe": "TeeTee",
-    "James":"Jamessu",
+    "James": "Jamessu",
 }
 
 def correct_names(artists):
     if isinstance(artists, list):
         return [name_corrections.get(a.strip(), a.strip()) for a in artists]
     return name_corrections.get(artists.strip(), artists.strip())
+
+def extract_tweet_id(url):
+    match = re.search(r"status/(\d+)", url)
+    if not match:
+        raise ValueError(f"Could not find a tweet ID in URL: {url}")
+    return match.group(1)
+
+def extract_username(url):
+    match = re.search(r"x\.com/([^/]+)/status/", url)
+    if not match:
+        raise ValueError(f"Could not find a username in URL: {url}")
+    return match.group(1)
+
+def find_tweet_by_url(scweet_client, target_url, search_limit=50):
+    """Scweet has no dedicated 'get single tweet' endpoint, so we pull recent
+    profile tweets and match by tweet_id extracted from the URL."""
+    target_id = extract_tweet_id(target_url)
+    username = extract_username(target_url)
+    tweets = scweet_client.get_profile_tweets([username], limit=search_limit)
+    for tweet in tweets:
+        if tweet.get("tweet_id") == target_id:
+            return tweet
+    return None
+
 s = Scweet(auth_token=auth_token)
-profile_tweets = s.get_profile_tweets(["DomundiTV"], limit=5)
 
-if not profile_tweets:
-    print("No tweets found.")
+target_tweet = find_tweet_by_url(s, TARGET_TWEET_URL)
+
+if not target_tweet:
+    print(f"Could not find tweet {TARGET_TWEET_URL} in the recent timeline. "
+          f"Try increasing search_limit if it's an older tweet.")
 else:
-    latest_tweet = profile_tweets[0]
-    print("Latest schedule tweet:", latest_tweet.get("text", ""))
-
-    image_links = latest_tweet.get("media", {}).get("image_links", [])
+    print("Target schedule tweet:", target_tweet.get("text", ""))
+    image_links = target_tweet.get("media", {}).get("image_links", []) if target_tweet.get("media") else []
     if not image_links:
         print("No images found.")
     else:
@@ -51,11 +78,9 @@ else:
 
         client = anthropic.Anthropic(api_key=anthropic_key)
         all_events = []
-
         for i in range(len(image_links)):
             with open(f"schedule_{i}.jpg", "rb") as f:
                 image_data = base64.standard_b64encode(f.read()).decode("utf-8")
-
             response = client.messages.create(
                 model="claude-sonnet-4-6",
                 max_tokens=4000,
@@ -67,7 +92,6 @@ else:
                     ]
                 }]
             )
-
             raw = response.content[0].text.strip().replace("```json", "").replace("```", "")
             events = json.loads(raw)
             for event in events:
