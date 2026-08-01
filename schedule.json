@@ -3,25 +3,25 @@
     "date": "08/01/2026",
     "event": "DMD SPORTS DAY",
     "time": "12:30 PM",
-    "artists": ["DMD BOYS"]
+    "artists": "DMD BOYS"
   },
   {
     "date": "08/02/2026",
     "event": "DR.ALLY MEMORY OF LOVE WITH NORTHOTTO",
     "time": "3 PM",
-    "artists": ["North", "Otto"]
+    "artists": "North, Otto"
   },
   {
     "date": "08/02/2026",
     "event": "FIRSTONE FAN GATHERING HAPPY FIRSTONE DAY",
     "time": "3 PM",
-    "artists": ["FirstOne"]
+    "artists": "FirstOne"
   },
   {
     "date": "08/02/2026",
     "event": "MOSCHINO TOY 2 GUMMY YUMMY IN BANGKOK!",
     "time": "4:30 PM",
-    "artists": ["TeeTee", "Por"]
+    "artists": "TeeTee, Por"
   },
   {
     "date": "08/02/2026",
@@ -33,31 +33,31 @@
     "date": "08/03/2026",
     "event": "TAOKAENOI LIVE",
     "time": "7 PM",
-    "artists": ["TeeTee", "Por"]
+    "artists": "TeeTee, Por"
   },
   {
     "date": "08/04/2026",
     "event": "THE FUTURE OF NEXT GENERATION SKIN",
     "time": "6:25 PM",
-    "artists": ["TuTor", "Yim"]
+    "artists": "TuTor, Yim"
   },
   {
     "date": "08/04/2026",
-    "event": "GARNIER 15 MIN SKINCARE WITH TEETEE-POR",
+    "event": "GARNIER 15 MINUTES SKINCARE WITH TEETEE-POR",
     "time": "7 PM",
-    "artists": ["TeeTee", "Por"]
+    "artists": "TeeTee, Por"
   },
   {
     "date": "08/05/2026",
     "event": "FINO THE FIRST DROP WITH TEETEE-POR",
     "time": "5:30 PM",
-    "artists": ["TeeTee", "Por"]
+    "artists": "TeeTee, Por"
   },
   {
     "date": "08/06/2026",
     "event": "BEHIND THE SCENES WITH TUTORYIM - LABX SKIN",
     "time": "8 PM",
-    "artists": ["TuTor", "Yim"]
+    "artists": "TuTor, Yim"
   },
   {
     "date": "08/07/2026",
@@ -71,7 +71,7 @@
   {
     "date": "08/07/2026",
     "event": "DOMUNDI DAY IN THE USA 2",
-    "time": "1 PM (Eastern Time) / 12.30 AM (August 8)",
+    "time": "1 PM (Eastern Time) | 12.30 AM (August 8)",
     "artists": [
       "Thomas",
       "Kong",
@@ -103,7 +103,7 @@
     "time": "TBC",
     "artists": [
       "Pete",
-      "Reeonn"
+      "Reeoinn"
     ]
   },
   {
@@ -164,7 +164,7 @@
   },
   {
     "date": "08/08/2026",
-    "event": "SHOPEE LIVE EXCLUSIVE FAN BENEFITS X THEE-LEF",
+    "event": "SHOPEE LIVE EXCLUSIVE FAN BENEFITS X \"THEE-LEFW\"",
     "time": "7.30 PM",
     "artists": [
       "Wave",
@@ -274,7 +274,7 @@
   },
   {
     "date": "08/12/2026",
-    "event": "LIVE WITH KENG AND NAMPING",
+    "event": "LIVE",
     "time": "7 PM",
     "artists": [
       "Keng",
