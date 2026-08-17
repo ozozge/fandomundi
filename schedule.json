@@ -1,255 +1,209 @@
 [
   {
-    "date": "08/01/2026",
-    "event": "DMD SPORTS DAY",
-    "time": "12:30 PM",
-    "artists": "DMD BOYS"
+    "date": "08/17/2026",
+    "event": "NUNEW 7TH SINGLE 'NUNEW - KATA' FEAT. BOWKYLION PRESS TOUR",
+    "time": "11:30 AM onward",
+    "artists": [
+      "NuNew"
+    ]
   },
   {
-    "date": "08/02/2026",
-    "event": "DR.ALLY MEMORY OF LOVE WITH NORTHOTTO",
-    "time": "3 PM",
-    "artists": "North, Otto"
+    "date": "08/17/2026",
+    "event": "FITTING SERIES YOU(R)TUBER SERIES",
+    "time": "11:00 AM",
+    "artists": [
+      "Tle",
+      "FirstOne",
+      "Ton",
+      "Few",
+      "Gems"
+    ]
   },
   {
-    "date": "08/02/2026",
-    "event": "FIRSTONE FAN GATHERING HAPPY FIRSTONE DAY",
-    "time": "3 PM",
-    "artists": "FirstOne"
+    "date": "08/18/2026",
+    "event": "BENUTRA X TEETEEPOR FACE TO FACE FAN SIGN BOXSET",
+    "time": "1 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
   },
   {
-    "date": "08/02/2026",
-    "event": "MOSCHINO TOY 2 GUMMY YUMMY IN BANGKOK!",
-    "time": "4:30 PM",
-    "artists": "TeeTee, Por"
+    "date": "08/18/2026",
+    "event": "MOS BURGER MEET & EAT WITH TEETEE-POR",
+    "time": "6:30 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
   },
   {
-    "date": "08/02/2026",
-    "event": "YOUR THIRD SERIES EP.2",
-    "time": "10:30 PM",
-    "artists": "TeeTee, Por"
-  },
-  {
-    "date": "08/03/2026",
-    "event": "TAOKAENOI LIVE",
+    "date": "08/18/2026",
+    "event": "THE MALL LIFESTORE AMAZE",
     "time": "7 PM",
-    "artists": "TeeTee, Por"
-  },
-  {
-    "date": "08/04/2026",
-    "event": "THE FUTURE OF NEXT GENERATION SKIN",
-    "time": "6:25 PM",
-    "artists": "TuTor, Yim"
-  },
-  {
-    "date": "08/04/2026",
-    "event": "GARNIER 15 MINUTES SKINCARE WITH TEETEE-POR",
-    "time": "7 PM",
-    "artists": "TeeTee, Por"
-  },
-  {
-    "date": "08/05/2026",
-    "event": "FINO THE FIRST DROP WITH TEETEE-POR",
-    "time": "5:30 PM",
-    "artists": "TeeTee, Por"
-  },
-  {
-    "date": "08/06/2026",
-    "event": "BEHIND THE SCENES WITH TUTORYIM - LABX SKIN",
-    "time": "8 PM",
-    "artists": "TuTor, Yim"
-  },
-  {
-    "date": "08/07/2026",
-    "event": "SWEET BLOOM WITH TLEFIRSTONE",
-    "time": "4 PM",
     "artists": [
       "Tle",
       "FirstOne"
     ]
   },
   {
-    "date": "08/07/2026",
-    "event": "DOMUNDI DAY IN THE USA 2",
-    "time": "1 PM (Eastern Time) | 12.30 AM (August 8)",
-    "artists": [
-      "Thomas",
-      "Kong",
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "FANSIGN IN CHINA",
-    "time": "TBC",
-    "artists": [
-      "AuAu",
-      "Save"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "FIRST DATE WITH RYUJIN & PATJI",
-    "time": "TBC",
-    "artists": [
-      "RyuJin",
-      "PatJi"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "THE GOODY",
-    "time": "TBC",
-    "artists": [
-      "Pete",
-      "Reeoinn"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "ZEE PRUK X MOEV",
-    "time": "10 AM",
-    "artists": [
-      "Zee"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "MELA A COZY DAY WITH JJ",
-    "time": "12 PM",
-    "artists": [
-      "JJ"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "MEET & GLOW WITH KENGNAMPING EXCLUSIVE FANSIGN EVENT BY RISEBYNUR",
-    "time": "1.30 PM",
-    "artists": [
-      "Keng",
-      "Namping"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "8.8 MONDAY MOIST X NORTH OTTO",
-    "time": "2 PM",
+    "date": "08/18/2026",
+    "event": "YOYO X NORTHOTTO",
+    "time": "7 PM",
     "artists": [
       "North",
       "Otto"
     ]
   },
   {
-    "date": "08/08/2026",
-    "event": "WEIBO GALA THAILAND",
-    "time": "6 PM",
-    "artists": [
-      "Jamessu",
-      "NuNew",
-      "Tutor",
-      "Yim",
-      "Tle",
-      "FirstOne"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "8.8 MONDAY MOIST X COPPER FIFA",
-    "time": "7 PM",
-    "artists": [
-      "Copper",
-      "Fifa"
-    ]
-  },
-  {
-    "date": "08/08/2026",
-    "event": "SHOPEE LIVE EXCLUSIVE FAN BENEFITS",
-    "time": "7.30 PM",
-    "artists": [
-      "Wave",
-      "Thee"
-    ]
-  },
-  {
-    "date": "08/09/2026",
-    "event": "FANSIGN IN CHINA",
-    "time": "TBC",
-    "artists": [
-      "Tle",
-      "FirstOne"
-    ]
-  },
-  {
-    "date": "08/09/2026",
-    "event": "DR.ALLY WONDER DAY WITH LATTEKIM",
-    "time": "TBC",
-    "artists": [
-      "Latte",
-      "Kim"
-    ]
-  },
-  {
-    "date": "08/09/2026",
-    "event": "DOMUNDI DAY IN THE USA",
-    "time": "12:30 PM (Eastern Time) | 11:30 PM",
-    "artists": [
-      "Thomas",
-      "Kong"
-    ]
-  },
-  {
-    "date": "08/09/2026",
-    "event": "DOMUNDI DAY IN THE USA",
-    "time": "7 PM (Eastern Time) | 6 AM (August 10)",
+    "date": "08/19/2026",
+    "event": "COACH PLAY SIAMSQUARE OPENING EVENT",
+    "time": "2 PM",
     "artists": [
       "TeeTee",
       "Por"
     ]
   },
   {
-    "date": "08/09/2026",
-    "event": "MELA LAUGH&PLAY WITH JAMES SU",
-    "time": "12 PM",
+    "date": "08/19/2026",
+    "event": "NEXT STATION HOPINESS SHOKUBUTSU X THOMAS&KONG",
+    "time": "6 PM",
     "artists": [
-      "Jamessu"
+      "Thomas",
+      "Kong"
     ]
   },
   {
-    "date": "08/09/2026",
-    "event": "JOYFUL FRAME ART WORKSHOP",
-    "time": "3 PM",
+    "date": "08/20/2026",
+    "event": "MAGIC LOVER SERIES",
+    "time": "9:40 AM",
     "artists": [
-      "Keng",
-      "Namping"
+      "Rang",
+      "Namping",
+      "Thomas",
+      "Kong",
+      "JT",
+      "Ohm"
     ]
   },
   {
-    "date": "08/09/2026",
-    "event": "MERCI X NUNEW",
-    "time": "7:30 PM",
+    "date": "08/20/2026",
+    "event": "INFINITY MEDICAL CLINIC X TLE & FIRSTONE PRESENTER LAUNCH EVENT",
+    "time": "1 PM",
     "artists": [
-      "NuNew"
+      "Tle",
+      "FirstOne"
     ]
   },
   {
-    "date": "08/09/2026",
-    "event": "YOUR THIRD SERIES EP.3",
-    "time": "10:30 PM | 11:30 PM",
-    "artists": []
-  },
-  {
-    "date": "08/10/2026",
-    "event": "THE KLINIQUEXNETJJ LIVE BATTLE",
+    "date": "08/20/2026",
+    "event": "OPPO EXPERIENCE CENTER CENTRALWORLD",
     "time": "5 PM",
     "artists": [
-      "Net",
-      "JJ"
+      "TeeTee",
+      "Por"
     ]
   },
   {
-    "date": "08/12/2026",
-    "event": "INVISIBLE BLOOM WITH RYUJINPATJI",
+    "date": "08/20/2026",
+    "event": "SCOOPIFY SWEET GUMMY WITH SAVE",
+    "time": "5:30 PM",
+    "artists": [
+      "Save"
+    ]
+  },
+  {
+    "date": "08/20/2026",
+    "event": "LSA 50 ICONS OF 2026",
+    "time": "6 PM",
+    "artists": [
+      "NuNew",
+      "Jamessu",
+      "Tim",
+      "AuAu"
+    ]
+  },
+  {
+    "date": "08/20/2026",
+    "event": "LSA 50 ICONS OF 2026",
+    "time": "7 PM",
+    "artists": [
+      "Zee"
+    ]
+  },
+  {
+    "date": "08/20/2026",
+    "event": "THE MALL LIFESTORE SPORT DAY AFTER MATCH TLE & FIRSTONE",
+    "time": "7 PM",
+    "artists": [
+      "Tle",
+      "FirstOne",
+      "Rainy"
+    ]
+  },
+  {
+    "date": "08/21/2026",
+    "event": "LEECN x TEETEEPOR",
+    "time": "TBC",
+    "artists": [
+      "TeeTree",
+      "Por"
+    ]
+  },
+  {
+    "date": "08/21/2026",
+    "event": "HAPPY KENG DAY",
+    "time": "1 PM",
+    "artists": [
+      "Keng"
+    ]
+  },
+  {
+    "date": "08/21/2026",
+    "event": "SISTAR SECRET RECIPE X AUAUSAVE",
+    "time": "2 PM",
+    "artists": [
+      "AuAu",
+      "Save"
+    ]
+  },
+  {
+    "date": "08/21/2026",
+    "event": "BEAUTERRY MY HOME BECOMING",
+    "time": "3 PM",
+    "artists": [
+      "Otto"
+    ]
+  },
+  {
+    "date": "08/21/2026",
+    "event": "WITHAT SOFT SCENT WITH TLEFIRSTONE",
+    "time": "6 PM",
+    "artists": [
+      "Tle",
+      "FirstOne"
+    ]
+  },
+  {
+    "date": "08/21/2026",
+    "event": "MAGNUM MOMENTS WITH KENG HARIT",
+    "time": "TBC",
+    "artists": [
+      "Keng"
+    ]
+  },
+  {
+    "date": "08/22/2026",
+    "event": "SUMMER, I'LL MEET YOU AS PROMISED",
+    "time": "TBC",
+    "artists": [
+      "TeeTree",
+      "Por"
+    ]
+  },
+  {
+    "date": "08/22/2026",
+    "event": "2026 RYUJINPATJI FAN MEETING IN CHINA",
     "time": "TBC",
     "artists": [
       "RyuJin",
@@ -257,154 +211,442 @@
     ]
   },
   {
-    "date": "08/12/2026",
-    "event": "VERITE THE CORA PEARL GARDEN WITH AUAU",
-    "time": "10 AM",
+    "date": "08/22/2026",
+    "event": "DR.ALLY YOUR GLOW MOMENT WITH YIM",
+    "time": "TBC",
     "artists": [
-      "AuAu"
+      "Yim"
     ]
   },
   {
-    "date": "08/12/2026",
-    "event": "VERITE THE CORA PEARL GARDEN WITH SAVE",
-    "time": "4 PM",
+    "date": "08/22/2026",
+    "event": "AUAUSAVE X THAI TASTE A MOMENT TO REMEMBER",
+    "time": "All Day",
     "artists": [
+      "AuAu",
       "Save"
     ]
   },
   {
-    "date": "08/12/2026",
-    "event": "LIVE WITH KENG AND NAMPING",
-    "time": "7 PM",
+    "date": "08/22/2026",
+    "event": "MELA BLOOM IN LOVE WITH NET",
+    "time": "12:30 PM",
+    "artists": [
+      "Net"
+    ]
+  },
+  {
+    "date": "08/22/2026",
+    "event": "EVENT",
+    "time": "1 PM",
     "artists": [
       "Keng",
       "Namping"
     ]
   },
   {
-    "date": "08/14/2026",
-    "event": "ICHI-MESHI FANS JOURNEY WITH AUAU",
-    "time": "6:15 PM",
+    "date": "08/22/2026",
+    "event": "MAMI SOFT & BRIGHT FUN AT THE CAFE WITH JAMES SU",
+    "time": "2:30 PM",
     "artists": [
-      "AuAu"
+      "Jamessu"
     ]
   },
   {
-    "date": "08/14/2026",
-    "event": "DR.SKINNE EXCLUSIVE THOMAS-KONG",
-    "time": "6:30 PM",
+    "date": "08/22/2026",
+    "event": "KATE KABUKE X BEAUTRIUM",
+    "time": "3 PM",
+    "artists": [
+      "Thee",
+      "Wave"
+    ]
+  },
+  {
+    "date": "08/22/2026",
+    "event": "YOUR THIRD SERIES BUSKING",
+    "time": "6 PM",
+    "artists": [
+      "Max",
+      "Nat",
+      "Mark",
+      "Gems",
+      "Few"
+    ]
+  },
+  {
+    "date": "08/23/2026",
+    "event": "PERCY DREAM COME TRUE WITH NET",
+    "time": "TBC",
+    "artists": [
+      "Net"
+    ]
+  },
+  {
+    "date": "08/23/2026",
+    "event": "SUMMER DATE WITH YOU",
+    "time": "TBC",
+    "artists": [
+      "TeeTree",
+      "Por"
+    ]
+  },
+  {
+    "date": "08/23/2026",
+    "event": "A Special Day Trip with Jamessu",
+    "time": "TBC",
+    "artists": [
+      "Jamessu"
+    ]
+  },
+  {
+    "date": "08/23/2026",
+    "event": "Auausave x Thai Taste A Moment to Remember",
+    "time": "All Day",
+    "artists": [
+      "AuAu",
+      "Save"
+    ]
+  },
+  {
+    "date": "08/23/2026",
+    "event": "Merci Exclusive Event with Thee Wave Official Moment in Cafe",
+    "time": "1 PM",
+    "artists": [
+      "Thee",
+      "Wave"
+    ]
+  },
+  {
+    "date": "08/23/2026",
+    "event": "All Want Want Up",
+    "time": "1 PM",
     "artists": [
       "Thomas",
       "Kong"
     ]
   },
   {
-    "date": "08/15/2026",
-    "event": "NOLA SUPERFAN: POOLSIDE PARTY & BARBECUE WITH MAX",
-    "time": "TBC",
+    "date": "08/23/2026",
+    "event": "2026 Tmelive International Music Awards",
+    "time": "4 PM",
     "artists": [
-      "Max"
+      "NuNew"
     ]
   },
   {
-    "date": "08/15/2026",
-    "event": "FANSIGN IN CHINA",
-    "time": "TBC",
+    "date": "08/23/2026",
+    "event": "Kengnamping 1st Fanmeeting in Taipei",
+    "time": "5 PM",
     "artists": [
       "Keng",
       "Namping"
     ]
   },
   {
-    "date": "08/15/2026",
-    "event": "1 DAY WITH TIE AND FIRSTONE",
-    "time": "10:30 AM",
+    "date": "08/23/2026",
+    "event": "Atlanta Luxury Dinner Experience with Tle & Firstone",
+    "time": "6 PM",
     "artists": [
       "Tle",
       "FirstOne"
     ]
   },
   {
-    "date": "08/15/2026",
-    "event": "IT'S SKIN IT'S POWER 10 DAY WITH NET-JJ",
-    "time": "3 PM",
+    "date": "08/23/2026",
+    "event": "Your Third Series EP.5",
+    "time": "10:30 PM / 11:30 PM",
+    "artists": []
+  },
+  {
+    "date": "08/24/2026",
+    "event": "Sandell Sweet Melting Pop-Up Store",
+    "time": "6 PM",
     "artists": [
-      "Net",
-      "JJ"
+      "Tle",
+      "FirstOne"
     ]
   },
   {
-    "date": "08/15/2026",
-    "event": "DUANG GO ROUND CONCERT PRESENTED BY TRUE5G",
-    "time": "5 PM",
+    "date": "08/26/2026",
+    "event": "Ready to Be Okay with AuAu - Save",
+    "time": "3 PM",
     "artists": [
+      "AuAu",
+      "Save"
+    ]
+  },
+  {
+    "date": "08/26/2026",
+    "event": "Shokubutsu x Teetee & Por",
+    "time": "7 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
+  },
+  {
+    "date": "08/27/2026",
+    "event": "Surefresh x Jamessu & Jessy",
+    "time": "TBC",
+    "artists": [
+      "Jamessu",
+      "Jessy"
+    ]
+  },
+  {
+    "date": "08/27/2026",
+    "event": "Lost in the Camp with Por Suppakarn",
+    "time": "4 PM",
+    "artists": [
+      "Por"
+    ]
+  },
+  {
+    "date": "08/27/2026",
+    "event": "The Mall Lifestore Sport Day After Match Thomas & Kong",
+    "time": "4 PM",
+    "artists": [
+      "Thomas",
+      "Kong",
+      "McTiky"
+    ]
+  },
+  {
+    "date": "08/27/2026",
+    "event": "Tingduo Live",
+    "time": "7 PM",
+    "artists": [
+      "RyuJin",
+      "PatJi"
+    ]
+  },
+  {
+    "date": "08/28/2026",
+    "event": "Love Upon a Time Fan Meeting in Japan 2026",
+    "time": "11 AM - 3:30 PM",
+    "artists": [
+      "Net",
+      "JJ",
+      "Lette",
+      "Kim"
+    ]
+  },
+  {
+    "date": "08/28/2026",
+    "event": "Benutra Be Winner The Vitamin Victory",
+    "time": "7 PM",
+    "artists": [
+      "TeeTee",
+      "Por",
+      "BokBear"
+    ]
+  },
+  {
+    "date": "08/28/2026",
+    "event": "AIS Surprised Deal Live",
+    "time": "7 PM",
+    "artists": [
+      "Thomas",
+      "Kong"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "TUTOR SHINING DAY BY LAITHAI",
+    "time": "TBC",
+    "artists": [
+      "Tutor"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "FRIENDLY ME THE PRIVATE AFFAIR WITH WAVE",
+    "time": "TBC",
+    "artists": [
+      "Wave"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "KHEMJIRA FAN MEET TOUR IN EUROPE FRANKFURT",
+    "time": "11:30 AM - 4:30 PM",
+    "artists": [
+      "Keng",
+      "Namping",
+      "Tle",
+      "FirstOne"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "LOVE UPON A TIME FAN MEETING IN JAPAN 2026 (FAN SIGN)",
+    "time": "11:30 AM - 3:30 PM",
+    "artists": [
+      "Net",
+      "JJ",
+      "Latte",
+      "Kim"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "NORTHOTTO X SCOOPSCOOP",
+    "time": "1:30 PM",
+    "artists": [
+      "North",
+      "Otto"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "YOUR HAIR, YOUR POWER EXCLUSIVE SWEET MOMENT WITH THOMAS KONG",
+    "time": "3:30 PM",
+    "artists": [
+      "Thomas",
+      "Kong"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "JARINYA NEW SEASON X TEETEEPOR",
+    "time": "6 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "3CE MELT MY HEART X NUNEW",
+    "time": "7 PM",
+    "artists": [
+      "NuNew"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "FANBOY GALA NIGHT EP.1",
+    "time": "Red Carpet 7 PM | Series Screening 10 PM",
+    "artists": [
+      "AuAu",
+      "Save",
+      "Jamessu",
+      "Ryujin",
+      "Piss",
+      "Nam"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "FANBOY GALA NIGHT EP.1 (Fan Gathering)",
+    "time": "Red Carpet 7 PM | Series Screening 10 PM",
+    "artists": [
+      "Park",
+      "Nat",
+      "Yim",
+      "Gemo",
+      "Porsche",
+      "Copper",
+      "Fita",
+      "Phupha",
+      "Faw",
+      "Reazos",
+      "Nick",
+      "Ton"
+    ]
+  },
+  {
+    "date": "08/29/2026",
+    "event": "FANBOY GALA NIGHT EP.1 (Series Screening)",
+    "time": "10 PM",
+    "artists": [
+      "Max",
+      "Thomas",
+      "Kong",
       "TeeTee",
       "Por",
       "North",
       "Otto",
-      "Wave",
-      "Thee"
+      "Wave"
     ]
   },
   {
-    "date": "08/15/2026",
-    "event": "FANDOM FEST",
-    "time": "5 PM",
+    "date": "08/29/2026",
+    "event": "MR. FANBOY SERIES EP.1",
+    "time": "10:30 PM",
+    "artists": [
+      "Mr. Fanboy Cast"
+    ]
+  },
+  {
+    "date": "08/30/2026",
+    "event": "JIMMY BELOVED EXCLUSIVE EVENT",
+    "time": "TBC",
+    "artists": [
+      "Jimmy"
+    ]
+  },
+  {
+    "date": "08/30/2026",
+    "event": "FRIENDLY ME CANDY KISS MOMENT WITH TUTOR",
+    "time": "TBC",
+    "artists": [
+      "Tutor"
+    ]
+  },
+  {
+    "date": "08/30/2026",
+    "event": "RESERVED FOR US WITH COPPERFIFA",
+    "time": "TBC",
+    "artists": [
+      "Copper",
+      "Fifa"
+    ]
+  },
+  {
+    "date": "08/30/2026",
+    "event": "KHEMJIRA FAN MEET TOUR IN EUROPE MADRID",
+    "time": "11:30 AM - 4:30 PM",
+    "artists": [
+      "Keng",
+      "Namping",
+      "Tle",
+      "FirstOne"
+    ]
+  },
+  {
+    "date": "08/30/2026",
+    "event": "SENLAB SCENT OF US WITH NORTH OTTO",
+    "time": "3 PM",
+    "artists": [
+      "North",
+      "Otto"
+    ]
+  },
+  {
+    "date": "08/30/2026",
+    "event": "SAY YES NUTRIMASTER: NATURE MEETS SCIENCE",
+    "time": "4 PM",
     "artists": [
       "Zee",
       "NuNew"
     ]
   },
   {
-    "date": "08/16/2026",
-    "event": "MAXNAT EXCLUSIVE DAY BY HONAH LEE",
-    "time": "TBC",
-    "artists": [
-      "Max",
-      "Nat"
-    ]
-  },
-  {
-    "date": "08/16/2026",
-    "event": "FRIENDLY ME MOONLIT RIVER WITH KONG",
-    "time": "TBC",
-    "artists": [
-      "Kong"
-    ]
-  },
-  {
-    "date": "08/16/2026",
-    "event": "JJ MAGICAL TIME BY LAITHAI",
-    "time": "TBC",
-    "artists": [
-      "JJ"
-    ]
-  },
-  {
-    "date": "08/16/2026",
-    "event": "PAINTING MEMORIES WITH NUNEW",
-    "time": "2 PM",
-    "artists": [
-      "NuNew"
-    ]
-  },
-  {
-    "date": "08/16/2026",
-    "event": "DUANG GO ROUND CONCERT PRESENTED BY TRUE5G",
-    "time": "3:30 PM",
+    "date": "08/30/2026",
+    "event": "JOURNEY TO YOUR HEART",
+    "time": "5 PM",
     "artists": [
       "TeeTee",
-      "Por",
-      "North",
-      "Otto",
-      "Wave",
-      "Thee"
+      "Por"
     ]
   },
   {
-    "date": "08/16/2026",
-    "event": "YOUR THIRD SERIES EP.4",
+    "date": "08/30/2026",
+    "event": "YOUR THIRD SERIES EP.6",
     "time": "10:30 PM",
-    "artists": []
+    "artists": [
+      "Your Third Cast"
+    ]
   }
 ]
