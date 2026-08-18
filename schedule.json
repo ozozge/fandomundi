@@ -9,13 +9,13 @@
   },
   {
     "date": "08/17/2026",
-    "event": "FITTING SERIES YOU(R)TUBER SERIES",
-    "time": "11:00 AM",
+    "event": "FITTING Series YOU(R)TUBER SERIES",
+    "time": "11:00 AM / 11:30 AM",
     "artists": [
       "Tle",
       "FirstOne",
       "Ton",
-      "Few",
+      "Fev",
       "Gems"
     ]
   },
@@ -78,8 +78,8 @@
     "event": "MAGIC LOVER SERIES",
     "time": "9:40 AM",
     "artists": [
-      "Keng",
-      "Namping",
+      "Rang",
+      "Nampung",
       "Thomas",
       "Kong",
       "JT",
@@ -114,12 +114,12 @@
   },
   {
     "date": "08/20/2026",
-    "event": "LSA 50 ICONS OF 2026",
+    "event": "LSA 50 ICONS OF 2026 - Red Carpet",
     "time": "6 PM",
     "artists": [
       "NuNew",
       "Jamessu",
-      "Yim",
+      "Tim",
       "AuAu"
     ]
   },
@@ -269,7 +269,7 @@
       "Max",
       "Nat",
       "Mark",
-      "Gems",
+      "Gem",
       "Few"
     ]
   },
@@ -327,7 +327,7 @@
   },
   {
     "date": "08/23/2026",
-    "event": "2026 Tmelive International Music Awards",
+    "event": "2026 TMELive International Music Awards",
     "time": "4 PM",
     "artists": [
       "NuNew"
@@ -338,7 +338,7 @@
     "event": "Kengnamping 1st Fanmeeting in Taipei",
     "time": "5 PM",
     "artists": [
-      "Keng",
+      "Kong",
       "Namping"
     ]
   },
@@ -354,7 +354,7 @@
   {
     "date": "08/23/2026",
     "event": "Your Third Series EP.5",
-    "time": "10:30 PM / 11:30 PM",
+    "time": "11:30 PM",
     "artists": []
   },
   {
@@ -377,7 +377,7 @@
   },
   {
     "date": "08/26/2026",
-    "event": "Shokubutsu x Teetee & Por",
+    "event": "Shokubutsu x TeeTee & Por",
     "time": "7 PM",
     "artists": [
       "TeeTee",
@@ -408,7 +408,7 @@
     "artists": [
       "Thomas",
       "Kong",
-      "Mr.Toky"
+      "McTiky"
     ]
   },
   {
@@ -426,8 +426,8 @@
     "time": "11 AM - 3:30 PM",
     "artists": [
       "Net",
-      "JJ",
-      "Latte",
+      "Ji",
+      "Lette",
       "Kim"
     ]
   },
@@ -436,7 +436,7 @@
     "event": "Benutra Be Winner The Vitamin Victory",
     "time": "7 PM",
     "artists": [
-      "TeeTee",
+      "YeeTee",
       "Por",
       "BokBear"
     ]
@@ -472,7 +472,7 @@
     "time": "11:30 AM - 4:30 PM",
     "artists": [
       "Keng",
-      "Namping",
+      "Nampling",
       "Tle",
       "FirstOne"
     ]
@@ -531,14 +531,14 @@
       "AuAu",
       "Save",
       "Jamessu",
-      "RyuJin",
-      "Patji",
+      "Ryder",
+      "Pite",
       "Nan"
     ]
   },
   {
     "date": "08/29/2026",
-    "event": "FANBOY GALA NIGHT EP.1 (Fan Gathering)",
+    "event": "FANBOY GALA NIGHT EP.1",
     "time": "Red Carpet 7 PM | Series Screening 10 PM",
     "artists": [
       "Park",
@@ -547,36 +547,33 @@
       "Gems",
       "Porsche",
       "Copper",
-      "Fifa",
+      "Fila",
       "Phupha",
-      "Few",
-      "Reeonn",
+      "Faw",
+      "Reeone",
       "Nick",
       "Ton"
     ]
   },
   {
     "date": "08/29/2026",
-    "event": "FANBOY GALA NIGHT EP.1 (Series Screening)",
-    "time": "10 PM",
+    "event": "FANBOY GALA NIGHT EP.1",
+    "time": "Series Screening 10 PM",
     "artists": [
       "Max",
       "Thomas",
       "Kong",
       "TeeTee",
       "Por",
-      "North",
       "Otto",
-      "Wave"
+      "Steve"
     ]
   },
   {
     "date": "08/29/2026",
     "event": "MR. FANBOY SERIES EP.1",
-    "time": "10:30 PM",
-    "artists": [
-      "Mr. Fanboy Cast"
-    ]
+    "time": "10:30 PM | 11:30 PM",
+    "artists": []
   },
   {
     "date": "08/30/2026",
@@ -609,7 +606,7 @@
     "time": "11:30 AM - 4:30 PM",
     "artists": [
       "Keng",
-      "Namping",
+      "Nampling",
       "Tle",
       "FirstOne"
     ]
@@ -644,9 +641,7 @@
   {
     "date": "08/30/2026",
     "event": "YOUR THIRD SERIES EP.6",
-    "time": "10:30 PM",
-    "artists": [
-      "Your Third Cast"
-    ]
+    "time": "10:30 PM | 11:30 PM",
+    "artists": []
   }
 ]
