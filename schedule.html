@@ -32,7 +32,7 @@
       <li class="menu-item"><a href="dramas.html">Dramas</a></li>
       <li class="menu-item"><a href="music.html">Music</a></li>
       <li class="menu-item"><a href="staff.html">Staff</a></li>
-      <li class="menu-item"><a href="fanevents.html">Fan Events</a></li>
+      <li class="menu-item"><a href="recs.html">Recs</a></li>
       <li class="menu-item"><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
@@ -266,17 +266,6 @@
       }
     </script>
   </main>
-
-  <script>
-    const artistList = document.getElementById("artistList");
-    const artists = Array.from(artistList.querySelectorAll("li"));
-    artists.sort((a, b) => {
-      const nameA = a.textContent.trim().toLowerCase();
-      const nameB = b.textContent.trim().toLowerCase();
-      return nameA.localeCompare(nameB);
-    });
-    artists.forEach(artist => artistList.appendChild(artist));
-  </script>
 
 </body>
 </html>
