@@ -82,7 +82,7 @@
           <li class="menu-item"><a href="dramas.html">Dramas</a></li>
           <li class="menu-item"><a href="music.html">Music</a></li>
           <li class="menu-item"><a href="staff.html">Staff</a></li>
-          <li class="menu-item"><a href="fanevents.html">Fan Events</a></li>
+          <li class="menu-item"><a href="recs.html">Recs</a></li>
           <li class="menu-item"><a href="contact.html">Contact</a></li>
     
         </ul>
@@ -114,14 +114,5 @@
     </form>
   </main>
 
-  <script>
-    // Auto-sort alphabetical artist list
-    const artistList = document.getElementById("artistList");
-    if (artistList) {
-      const artists = Array.from(artistList.querySelectorAll("li"));
-      artists.sort((a, b) => a.textContent.trim().toLowerCase().localeCompare(b.textContent.trim().toLowerCase()));
-      artists.forEach(a => artistList.appendChild(a));
-    }
-  </script>
 </body>
 </html>
