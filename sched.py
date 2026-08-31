@@ -19,7 +19,7 @@ auth_token = os.getenv("AUTH_TOKEN")
 anthropic_key = os.getenv("ANTHROPIC_KEY")
 
 # --- Change this URL biweekly to point at the tweet with the current schedule ---
-TARGET_TWEET_URL = "https://x.com/DomundiTV/status/2089197270038392898"
+TARGET_TWEET_URL = "https://x.com/DomundiTV/status/2094448903848652853"
 
 name_corrections = {
     "Tie": "Tle",
