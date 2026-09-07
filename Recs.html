@@ -12,13 +12,212 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fan Events</title>
+  <title>Recommendations</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       RECS PAGE — built on top of style.css's dark
+       gradient body/main. Uses the same orange
+       (#D46A1F / #f26a00), cream (#f0d8c0), and
+       near-black (#1a1008) already in your palette,
+       and mirrors the .peek-btn arrow style for the
+       slider controls so it feels like one system.
+       ============================================ */
+
+    .rec-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px 60px;
+    }
+
+    .rec-section + .rec-section {
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .rec-section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: #D46A1F;
+      letter-spacing: 2px;
+      margin: 0 0 20px;
+    }
+
+    /* ---------- Featured grid (4 cards) ---------- */
+    .rec-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    @media (max-width: 900px) {
+      .rec-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .rec-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ---------- Video card ---------- */
+    .rec-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(240,216,192,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .rec-card:hover {
+      border-color: #D46A1F;
+      background: rgba(255,255,255,0.07);
+    }
+
+    .rec-thumb-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+    }
+    .rec-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .rec-ep-badge {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      display: flex;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      overflow: hidden;
+      border-radius: 4px;
+    }
+    .rec-ep-badge span { padding: 3px 7px; color: #fff; }
+    .rec-ep-badge .ep-label { background: rgba(26,16,8,0.8); }
+    .rec-ep-badge .ep-part  { background: #D46A1F; }
+
+    .rec-duration {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      background: rgba(26,16,8,0.8);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 6px;
+      border-radius: 4px;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .rec-card-body {
+      padding: 12px 14px 16px;
+    }
+
+    .rec-card-title {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.35;
+      color: #fff;
+      margin: 0 0 6px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .rec-channel {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      color: #f0d8c0;
+      margin: 0 0 3px;
+    }
+    .rec-channel svg { width: 12px; height: 12px; flex-shrink: 0; fill: #D46A1F; }
+
+    .rec-card-meta {
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      color: rgba(240,216,192,0.7);
+      margin: 0 0 6px;
+    }
+
+    .rec-cc {
+      display: inline-block;
+      font-family: 'Nunito', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.1);
+      color: #f0d8c0;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* ---------- Slider row below the grid ---------- */
+    .rec-slider-wrap {
+      position: relative;
+    }
+
+    .rec-slider {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x proximity;
+      scroll-behavior: smooth;
+      padding: 4px 4px 8px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .rec-slider::-webkit-scrollbar { display: none; }
+
+    .rec-slider .rec-card {
+      flex: 0 0 230px;
+      scroll-snap-align: start;
+    }
+
+    /* Same visual language as your existing .peek-btn arrows */
+    .rec-arrow {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      background: rgba(26,16,8,0.7);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 26px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      line-height: 1;
+      padding: 0;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .rec-arrow:hover { border-color: #D46A1F; color: #D46A1F; }
+    .rec-arrow.left  { left: -18px; }
+    .rec-arrow.right { right: -18px; }
+
+    @media (max-width: 640px) {
+      .rec-arrow { display: none; } /* rely on touch scroll on mobile */
+      .rec-section { padding: 24px 20px; }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
+  <header>
     <div class="logo-title">
       <a href="index.html">
         <img src="fandomundi_logo.png" alt="Fandomundi Logo" class="logo" />
@@ -28,7 +227,6 @@
 
   <nav class="navbar">
     <ul class="menu">
-
       <li class="menu-item"><a href="artists.html">Artists</a></li>
       <li class="menu-item"><a href="schedule.html">Events/Schedule</a></li>
       <li class="menu-item"><a href="dramas.html">Dramas</a></li>
@@ -36,16 +234,228 @@
       <li class="menu-item"><a href="staff.html">Staff</a></li>
       <li class="menu-item"><a href="recs.html">Recs</a></li>
       <li class="menu-item"><a href="contact.html">Contact</a></li>
-
     </ul>
-
   </nav>
+
   <main>
-    <div class="upcoming-header">
-      <h2 class="upcoming-title">Under Construction :)</h2>
-    </div>
-    
+
+    <!-- ============ SECTION TEMPLATE — copy this whole block per series ============ -->
+
+    <section class="rec-section">
+      <h2 class="rec-section-title">DOMUNDI 101</h2>
+
+      <div class="rec-slider-wrap">
+        <button class="rec-arrow left" aria-label="Scroll left">&#8249;</button>
+        <div class="rec-slider">
+          <a class="rec-card" href="https://www.youtube.com/watch?v=vnG1TFU9Lpk&list=PLcTibKbv20S73Nbcf550x24UJAzPze0AT" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/vnG1TFU9Lpk/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">DMD Friendship The Reality</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=EiHXhwvvQZw" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/EiHXhwvvQZw/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">DMD Friendship The Reality Last Ride</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=qGyy-cr0mWA&list=PLcTibKbv20S6OAFQhavL9A18LrfI0dQ_q&index=6" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/qGyy-cr0mWA/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">DMD Friendship the Reality | It Takes Two </p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=IlJvsH2PGBs&list=PLcTibKbv20S6yzHwPxnL6Ltn2ST_AJ-vF" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/IlJvsH2PGBs/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">DMD Friendship the Reality, The THIRD Chapter | EP.1</p>
+            </div>
+          </a>
+        </div>
+        <button class="rec-arrow right" aria-label="Scroll right">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- ============ Repeat the whole block for the next series ============ -->
+
+    <section class="rec-section">
+      <h2 class="rec-section-title">DMD Sports Day</h2>
+
+      <div class="rec-slider-wrap">
+        <button class="rec-arrow left" aria-label="Scroll left">&#8249;</button>
+        <div class="rec-slider">
+          <a class="rec-card" href="https://www.youtube.com/watch?v=75UZEZrFLvA&list=PLPn-AiiKuDlw4MKOTax7WlS6h-fF9Hn7Q" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/75UZEZrFLvA/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">DMD Sports Day 2025</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=xZ1Df1zyUo4" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/xZ1Df1zyUo4/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">DMD Sports Day 2026</p>
+            </div>
+          </a>
+        </div>
+        <button class="rec-arrow right" aria-label="Scroll right">&#8250;</button>
+      </div>
+    </section>
+
+    <section class="rec-section">
+      <h2 class="rec-section-title">Concerts</h2>
+
+      <div class="rec-slider-wrap">
+        <button class="rec-arrow left" aria-label="Scroll left">&#8249;</button>
+        <div class="rec-slider">
+          <a class="rec-card" href="https://www.youtube.com/watch?v=54EkBS5QjLw" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/54EkBS5QjLw/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Khemjira The Golden Time Concert Day 1</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=GiFPEo8CQGg" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/GiFPEo8CQGg/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Khemjira The Golden Time Concert Day 2</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=nRGO7mcY7VM" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/nRGO7mcY7VM/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">DUANG GO ROUND CONCERT Day 1</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=26jjB3_h0FI" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/26jjB3_h0FI/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">DUANG GO ROUND CONCERT Day 2</p>
+            </div>
+          </a>
+        </div>
+        <button class="rec-arrow right" aria-label="Scroll right">&#8250;</button>
+      </div>
+    </section>
+
+    <section class="rec-section">
+      <h2 class="rec-section-title">Fun and Games</h2>
+
+      <div class="rec-slider-wrap">
+        <button class="rec-arrow left" aria-label="Scroll left">&#8249;</button>
+        <div class="rec-slider">
+          <a class="rec-card" href="https://www.youtube.com/watch?v=CJ0s9ptiRjc" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/CJ0s9ptiRjc/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Valentine's Day 2026</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=3yfYuEEDJEk" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/3yfYuEEDJEk/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Blindfolded Guessing Game</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=fVr-3vDYMpA" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/fVr-3vDYMpA/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Don't Say Words Above Their Heads Game</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=b6xU2-Mknsg" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/b6xU2-Mknsg/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Guess the Word Game</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=2kY9KACJa-Q" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/2kY9KACJa-Q/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Drawing Game</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=uc8cT8vaJBU" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/uc8cT8vaJBU/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Charades</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=HyDXwvECrKM" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/HyDXwvECrKM/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Werewolf Game</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=yUpb5qM81Tk" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/yUpb5qM81Tk/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Werewolf Game Part 2</p>
+            </div>
+          </a>
+
+
+        </div>
+        <button class="rec-arrow right" aria-label="Scroll right">&#8250;</button>
+      </div>
+    </section>
+
+    <!-- Add more <section class="rec-section"> blocks the same way for
+         additional series/playlists -->
+
   </main>
-  
+
+  <script>
+    // Wires every .rec-arrow pair to scroll its .rec-slider by one "page".
+    document.querySelectorAll('.rec-slider-wrap').forEach(function (wrap) {
+      const slider = wrap.querySelector('.rec-slider');
+      const leftBtn = wrap.querySelector('.rec-arrow.left');
+      const rightBtn = wrap.querySelector('.rec-arrow.right');
+      if (!slider) return;
+
+      const scrollByAmount = () => slider.clientWidth * 0.9;
+
+      leftBtn && leftBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: -scrollByAmount(), behavior: 'smooth' });
+      });
+      rightBtn && rightBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: scrollByAmount(), behavior: 'smooth' });
+      });
+    });
+  </script>
+
 </body>
 </html>
