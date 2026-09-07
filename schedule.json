@@ -125,7 +125,8 @@
     "event": "SCOOPIFY DARK CHOCO WITH AUAU",
     "time": "TBC",
     "artists": [
-      "AuAu"
+      "AuAu",
+      "Save"
     ]
   },
   {
@@ -458,35 +459,10 @@
       "Por"
     ]
   },
-    {
-    "date": "09/11/2026",
-    "event": "Maison Keeps Flagship Store Grand Opening",
-    "time": "5 PM",
-    "artists": [
-      "Tle",
-      "FirstOne"
-    ]
-  },
   {
-    "date": "09/12/2026",
-    "event": "JAMESSU ONE DAY SPECIAL EXCLUSIVE EVENT",
-    "time": "TBC",
-    "artists": [
-      "JamesSu"
-    ]
-  },
-  {
-    "date": "09/12/2026",
-    "event": "WRITTEN IN OUR HEARTS WITH KONG",
-    "time": "TBC",
-    "artists": [
-      "Kong"
-    ]
-  },
-  {
-    "date": "09/12/2026",
-    "event": "KENGNAMPING FANSIGNDAY IN JAPAN",
-    "time": "10 AM | 2 PM",
+    "date": "08/29/2026",
+    "event": "3CE MELT MY HEART X NUNEW",
+    "time": "7 PM",
     "artists": [
       "Keng",
       "Namping"
@@ -526,16 +502,8 @@
     "artists": []
   },
   {
-    "date": "09/13/2026",
-    "event": "Tle Fan Gathering Happy Birthday Day",
-    "time": "6 PM",
-    "artists": [
-      "Tle"
-    ]
-  },
-  {
-    "date": "09/13/2026",
-    "event": "LIVE : PINKLE",
+    "date": "08/30/2026",
+    "event": "JIMMY BELOVED EXCLUSIVE EVENT",
     "time": "TBC",
     "artists": [
       "TeeTee"
