@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F4J4BBXV1C"></script>
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F4J4BBXV1C');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies – Fandomundi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #D46A1F;
+      --orange-bright: #f26a00;
+      --black: #1a1008;
+      --cream: #fffaf5;
+      --card-bg: #fff8f0;
+      --border: #f0d8c0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #1a1008 60%, #D46A1F 100%);
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── PAGE HEADER ── */
+    .movies-header {
+      padding: 60px 60px 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .movies-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 90px;
+      color: var(--orange);
+      letter-spacing: 4px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .movies-header p {
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    /* ── FILTERS ── */
+    .filters-wrap {
+      padding: 28px 60px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-right: 2px;
+    }
+
+    .filter-btn {
+      font-family: 'Nunito', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+      color: rgba(255,255,255,0.65);
+      cursor: pointer;
+      transition: all 0.18s;
+      letter-spacing: 0.5px;
+    }
+
+    .filter-btn:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+
+    .filter-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+    }
+
+    .search-wrap {
+      margin-left: auto;
+      position: relative;
+    }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: rgba(255,255,255,0.4);
+      stroke-width: 2;
+      stroke-linecap: round;
+      pointer-events: none;
+    }
+
+    #actorSearch {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      padding: 7px 14px 7px 34px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      width: 200px;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+
+    #actorSearch::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    #actorSearch:focus {
+      border-color: var(--orange);
+    }
+
+    #sortSelect {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      padding: 7px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.18s;
+    }
+
+    #sortSelect:focus {
+      border-color: var(--orange);
+    }
+
+    #sortSelect option {
+      background: #1a1008;
+      color: #fff;
+    }
+
+    /* ── RESULTS COUNT ── */
+    .results-bar {
+      padding: 16px 60px 0;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+    }
+
+    /* ── MOVIE GRID ── */
+    .movie-grid {
+      padding: 24px 60px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── MOVIE CARD ── */
+    .movie-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .movie-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-3px);
+    }
+
+    .poster-wrap {
+      position: relative;
+      aspect-ratio: 2/3;
+      background: rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+
+    .poster-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .movie-card:hover .poster-wrap img {
+      transform: scale(1.04);
+    }
+
+    .poster-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 13px;
+    }
+
+    .year-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.75);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── CARD BODY ── */
+    .card-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .movie-name {
+      font-weight: 700;
+      font-size: 13px;
+      color: #fff;
+      line-height: 1.35;
+    }
+
+    /* ── SCORES ── */
+    .scores {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .score-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .score-imdb {
+      background: #f5c518;
+      color: #1a1a1a;
+    }
+
+    .score-mdl {
+      background: #2a6ab5;
+      color: #fff;
+    }
+
+    .score-na {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.4);
+      font-weight: 400;
+    }
+
+    /* ── CAST ── */
+    .cast-section {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .cast-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cast-label {
+      font-size: 9px;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+    }
+
+    .cast-names {
+      font-size: 11px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.4;
+    }
+
+    .cast-names .main-cast {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* ── WATCH LINKS ── */
+    .watch-links {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin-top: auto;
+    }
+
+    .watch-link {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.15s;
+    }
+
+    .watch-link:hover {
+      color: var(--orange-bright);
+    }
+
+    .watch-link svg {
+      width: 10px;
+      height: 10px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── NO RESULTS ── */
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255,255,255,0.3);
+      font-size: 15px;
+    }
+
+    .no-results strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: rgba(255,255,255,0.15);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .movies-header { padding: 30px 16px 16px; }
+      .movies-header h1 { font-size: 52px; }
+      .results-bar { padding: 10px 16px 0; }
+
+      .filters-wrap {
+        padding: 16px;
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .filter-group {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        width: 100%;
+        padding-bottom: 4px;
+      }
+
+      .search-wrap {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      #actorSearch { width: 100%; }
+
+      #sortSelect { width: 100%; }
+
+      .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 16px 12px 40px;
+        gap: 10px;
+      }
+
+      .card-body {
+        padding: 8px 10px 10px;
+        gap: 6px;
+      }
+
+      .movie-name { font-size: 11px; }
+
+      .score-pill { font-size: 10px; padding: 2px 6px; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="logo-title">
+      <a href="index.html">
+        <img src="fandomundi_logo.png" alt="Fandomundi Logo" class="logo" />
+      </a>
+    </div>
+  </header>
+
+  <!-- ── NAV ── -->
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="menu-item"><a href="artists.html">Artists</a></li>
+      <li class="menu-item"><a href="schedule.html">Events/Schedule</a></li>
+      <li class="menu-item"><a href="dramas.html">Dramas</a></li>
+      <li class="menu-item"><a href="movies.html">Movies</a></li>
+      <li class="menu-item"><a href="music.html">Music</a></li>
+      <li class="menu-item"><a href="staff.html">Staff</a></li>
+      <li class="menu-item"><a href="Recs.html">Recs</a></li>
+      <li class="menu-item"><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="movies-header">
+    <h1>Movies</h1>
+    <p id="totalCount">Loading...</p>
+  </div>
+
+  <!-- ── FILTERS ── -->
+  <div class="filters-wrap">
+    <div class="filter-group">
+      <span class="filter-label">Year</span>
+      <button class="filter-btn active" data-year="all">All</button>
+      <!-- year buttons injected by JS -->
+    </div>
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="actorSearch" placeholder="Search..." />
+    </div>
+    <select id="sortSelect">
+      <option value="default">Sort by...</option>
+      <option value="year">Year </option>
+      <option value="imdb">IMDB Score</option>
+      <option value="mdl">MDL Score</option>
+    </select>
+  </div>
+
+  <p class="results-bar" id="resultsCount"></p>
+
+  <!-- ── MOVIE GRID ── -->
+  <div class="movie-grid" id="movieGrid"></div>
+
+  <script>
+    // ─────────────────────────────────────────────
+    // MOVIE DATA — add/edit movies here
+    // poster: path relative to root (same folder as this file)
+    // imdb/mdl: number, or null if not available yet
+    // main: array of main cast names
+    // supporting: array of supporting cast (can be empty [])
+    // links: array of { label, url } — leave empty [] if not streaming yet
+    // ─────────────────────────────────────────────
+    const movies = [
+      {
+        title: "After Sundown",
+        year: 2023,
+        poster: "posters/aftersun.jpg",
+        imdb: 6.0,
+        mdl: 7.2,
+        main: ["Zee", "Nunew"],
+        supporting: ["Namping"],
+        links: [
+          { label: "Netflix", url: "https://www.netflix.com/th-en/title/81720537" }
+        ]
+      },
+      {
+        title: "Diva, la Vie (Beauty and the Beat)",
+        year: 2025,
+        poster: "posters/diva.jpg",
+        imdb: 5.6,
+        mdl: 7.7,
+        main: ["Nunew"],
+        supporting: ["Keng"],
+        links: [
+          { label: "Netflix", url: "https://www.netflix.com/title/82638253" }
+        ]
+      },
+      {
+        title: "Make Me Shudder",
+        year: 2013,
+        poster: "posters/shudder.jpg",
+        imdb: 4.7,
+        mdl: 7.5,
+        main: ["Net"],
+        supporting: [],
+        links: [ ]
+      },
+      {
+        title: "Make Me Shudder 2",
+        year: 2014,
+        poster: "posters/shudder2.jpg",
+        imdb: 5.0,
+        mdl: 7.5,
+        main: ["Net"],
+        supporting: [],
+        links: [  ]
+      },
+      {
+        title: "Make Me Shudder 3",
+        year: 2015,
+        poster: "posters/shudder3.jpg",
+        imdb: 4.2,
+        mdl: 7.4,
+        main: ["Net"],
+        supporting: [],
+        links: [  ]
+      },
+      {
+        title: "Tell the World I Love You",
+        year: 2022,
+        poster: "posters/tellthe.jpg",
+        imdb: 7.2,
+        mdl: 7.2,
+        main: [],
+        supporting: ["Net"],
+        links: []
+      },
+      {
+        title: "Dangerous Boys 2",
+        year: 2024,
+        poster: "posters/danger.jpg",
+        imdb: 7.9,
+        mdl: null,
+        main: ["Net"],
+        supporting: [],
+        links: []
+      },
+      {
+        title: "The Paradise of Thorns",
+        year: 2024,
+        poster: "posters/paradise.jpg",
+        imdb: 7.6,
+        mdl: 8.8,
+        main: [],
+        supporting: ["Keng"],
+        links: [{ label: "Netflix", url: "https://www.netflix.com/title/81981328" }]
+      },
+      
+
+      
+        
+
+      // ── ADD MORE Movies BELOW ──
+      // {
+      //   title: "Movie Title",
+      //   year: 2024,           // number or "TBA"
+      //   poster: "posters/filename.jpg",
+      //   imdb: 8.2,            // number or null
+      //   mdl: 8.9,             // number or null
+      //   main: ["Actor1", "Actor2"],
+      //   supporting: ["Actor3", "Actor4"],
+      //   links: [
+      //     { label: "Netflix", url: "https://..." }
+      //   ]
+      // },
+    ];
+
+    // ─────────────────────────────────────────────
+    // BUILD YEAR FILTERS
+    // ─────────────────────────────────────────────
+    const years = [...new Set(
+      movies.map(m => m.year).filter(y => y !== "TBA")
+    )].sort((a, b) => b - a);
+
+    const filterGroup = document.querySelector('.filter-group');
+    years.forEach(yr => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.dataset.year = yr;
+      btn.textContent = yr;
+      filterGroup.appendChild(btn);
+    });
+
+    // Add TBA button if any
+    if (movies.some(d => d.year === "TBA")) {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.dataset.year = 'TBA';
+      btn.textContent = 'TBA';
+      filterGroup.appendChild(btn);
+    }
+
+    // ─────────────────────────────────────────────
+    // RENDER + FILTER
+    // ─────────────────────────────────────────────
+    let activeYear = 'all';
+    let searchQuery = '';
+    let sortBy = 'default';
+
+    function buildCard(movie) {
+      const supporting = movie.supporting || [];
+      const allCast = [...movie.main, ...supporting];
+
+      const scoreHTML = (() => {
+        const parts = [];
+        if (movie.imdb !== null) parts.push(`<span class="score-pill score-imdb">⭑ ${movie.imdb}</span>`);
+        if (movie.mdl !== null)  parts.push(`<span class="score-pill score-mdl">MDL ${movie.mdl}</span>`);
+        if (parts.length === 0)  parts.push(`<span class="score-pill score-na">Scores TBA</span>`);
+        return parts.join('');
+      })();
+
+      const mainHTML = movie.main.map(n => `<span class="main-cast">${n}</span>`).join(', ');
+      const supHTML  = supporting.length
+        ? `<div class="cast-row"><div class="cast-label">Supporting</div><div class="cast-names">${supporting.join(', ')}</div></div>`
+        : '';
+
+      const linksHTML = movie.links.length
+        ? `<div class="watch-links">${movie.links.map(l =>
+            `<a href="${l.url}" target="_blank" class="watch-link">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              ${l.label}
+            </a>`
+          ).join('')}</div>`
+        : '';
+
+      const posterHTML = `<img src="${movie.poster}" alt="${movie.title}" onerror="this.parentElement.innerHTML='<div class=\\'poster-placeholder\\'>No poster</div>'" />`;
+
+      return `
+        <div class="movie-card" data-year="${movie.year}" data-cast="${allCast.join(',').toLowerCase()}">
+          <div class="poster-wrap">
+            ${posterHTML}
+            <span class="year-badge">${movie.year}</span>
+          </div>
+          <div class="card-body">
+            <div class="movie-name">${movie.title}</div>
+            <div class="scores">${scoreHTML}</div>
+            <div class="cast-section">
+              <div class="cast-row">
+                <div class="cast-label">Main cast</div>
+                <div class="cast-names">${mainHTML}</div>
+              </div>
+              ${supHTML}
+            </div>
+            ${linksHTML}
+          </div>
+        </div>`;
+    }
+
+    function render() {
+      const grid = document.getElementById('movieGrid');
+      const query = searchQuery.trim().toLowerCase();
+
+      const filtered = movies.filter(m => {
+        const yearMatch = activeYear === 'all' || String(m.year) === String(activeYear);
+        const allCast = [...m.main, ...(m.supporting || [])].join(' ').toLowerCase();
+        const castMatch = !query || allCast.includes(query) || m.title.toLowerCase().includes(query);
+        return yearMatch && castMatch;
+      });
+      filtered.sort((a, b) => {
+        if (sortBy === 'year') {
+          const ya = a.year === 'TBA' ? 0 : a.year;
+          const yb = b.year === 'TBA' ? 0 : b.year;
+          return yb - ya;
+        }
+        if (sortBy === 'imdb') return (b.imdb ?? -1) - (a.imdb ?? -1);
+        if (sortBy === 'mdl')  return (b.mdl ?? -1) - (a.mdl ?? -1);
+        return 0;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="no-results"><strong>No results</strong>Try a different filter or actor name</div>`;
+      } else {
+        grid.innerHTML = filtered.map(buildCard).join('');
+      }
+
+      document.getElementById('resultsCount').textContent =
+        filtered.length === movies.length
+          ? `${movies.length} movies`
+          : `${filtered.length} of ${movies.length} movies`;
+
+      document.getElementById('totalCount').textContent =
+        `${movies.length} movies · Movies that are not all produced by Domundi, but feature at least one Domundi artist in a lead role or in supporting roles.`;
+    }
+
+    // Year filter clicks
+    document.querySelector('.filter-group').addEventListener('click', e => {
+      if (!e.target.matches('.filter-btn')) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      activeYear = e.target.dataset.year;
+      render();
+    });
+
+    document.getElementById('sortSelect').addEventListener('change', e => {
+      sortBy = e.target.value;
+      render();
+    });
+
+    // Actor search
+    document.getElementById('actorSearch').addEventListener('input', e => {
+      searchQuery = e.target.value;
+      render();
+    });
+
+    // Auto-sort alphabetical artist list
+    const artistList = document.getElementById('artistList');
+    if (artistList) {
+      const items = Array.from(artistList.querySelectorAll('li'));
+      items.sort((a, b) => a.textContent.trim().toLowerCase().localeCompare(b.textContent.trim().toLowerCase()));
+      items.forEach(i => artistList.appendChild(i));
+    }
+
+    // Initial render
+    render();
+  </script>
+
+</body>
+</html>
