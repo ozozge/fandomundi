@@ -1,271 +1,7 @@
 [
   {
-    "date": "09/01/2026",
-    "event": "Private Event",
-    "time": "10:20 AM",
-    "artists": [
-      "Max",
-      "Poppy",
-      "Zee",
-      "Yim",
-      "Net",
-      "JJ"
-    ]
-  },
-  {
-    "date": "09/01/2026",
-    "event": "DOUCAN - SEOUL FASHION WEEK 2027 SS",
-    "time": "12 PM",
-    "artists": [
-      "Ohm"
-    ]
-  },
-  {
-    "date": "09/01/2026",
-    "event": "9.1 SUPER LIVE DAY X TEETEE POR",
-    "time": "7:30 PM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/02/2026",
-    "event": "DAILY MIRROR - SEOUL FASHION WEEK 2027 SS",
-    "time": "3:30 PM",
-    "artists": [
-      "Thomas",
-      "Kong"
-    ]
-  },
-  {
-    "date": "09/02/2026",
-    "event": "THAILAND THE LAND OF TROPICAL FRUITS 2026",
-    "time": "6 PM",
-    "artists": [
-      "North",
-      "Otto"
-    ]
-  },
-  {
-    "date": "09/02/2026",
-    "event": "TIME & TREASURE : G-SHOCK",
-    "time": "6 PM",
-    "artists": [
-      "Net"
-    ]
-  },
-  {
-    "date": "09/03/2026",
-    "event": "MMAM - SEOUL FASHION WEEK 2027 SS",
-    "time": "1 PM",
-    "artists": [
-      "Thomas",
-      "Kong"
-    ]
-  },
-  {
-    "date": "09/03/2026",
-    "event": "MMAM - SEOUL FASHION WEEK 2027 SS",
-    "time": "1 PM",
-    "artists": [
-      "Wave"
-    ]
-  },
-  {
-    "date": "09/03/2026",
-    "event": "DISNEY THAILAND EXPO 2026 OPENING CEREMONY",
-    "time": "4 PM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/03/2026",
-    "event": "Y ENTERTAIN AWARDS 2026",
-    "time": "TBC",
-    "artists": [
-      "Keng",
-      "Namping",
-      "Tle"
-    ]
-  },
-  {
-    "date": "09/03/2026",
-    "event": "THAILAND THE LAND OF TROPICAL FRUITS 2026",
-    "time": "6 PM",
-    "artists": [
-      "Copper",
-      "Fifa"
-    ]
-  },
-  {
-    "date": "09/03/2026",
-    "event": "Y ENTERTAIN AWARDS 2026",
-    "time": "6:30 PM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/03/2026",
-    "event": "COLORS OF THAI THAI",
-    "time": "TBC",
-    "artists": [
-      "Latte",
-      "Kim",
-      "North",
-      "Otto"
-    ]
-  },
-  {
-    "date": "09/04/2026",
-    "event": "SCOOPIFY DARK CHOCO WITH AUAU",
-    "time": "TBC",
-    "artists": [
-      "AuAu",
-      "Save"
-    ]
-  },
-  {
-    "date": "09/04/2026",
-    "event": "ZEENUWEW 'FOREVER WITH YOU' FAN MEETING IN USA (LAS VEGAS)",
-    "time": "TBC",
-    "artists": [
-      "Zee",
-      "NuNew"
-    ]
-  },
-  {
-    "date": "09/04/2026",
-    "event": "CARUSO - SEOUL FASHION WEEK 2027 SS",
-    "time": "10 AM",
-    "artists": [
-      "Net",
-      "Ohm"
-    ]
-  },
-  {
-    "date": "09/04/2026",
-    "event": "LIVE: 9498TOYS",
-    "time": "10:30 AM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/04/2026",
-    "event": "GREEDILOUS - SEOUL FASHION WEEK 2027 SS",
-    "time": "5 PM",
-    "artists": [
-      "RyuJin",
-      "PatJi"
-    ]
-  },
-  {
-    "date": "09/04/2026",
-    "event": "GUCCI PRIMAVERA EVENT",
-    "time": "5 PM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/04/2026",
-    "event": "INFINITY MEDICAL CLINIC",
-    "time": "7 PM",
-    "artists": [
-      "Sant",
-      "MhiiPraew"
-    ]
-  },
-  {
-    "date": "09/05/2026",
-    "event": "DIVA IN THE LIGHT AN EXCLUSIVE DINNER WITH OHMKRIT",
-    "time": "1 PM",
-    "artists": [
-      "Ohm"
-    ]
-  },
-  {
-    "date": "09/05/2026",
-    "event": "CAT EXPOP CHIANGMAI",
-    "time": "4 PM",
-    "artists": [
-      "Keng",
-      "Namping"
-    ]
-  },
-  {
-    "date": "09/05/2026",
-    "event": "CAT EXPOP CHIANGMAI",
-    "time": "4 PM",
-    "artists": [
-      "Tle",
-      "FirstOne"
-    ]
-  },
-  {
-    "date": "09/05/2026",
-    "event": "CAT EXPOP CHIANGMAI",
-    "time": "4 PM",
-    "artists": [
-      "DEXX"
-    ]
-  },
-  {
-    "date": "09/05/2026",
-    "event": "FRIENDLY ME FLIP YOUR BEAUTY WITH SAVE",
-    "time": "6 PM",
-    "artists": [
-      "Save"
-    ]
-  },
-  {
-    "date": "09/05/2026",
-    "event": "MR. FANBOY SERIES EP.2",
-    "time": "10:30 PM",
-    "artists": [
-      "MR. FANBOY"
-    ]
-  },
-  {
-    "date": "09/06/2026",
-    "event": "ZEENUNEW 'FOREVER WITH YOU' FAN MEETING IN USA (NEW YORK)",
-    "time": "TBC",
-    "artists": [
-      "Zee",
-      "NuNew"
-    ]
-  },
-  {
-    "date": "09/06/2026",
-    "event": "YOUR THIRD SERIES EP.7 LOVE AT THIRD FARM",
-    "time": "",
-    "artists": [
-      "Max",
-      "Nat",
-      "Ohm",
-      "Gems",
-      "Few"
-    ]
-  },
-  {
-    "date": "09/06/2026",
-    "event": "REMY CUTE PAWTY WITH RYUJINPATJI",
-    "time": "1 PM",
-    "artists": [
-      "RyuJin",
-      "PatJi"
-    ]
-  },
-  {
-    "date": "09/06/2026",
-    "event": "BSC LOCK IT FIT LOCKED IN LOVE WITH THOMASKONG",
+    "date": "09/17/2026",
+    "event": "CK HOUSE ANIMATION X THOMASKONG",
     "time": "3 PM",
     "artists": [
       "Thomas",
@@ -273,34 +9,73 @@
     ]
   },
   {
-    "date": "09/06/2026",
-    "event": "GO GLOW WITH NAMPING",
-    "time": "7:30 PM",
+    "date": "09/17/2026",
+    "event": "THE 11TH ANNIVERSARY WITH MITH",
+    "time": "5:30 PM",
     "artists": [
+      "Kang",
       "Namping"
     ]
   },
   {
-    "date": "09/06/2026",
-    "event": "YOUR THIRD SERIES EP.7",
-    "time": "10:30 PM",
+    "date": "09/17/2026",
+    "event": "LIGHT UP LIVE WITH TLE",
+    "time": "7 PM",
     "artists": [
-      "YOUR THIRD SERIES"
+      "Tle"
     ]
   },
   {
-    "date": "09/07/2026",
-    "event": "DENTISTE' X KENGNAMPING TONE-UP THE ICONIC SMILES",
-    "time": "5 PM",
+    "date": "09/17/2026",
+    "event": "EFM FANDOM FANFICTION",
+    "time": "8:30 PM",
     "artists": [
-      "Keng",
-      "Namping",
-      "OhAe"
+      "RyuJin",
+      "PatJi"
     ]
   },
   {
-    "date": "09/07/2026",
-    "event": "THAILAND THE LAND OF TROPICAL FRUITS 2026",
+    "date": "09/17/2026",
+    "event": "\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23 \u0e41\u0e09",
+    "time": "9:30 PM",
+    "artists": [
+      "AuAu",
+      "Save"
+    ]
+  },
+  {
+    "date": "09/18/2026",
+    "event": "TRUE DTAC5G | FIRST TO EXTRAORDINARY. IT'S TRUE!",
+    "time": "8 AM",
+    "artists": [
+      "AuAu",
+      "Save",
+      "RyuJin",
+      "Patji",
+      "Ohm",
+      "MhiiPraew"
+    ]
+  },
+  {
+    "date": "09/18/2026",
+    "event": "\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23 \u0e02\u0e48\u0e32\u0e27\u0e40\u0e01\u0e35\u0e48\u0e22\u0e27\u0e0a\u0e48\u0e2d\u0e07\u0e27\u0e31\u0e19 \u0e0a\u0e48\u0e2d\u0e07\u0e23\u0e2d\u0e1a\u0e27\u0e31\u0e19",
+    "time": "12 PM",
+    "artists": [
+      "Poppy"
+    ]
+  },
+  {
+    "date": "09/18/2026",
+    "event": "EVERPINK FEEL YOUR SCENT WITH JJ & JOOKKROO",
+    "time": "",
+    "artists": [
+      "JJ",
+      "JookKroo"
+    ]
+  },
+  {
+    "date": "09/18/2026",
+    "event": "EVERPINK FEEL YOUR COLOR WITH MAXNAT",
     "time": "6 PM",
     "artists": [
       "Max",
@@ -308,290 +83,477 @@
     ]
   },
   {
-    "date": "09/08/2026",
-    "event": "TEETEE & POR TWO SOULS ONE HEART BY SHAMEN",
-    "time": "",
+    "date": "09/18/2026",
+    "event": "ICONIC CRAFT COFFEE EXPO 2026",
+    "time": "7 PM",
     "artists": [
-      "TeeTee",
+      "Thomas",
+      "Kong",
+      "Mr.Toky"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "SWEET BREEZE",
+    "time": "TBC",
+    "artists": [
+      "TeoTee",
       "Por"
     ]
   },
   {
-    "date": "09/08/2026",
-    "event": "THAILAND THE LAND OF TROPICAL FRUITS 2026",
-    "time": "6:30 PM",
-    "artists": [
-      "Thee",
-      "Wave"
-    ]
-  },
-  {
-    "date": "09/08/2026",
-    "event": "SKINPRO RX EXCLUSIVE LIVE 9.9 WITH TLE-FIRSTONE",
-    "time": "8 PM",
+    "date": "09/19/2026",
+    "event": "TLEFIRSTONE FANSIGN IN CHINA",
+    "time": "9 AM",
     "artists": [
       "Tle",
       "FirstOne"
     ]
   },
   {
-    "date": "09/09/2026",
-    "event": "THE VOGUE GALA 2026",
+    "date": "09/19/2026",
+    "event": "AUAUSAVE OCEAN WHISPERS FANSIGN",
+    "time": "10 AM",
+    "artists": [
+      "AuAu",
+      "Save"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "THE D DORM SITCOM Press Conference & Screening",
+    "time": "11 AM / 1 PM",
+    "artists": [
+      "Poppy",
+      "Max",
+      "Zee",
+      "Net",
+      "JJ",
+      "Yim"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "THE D DORM SITCOM Fans Gathering",
+    "time": "11 AM / 1 PM",
+    "artists": [
+      "Jimmy",
+      "Nat",
+      "Latte",
+      "Kim",
+      "Gems",
+      "RyuJin",
+      "Patji",
+      "Pung",
+      "Copper",
+      "Fifa",
+      "Nan",
+      "Nick",
+      "Teddy"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "Mystery of the Love Exclusive Workshop with James Su",
+    "time": "2 PM",
+    "artists": [
+      "JamesSu"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "Acne Reset with Thomaskong",
+    "time": "2 PM",
+    "artists": [
+      "Thomas",
+      "Kong"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "Future Park The Secret Party Mascot Show",
+    "time": "2 PM",
+    "artists": [
+      "NongZon",
+      "OhAe",
+      "Rainy",
+      "BokBear"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "Koriko Meet & Greet",
+    "time": "3 PM",
+    "artists": [
+      "Keng",
+      "Namping"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "Central Bangna New to Meet You",
+    "time": "5 PM",
+    "artists": [
+      "North",
+      "Otto"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "The D Dorm Sitcom EP.1",
     "time": "6 PM",
+    "artists": []
+  },
+  {
+    "date": "09/19/2026",
+    "event": "Iconic Craft Coffee Expo 2026",
+    "time": "7 PM",
+    "artists": [
+      "Net",
+      "33",
+      "JookKroo"
+    ]
+  },
+  {
+    "date": "09/19/2026",
+    "event": "Mr. Fanboy Series EP.4",
+    "time": "10:30 PM",
+    "artists": []
+  },
+  {
+    "date": "09/20/2026",
+    "event": "Wonderland",
+    "time": "TBC",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
+  },
+  {
+    "date": "09/20/2026",
+    "event": "Leemember Sweet Island with AuAuSave",
+    "time": "10:30 AM",
+    "artists": [
+      "AuAu",
+      "Save"
+    ]
+  },
+  {
+    "date": "09/20/2026",
+    "event": "Mami Screen Glow Day with Net",
+    "time": "2 PM",
+    "artists": [
+      "Net"
+    ]
+  },
+  {
+    "date": "09/20/2026",
+    "event": "Central Bangna New to Meet You",
+    "time": "5 PM",
+    "artists": [
+      "Teddy",
+      "Rainy"
+    ]
+  },
+  {
+    "date": "09/20/2026",
+    "event": "Vone Electric x Ryujin Patji - Rules of Love :: Love101",
+    "time": "6 PM",
+    "artists": [
+      "RyuJin",
+      "PatJi"
+    ]
+  },
+  {
+    "date": "09/20/2026",
+    "event": "Iconic Craft Coffee Expo 2026",
+    "time": "7 PM",
+    "artists": [
+      "Max",
+      "Nat",
+      "HeartDy"
+    ]
+  },
+  {
+    "date": "09/20/2026",
+    "event": "Your Third Series EP.9",
+    "time": "10:30 PM",
+    "artists": []
+  },
+  {
+    "date": "09/21/2026",
+    "event": "LINE MAN LIVE",
+    "time": "5 PM",
+    "artists": [
+      "North",
+      "Otto"
+    ]
+  },
+  {
+    "date": "09/21/2026",
+    "event": "DEW ORANGE LIVE",
+    "time": "6 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
+  },
+  {
+    "date": "09/22/2026",
+    "event": "GARNIER LAB THE CLINICAL VIT C EXPERIENCE",
+    "time": "4 PM",
+    "artists": [
+      "Pung",
+      "North",
+      "Otto",
+      "Few",
+      "Gems",
+      "Teddy",
+      "Ton"
+    ]
+  },
+  {
+    "date": "09/22/2026",
+    "event": "NONGZON BIRTHDAY CELEBRATION LIVE",
+    "time": "6 PM",
+    "artists": [
+      "NongZon"
+    ]
+  },
+  {
+    "date": "09/23/2026",
+    "event": "EXCLUSIVE LIVE DOVE X NAMPING",
+    "time": "7 PM",
     "artists": [
       "Namping"
     ]
   },
   {
-    "date": "09/09/2026",
-    "event": "THAILAND THE LAND OF TROPICAL FRUITS 2026",
-    "time": "6 PM",
+    "date": "09/24/2026",
+    "event": "MARNI - MILAN FASHION WEEK SPRING/SUMMER 2027",
+    "time": "2 PM (UTC+2) / 7 PM (GMT+7)",
+    "artists": [
+      "Thomas",
+      "Kong"
+    ]
+  },
+  {
+    "date": "09/24/2026",
+    "event": "LIVE",
+    "time": "7 PM",
+    "artists": [
+      "Keng",
+      "Namping"
+    ]
+  },
+  {
+    "date": "09/24/2026",
+    "event": "RAVIPA LIVE EXCLUSIVE MOMENT X TEETEE & POR",
+    "time": "7 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
+  },
+  {
+    "date": "09/25/2026",
+    "event": "MOSCHINO - MILAN FASHION WEEK 2027",
+    "time": "TBC",
+    "artists": [
+      "Tle",
+      "FirstOne"
+    ]
+  },
+  {
+    "date": "09/25/2026",
+    "event": "BORN TO SHINE WITH SAVE",
+    "time": "12 PM",
+    "artists": [
+      "Save"
+    ]
+  },
+  {
+    "date": "09/25/2026",
+    "event": "LOST MAPS JARINYA X TEETEEPOR",
+    "time": "3 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
+  },
+  {
+    "date": "09/25/2026",
+    "event": "THE TASTE OF PREMIUM IN THE MOMENT WITH NAMPING",
+    "time": "5 PM",
+    "artists": [
+      "Namping"
+    ]
+  },
+  {
+    "date": "09/25/2026",
+    "event": "BORN TO SHINE WITH AUAU",
+    "time": "5 PM",
+    "artists": [
+      "AuAu"
+    ]
+  },
+  {
+    "date": "09/26/2026",
+    "event": "NORTHOTTO BRAND SHARING EVENT",
+    "time": "TBC",
+    "artists": [
+      "North",
+      "Otto"
+    ]
+  },
+  {
+    "date": "09/26/2026",
+    "event": "TEETEEPOR X TEETEEPOR",
+    "time": "2 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
+  },
+  {
+    "date": "09/26/2026",
+    "event": "INFINITY MEDICAL CLINIC",
+    "time": "5 PM",
     "artists": [
       "Latte",
       "Kim"
     ]
   },
   {
-    "date": "09/09/2026",
-    "event": "SKIN EDITOR LIVE 9.9 UNLOCK YOUR OVERTIME SKIN WITH TEETEEPOR",
-    "time": "7 PM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/10/2026",
-    "event": "FINO SMOOTH LAB WITH TLE-FIRSTONE",
-    "time": "6 PM",
-    "artists": [
-      "Tle",
-      "FirstOne"
-    ]
-  },
-  {
-    "date": "09/10/2026",
-    "event": "THAILAND THE LAND OF TROPICAL FRUITS 2026",
-    "time": "6 PM",
-    "artists": [
-      "Tutor",
-      "Yim"
-    ]
-  },
-  {
-    "date": "09/10/2026",
-    "event": "SUREFRESH GARDEN OF BLOOM DINNER WITH COPPER FIFA",
-    "time": "6 PM",
-    "artists": [
-      "Copper",
-      "Fifa"
-    ]
-  },
-  {
-    "date": "09/10/2026",
-    "event": "HUNTER 1ST FLAGSHIP STORE IN THAILAND GRAND OPENING AT ICONSIAM",
-    "time": "6:30 PM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/11/2026",
-    "event": "ZESPRI KIWIFRUIT PRESENTS BROTHERS BATTLE 2026 : ROUND 2",
-    "time": "TBC",
-    "artists": [
-      "Zee",
-      "NuNew"
-    ]
-  },
-  {
-    "date": "09/11/2026",
-    "event": "KENGNAMPING 1ST FANMEETING IN JAPAN",
-    "time": "12 PM | 4:30 PM",
-    "artists": [
-      "Keng",
-      "Namping"
-    ]
-  },
-  {
-    "date": "09/11/2026",
-    "event": "ZESPRI KIWIFRUIT PRESENTS BROTHERS BATTLE 2026 : ROUND 1",
-    "time": "1 PM",
-    "artists": [
-      "Tle",
-      "FirstOne"
-    ]
-  },
-  {
-    "date": "09/11/2026",
-    "event": "EVERPINK IN THE SCENT OF LOVE WITH JAMESSU",
-    "time": "2 PM",
-    "artists": [
-      "JamesSu",
-      "Jessy"
-    ]
-  },
-  {
-    "date": "09/11/2026",
-    "event": "RYUJIN & PATJI UNDER THE SAME SUN LUCKY FAN EVENT",
-    "time": "3 PM",
-    "artists": [
-      "RyuJin",
-      "PatJi"
-    ]
-  },
-  {
-    "date": "09/11/2026",
-    "event": "MONDAYMOIST \"THE SUN SECRET\" X AUAU SAVE",
-    "time": "4 PM",
-    "artists": [
-      "AuAu",
-      "Save"
-    ]
-  },
-  {
-    "date": "09/11/2026",
-    "event": "BYBO BOOST YOUR GLOW BARE YOUR SKIN WITH TEETEE-POR",
-    "time": "6 PM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "08/29/2026",
-    "event": "3CE MELT MY HEART X NUNEW",
-    "time": "7 PM",
-    "artists": [
-      "Keng",
-      "Namping"
-    ]
-  },
-  {
-    "date": "09/12/2026",
-    "event": "DR.CHOICE PRESENTS : TIKTOK LIVE PLAY DATE WITH AUAU & YUZU",
-    "time": "1 PM",
-    "artists": [
-      "AuAu"
-    ]
-  },
-  {
-    "date": "09/12/2026",
-    "event": "REMY PAW & LOVE WITH TLEFIRSTONE & RAINY",
+    "date": "09/26/2026",
+    "event": "CENTRAL BANGNA NEW TO MEET YOU",
     "time": "5 PM",
     "artists": [
-      "Tle",
-      "FirstOne",
-      "Rainy"
+      "Ryujin",
+      "Pati",
+      "OhAe"
     ]
   },
   {
-    "date": "09/12/2026",
-    "event": "INGRAM'S THE SKIN DOCTOR",
-    "time": "7 PM",
+    "date": "09/26/2026",
+    "event": "ROOKIE DIVOS CONCERT",
+    "time": "6 PM",
     "artists": [
-      "RyuJin",
-      "PatJi"
-    ]
-  },
-  {
-    "date": "09/12/2026",
-    "event": "MR. FANBOY SERIES EP.3",
-    "time": "10:30 PM | 11:30 PM",
-    "artists": []
-  },
-  {
-    "date": "08/30/2026",
-    "event": "JIMMY BELOVED EXCLUSIVE EVENT",
-    "time": "TBC",
-    "artists": [
-      "TeeTee"
-    ]
-  },
-  {
-    "date": "09/13/2026",
-    "event": "LIVE : WEALD ECHO",
-    "time": "TBC",
-    "artists": [
-      "Por"
-    ]
-  },
-  {
-    "date": "09/13/2026",
-    "event": "THE ULTIMATE CAMP SAFARI WITH ZEENUNEW",
-    "time": "TBC",
-    "artists": [
-      "Zee",
       "NuNew",
-      "NongZon"
+      "Keng"
     ]
   },
   {
-    "date": "09/13/2026",
-    "event": "HONAH LEE EVERLIGHT X AUAUSAVE",
-    "time": "TBC",
-    "artists": [
-      "AuAu",
-      "Save"
-    ]
-  },
-  {
-    "date": "09/13/2026",
-    "event": "TUTORYIM FANMEETING IN KOREA",
-    "time": "11 AM - 3:30 PM",
-    "artists": [
-      "Tutor",
-      "Yim"
-    ]
-  },
-  {
-    "date": "09/13/2026",
-    "event": "DUMBLE BREATH OF MEMORY WITH TEETEEPOR",
+    "date": "09/26/2026",
+    "event": "SUREFRESH A GARDEN OF LOVE DINNER WITH JT OHM",
     "time": "6 PM",
     "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/13/2026",
-    "event": "YOUR THIRD SERIES EP.8",
-    "time": "10:30 PM - 11:30 PM",
-    "artists": []
-  },
-  {
-    "date": "09/14/2026",
-    "event": "LINE MAN LIVE",
-    "time": "5 PM",
-    "artists": [
-      "TeeTee",
-      "Por"
-    ]
-  },
-  {
-    "date": "09/14/2026",
-    "event": "NOLA SUPERFAN : SIGNATURE NIGHT WITH SAVE",
-    "time": "6 PM",
-    "artists": [
-      "Save"
-    ]
-  },
-  {
-    "date": "09/15/2026",
-    "event": "ALDO",
-    "time": "1 PM",
-    "artists": [
+      "JT",
       "Ohm"
     ]
   },
   {
-    "date": "09/16/2026",
-    "event": "THE 11TH ANNIVERSARY WITH MITH",
-    "time": "5:30 PM",
+    "date": "09/26/2026",
+    "event": "THE D DORM SITCOM EP.2",
+    "time": "6 PM",
+    "artists": []
+  },
+  {
+    "date": "09/26/2026",
+    "event": "MR. FANBOY SERIES EP.5",
+    "time": "10:30 PM",
+    "artists": []
+  },
+  {
+    "date": "09/27/2026",
+    "event": "LATTEKIM SPECIAL EVENT BY HONAH LEE",
+    "time": "TBC",
+    "artists": [
+      "Latte",
+      "Kim"
+    ]
+  },
+  {
+    "date": "09/27/2026",
+    "event": "TUTORYIM X TUTORYIM",
+    "time": "All Day",
+    "artists": [
+      "Tutor",
+      "Yim"
+    ]
+  },
+  {
+    "date": "09/27/2026",
+    "event": "CENTRAL BANGNA NEW TO MEET YOU",
+    "time": "3 PM",
+    "artists": [
+      "Porsche",
+      "Nan",
+      "NangZoh"
+    ]
+  },
+  {
+    "date": "09/27/2026",
+    "event": "INFINITY MEDICAL CLINIC",
+    "time": "5 PM",
     "artists": [
       "Tle",
       "FirstOne"
+    ]
+  },
+  {
+    "date": "09/27/2026",
+    "event": "YOUR THIRD SERIES EP.10",
+    "time": "9 PM",
+    "artists": []
+  },
+  {
+    "date": "09/28/2026",
+    "event": "TEETEE POR CROCS VISIT STORE AT CENTRALWORLD",
+    "time": "1:30 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
+    ]
+  },
+  {
+    "date": "09/29/2026",
+    "event": "THE MALL LIFESTORE SPORT DAY AFTER MATCH AUAU & SAVE",
+    "time": "4 PM",
+    "artists": [
+      "AuAu",
+      "Save",
+      "MhiiPraew"
+    ]
+  },
+  {
+    "date": "09/30/2026",
+    "event": "NINEENTERTAIN 24TH ANNIVERSARY CHARITY CONCERT",
+    "time": "1 PM",
+    "artists": [
+      "Max",
+      "Nat",
+      "AuAu",
+      "Save",
+      "Ryujin",
+      "Pati",
+      "North",
+      "Otto",
+      "Copper",
+      "Fifa",
+      "Pew",
+      "Gems",
+      "Pete",
+      "Reeohn"
+    ]
+  },
+  {
+    "date": "09/30/2026",
+    "event": "MIN MIN X TEETEEPOR: THE FROZEN CANDY LAND",
+    "time": "6 PM",
+    "artists": [
+      "TeeTee",
+      "Por"
     ]
   }
 ]
