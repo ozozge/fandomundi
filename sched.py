@@ -23,8 +23,15 @@ name_corrections = {
     "Tie": "Tle",
     "Tia": "Tle",
     "TIe": "Tle",
+    "33": "JJ",
+    "Auau": "AuAu",
+    "ToeTee": "TeeTee",
+    "TeoTee": "TeeTee",
     "TeeToe": "TeeTee",
+    "Teetee": "TeeTee",
     "James": "Jamessu",
+    "Nunew": "NuNew",
+    "Firstone": "FirstOne",
 }
 
 def correct_names(artists):
