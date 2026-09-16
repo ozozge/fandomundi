@@ -18,11 +18,11 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install scweet anthropic requests python-dotenv
+        run: pip install tweepy anthropic requests python-dotenv
 
       - name: Run script
         env:
-          AUTH_TOKEN: ${{ secrets.AUTH_TOKEN }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
           ANTHROPIC_KEY: ${{ secrets.ANTHROPIC_KEY }}
         run: python sched.py
 
