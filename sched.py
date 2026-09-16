@@ -28,9 +28,12 @@ name_corrections = {
 }
 
 def correct_names(artists):
+    def normalize(a):
+        cleaned = a.strip().capitalize()
+        return name_corrections.get(cleaned, cleaned)
     if isinstance(artists, list):
-        return [name_corrections.get(a.strip(), a.strip()) for a in artists]
-    return name_corrections.get(artists.strip(), artists.strip())
+        return [normalize(a) for a in artists]
+    return normalize(artists)
 
 def extract_tweet_id(url):
     match = re.search(r"status/(\d+)", url)
