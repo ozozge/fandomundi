@@ -31,6 +31,7 @@ name_corrections = {
     "Teetee": "TeeTee",
     "James": "Jamessu",
     "Nunew": "NuNew",
+    "Pew": "Few",
     "Firstone": "FirstOne",
 }
 
