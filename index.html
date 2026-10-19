@@ -20,6 +20,65 @@
   <title>Domundi Fandom</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── WHAT'S NEW ── */
+    .whats-new {
+      margin: 70px 60px 60px;
+      max-width: 640px;
+    }
+
+    .whats-new h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      color: #D46A1F;
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .update-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      border-left: 2px solid rgba(212,106,31,0.4);
+    }
+
+    .update-list li {
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      padding: 6px 0 6px 16px;
+    }
+
+    .update-date {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #D46A1F;
+    }
+
+    .update-notes {
+      margin: 4px 0 0;
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .update-notes li {
+      padding: 2px 0;
+    }
+
+    .update-notes li::marker {
+      color: #D46A1F;
+    }
+
+    @media (max-width: 720px) {
+      .whats-new { margin: 50px 16px 40px; }
+      .whats-new h2 { font-size: 16px; }
+      .update-list li { font-size: 13px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -39,6 +98,7 @@
       <li class="menu-item"><a href="music.html">Music</a></li>
       <li class="menu-item"><a href="staff.html">Staff</a></li>
       <li class="menu-item"><a href="Recs.html">Recs</a></li>
+      <li class="menu-item"><a href="Mascots.html">Mascots</a></li>
       <li class="menu-item"><a href="contact.html">Contact</a></li>
 
     </ul>
@@ -69,6 +129,21 @@
     <button class="peek-btn peek-next" id="peekNext">&#8250;</button>
     <div class="peek-dots" id="peekDots"></div>
   </div>
+
+  <!-- ── WHAT'S NEW ── add newest updates at the top -->
+  <section class="whats-new">
+    <h2>What's New</h2>
+    <ul class="update-list">
+      <li>
+        <span class="update-date">Oct 18, 2026</span>
+        <ul class="update-notes">
+          <li>Dramas page: cards now show episode counts and guest appearances (adding as I go).</li>
+          <li>Added JT to Gen 6</li>
+          <li>Added Mascots</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
   </main>
   <script>
   const peekSlides = document.querySelectorAll('.peek-slide');

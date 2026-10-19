@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F4J4BBXV1C"></script>
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F4J4BBXV1C');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mascots – Fandomundi</title>
+  <meta name="description" content="Meet the mascots of Domundi couples — like Nongzon, the little one of Zee and Nunew." />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --orange: #D46A1F;
+      --orange-bright: #f26a00;
+      --black: #1a1008;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(135deg, #1a1008 60%, #D46A1F 100%);
+      background-attachment: fixed;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    /* ── PAGE HEADER ── */
+    .mascots-header {
+      padding: 60px 60px 30px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .mascots-header h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 90px;
+      color: var(--orange);
+      letter-spacing: 4px;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .mascots-header p {
+      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      letter-spacing: 1px;
+      max-width: 620px;
+      line-height: 1.6;
+    }
+
+    /* ── SEARCH ── */
+    .tools-wrap {
+      padding: 24px 60px 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .search-wrap { position: relative; }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: rgba(255,255,255,0.4);
+      stroke-width: 2;
+      stroke-linecap: round;
+      pointer-events: none;
+    }
+
+    #mascotSearch {
+      font-family: 'Nunito', sans-serif;
+      font-size: 13px;
+      padding: 7px 14px 7px 34px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      width: 240px;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+
+    #mascotSearch::placeholder { color: rgba(255,255,255,0.35); }
+    #mascotSearch:focus { border-color: var(--orange); }
+
+    .results-count {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+    }
+
+    /* ── GRID ── */
+    .mascot-grid {
+      padding: 28px 60px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    /* ── CARD ── */
+    .mascot-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .mascot-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-3px);
+    }
+
+    /* family tree area */
+    .family {
+      position: relative;
+      padding: 22px 20px 0;
+      background: radial-gradient(circle at 50% 75%, rgba(212,106,31,0.35), transparent 65%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .parents {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .parent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      width: 64px;
+    }
+
+    .parent-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 2px solid var(--orange);
+      background: rgba(0,0,0,0.35);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      color: var(--orange);
+      letter-spacing: 1px;
+    }
+
+    .parent-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .parent-name {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+      text-align: center;
+    }
+
+    .heart {
+      color: var(--orange);
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    /* line from parents down to mascot */
+    .branch {
+      width: 2px;
+      height: 18px;
+      background: linear-gradient(var(--orange), rgba(212,106,31,0.2));
+      margin-top: -10px;
+    }
+
+    .mascot-img-wrap {
+      width: 170px;
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mascot-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.45));
+      transition: transform 0.3s;
+    }
+
+    .mascot-card:hover .mascot-img-wrap img {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    .mascot-placeholder {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 2px dashed rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* text area */
+    .mascot-body {
+      padding: 14px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      text-align: center;
+    }
+
+    .mascot-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px;
+      color: #fff;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .mascot-kin {
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: var(--orange);
+      font-weight: 700;
+      margin-top: -4px;
+      text-decoration: none;
+      align-self: center;
+      transition: color 0.15s;
+    }
+
+    .mascot-kin:hover { color: var(--orange-bright); }
+
+    .mascot-about {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+    }
+
+    .mascot-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .fact-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.75);
+    }
+
+    .fact-pill span {
+      color: rgba(255,255,255,0.4);
+      font-weight: 400;
+      margin-right: 4px;
+    }
+
+    .mascot-links {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 12px;
+      margin-top: auto;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .mascot-link {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--orange);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .mascot-link:hover { color: var(--orange-bright); }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255,255,255,0.3);
+      font-size: 15px;
+    }
+
+    .no-results strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      color: rgba(255,255,255,0.15);
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .mascots-header { padding: 30px 16px 16px; }
+      .mascots-header h1 { font-size: 52px; }
+      .tools-wrap { padding: 16px 16px 0; }
+      .search-wrap, #mascotSearch { width: 100%; }
+      .mascot-grid {
+        grid-template-columns: 1fr;
+        padding: 16px 16px 40px;
+        gap: 16px;
+      }
+      .mascot-img-wrap { width: 150px; height: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header>
+    <div class="logo-title">
+      <a href="index.html">
+        <img src="fandomundi_logo.png" alt="Fandomundi Logo" class="logo" />
+      </a>
+    </div>
+  </header>
+
+  <!-- ── NAV ── -->
+  <nav class="navbar">
+    <ul class="menu">
+      <li class="menu-item"><a href="artists.html">Artists</a></li>
+      <li class="menu-item"><a href="schedule.html">Events/Schedule</a></li>
+      <li class="menu-item"><a href="dramas.html">Dramas</a></li>
+      <li class="menu-item"><a href="movies.html">Movies</a></li>
+      <li class="menu-item"><a href="music.html">Music</a></li>
+      <li class="menu-item"><a href="mascots.html">Mascots</a></li>
+      <li class="menu-item"><a href="staff.html">Staff</a></li>
+      <li class="menu-item"><a href="Recs.html">Recs</a></li>
+      <li class="menu-item"><a href="Mascots.html">Mascots</a></li>
+      <li class="menu-item"><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <div class="mascots-header">
+    <h1>Mascots</h1>
+    <p>Some Domundi couples have a little one of their own. Meet the mascots and the parents who raise them.</p>
+  </div>
+
+  <!-- ── SEARCH ── -->
+  <div class="tools-wrap">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="mascotSearch" placeholder="Search mascot or artist..." />
+    </div>
+    <span class="results-count" id="resultsCount"></span>
+  </div>
+
+  <!-- ── GRID ── -->
+  <div class="mascot-grid" id="mascotGrid"></div>
+
+  <script>
+    // ─────────────────────────────────────────────
+    // MASCOT DATA — add/edit mascots here
+    // name: mascot name
+    // image: path to mascot picture (a transparent PNG looks best)
+    // twitter: mascot's X/Twitter handle, e.g. "@handle" (optional)
+    // parents: array of { name, img } — img is optional (initials show if missing)
+    // about: short description (optional)
+    // facts: array of { label, value } — e.g. Birthday, Debut (optional)
+    // links: array of { label, url } (optional)
+    // ─────────────────────────────────────────────
+    const mascots = [
+      {
+        name: "Nongzon",
+        image: "mascots/nongzon.jpg",
+        twitter: "@NongZon_Domundi",          // e.g. "@handle"
+        parents: [
+          { name: "Zee",   img: "artists/zee.jpg" },
+          { name: "Nunew", img: "artists/nunew.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "Rainy",
+        image: "mascots/rainy.jpg",
+        twitter: "@Rainy_Domundi",          // e.g. "@handle"
+        parents: [
+          { name: "Tle",   img: "artists/tle.jpg" },
+          { name: "FirstOne", img: "artists/Firstone.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "OhAe",
+        image: "mascots/ohae.jpg",
+        twitter: "@OhAe_Domundi",          // e.g. "@handle"
+        parents: [
+          { name: "Keng",   img: "artists/keng.jpg" },
+          { name: "Namping", img: "artists/namping.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "HeartDy",
+        image: "mascots/heartdy.jpg",
+        twitter: "@HeartDy_DMD",          // e.g. "@handle"
+        parents: [
+          { name: "Max",   img: "artists/max.jpg" },
+          { name: "Nat", img: "artists/nat.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "Alinor",
+        image: "mascots/alinor.jpg",
+        twitter: "@Alinor_Domundi",          // e.g. "@handle"
+        parents: [
+          { name: "Tutor",   img: "artists/tutor.jpg" },
+          { name: "Yim", img: "artists/yim.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "JookKroo",
+        image: "mascots/jookkroo.jpg",
+        twitter: "@JookKroo_DMD",          // e.g. "@handle"
+        parents: [
+          { name: "Net",   img: "artists/net.jpg" },
+          { name: "JJ", img: "artists/jj.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "MrToky",
+        image: "mascots/MrToky.jpg",
+        twitter: "@MrToky_Domundi",          // e.g. "@handle"
+        parents: [
+          { name: "Thomas",   img: "artists/thomas.jpg" },
+          { name: "Kong", img: "artists/kong.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "MhiiPraew",
+        image: "mascots/MhiiPraew.jpg",
+        twitter: "@MhiiPraew_DMD",          // e.g. "@handle"
+        parents: [
+          { name: "Thomas",   img: "artists/thomas.jpg" },
+          { name: "Kong", img: "artists/kong.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "TMiLK",
+        image: "mascots/TMiLK.jpg",
+        twitter: "@TMiLK_Domundi",          // e.g. "@handle"
+        parents: [
+          { name: "Latte",   img: "artists/latte.jpg" },
+          { name: "Kim", img: "artists/kim.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+      {
+        name: "BokBear",
+        image: "mascots/BokBear.jpg",
+        twitter: "@BokBear_DMD",          // e.g. "@handle"
+        parents: [
+          { name: "TeeTee",   img: "artists/teetee.jpg" },
+          { name: "Por", img: "artists/por.jpg" }
+        ],
+        about: "",
+        facts: [],
+        links: []
+      },
+
+      // ── ADD MORE MASCOTS BELOW ──
+      // {
+      //   name: "Mascot Name",
+      //   image: "mascots/filename.png",
+      //   twitter: "@handle",
+      //   parents: [
+      //     { name: "Artist1", img: "artists/artist1.jpg" },
+      //     { name: "Artist2", img: "artists/artist2.jpg" }
+      //   ],
+      //   about: "A short line about the mascot.",
+      //   facts: [
+      //     { label: "Birthday", value: "Jan 1" }
+      //   ],
+      //   links: [
+      //     { label: "Instagram", url: "https://..." }
+      //   ]
+      // },
+    ];
+
+    // ─────────────────────────────────────────────
+    // RENDER
+    // ─────────────────────────────────────────────
+    function initials(name) {
+      return name.slice(0, 2).toUpperCase();
+    }
+
+    function parentHTML(p) {
+      const avatar = p.img
+        ? `<img src="${p.img}" alt="${p.name}" onerror="this.parentElement.textContent='${initials(p.name)}'" />`
+        : initials(p.name);
+      return `
+        <div class="parent">
+          <div class="parent-avatar">${avatar}</div>
+          <div class="parent-name">${p.name}</div>
+        </div>`;
+    }
+
+    function buildCard(m) {
+      const parents = m.parents || [];
+      const facts = m.facts || [];
+      const links = m.links || [];
+
+      const parentsRow = parents
+        .map(parentHTML)
+        .join('<div class="heart">♥</div>');
+
+      const factsHTML = facts.length
+        ? `<div class="mascot-facts">${facts.map(f =>
+            `<span class="fact-pill"><span>${f.label}</span>${f.value}</span>`
+          ).join('')}</div>`
+        : '';
+
+      const linksHTML = links.length
+        ? `<div class="mascot-links">${links.map(l =>
+            `<a href="${l.url}" target="_blank" class="mascot-link">${l.label} ↗</a>`
+          ).join('')}</div>`
+        : '';
+
+      const handle = (m.twitter || '').replace(/^@/, '').trim();
+
+      return `
+        <div class="mascot-card">
+          <div class="family">
+            <div class="parents">${parentsRow}</div>
+            <div class="branch"></div>
+            <div class="mascot-img-wrap">
+              <img src="${m.image}" alt="${m.name}" onerror="this.parentElement.innerHTML='<div class=\\'mascot-placeholder\\'>No image yet</div>'" />
+            </div>
+          </div>
+          <div class="mascot-body">
+            <div class="mascot-name">${m.name}</div>
+            ${handle ? `<a class="mascot-kin" href="https://x.com/${handle}" target="_blank">@${handle}</a>` : ''}
+            ${m.about ? `<div class="mascot-about">${m.about}</div>` : ''}
+            ${factsHTML}
+            ${linksHTML}
+          </div>
+        </div>`;
+    }
+
+    function render() {
+      const query = document.getElementById('mascotSearch').value.trim().toLowerCase();
+      const grid = document.getElementById('mascotGrid');
+
+      const filtered = mascots.filter(m => {
+        const haystack = [m.name, ...(m.parents || []).map(p => p.name)].join(' ').toLowerCase();
+        return !query || haystack.includes(query);
+      });
+
+      grid.innerHTML = filtered.length
+        ? filtered.map(buildCard).join('')
+        : `<div class="no-results"><strong>No results</strong>Try a different mascot or artist name</div>`;
+
+      document.getElementById('resultsCount').textContent =
+        filtered.length === mascots.length
+          ? `${mascots.length} mascot${mascots.length === 1 ? '' : 's'}`
+          : `${filtered.length} of ${mascots.length} mascots`;
+    }
+
+    document.getElementById('mascotSearch').addEventListener('input', render);
+    render();
+  </script>
+
+</body>
+</html>
