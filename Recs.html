@@ -47,6 +47,53 @@
       margin: 0 0 20px;
     }
 
+    /* ---------- Section header with filter (NEW) ---------- */
+    .rec-section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 0 0 20px;
+    }
+    .rec-section-head .rec-section-title {
+      margin: 0;
+    }
+
+    .rec-filter {
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #f0d8c0;
+      background: rgba(26,16,8,0.7);
+      border: 1px solid rgba(240,216,192,0.25);
+      border-radius: 20px;
+      padding: 7px 34px 7px 14px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: linear-gradient(45deg, transparent 50%, #D46A1F 50%),
+                        linear-gradient(135deg, #D46A1F 50%, transparent 50%);
+      background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+      background-size: 5px 5px;
+      background-repeat: no-repeat;
+      transition: border-color 0.2s;
+    }
+    .rec-filter:hover,
+    .rec-filter:focus {
+      border-color: #D46A1F;
+      outline: none;
+    }
+    .rec-filter option {
+      background: #1a1008;
+      color: #f0d8c0;
+    }
+
+    /* Hidden by the filter */
+    .rec-card.is-hidden {
+      display: none;
+    }
+
     /* ---------- Featured grid (4 cards) ---------- */
     .rec-grid {
       display: grid;
@@ -216,6 +263,7 @@
     @media (max-width: 640px) {
       .rec-arrow { display: none; } /* rely on touch scroll on mobile */
       .rec-section { padding: 24px 20px; }
+      .rec-filter { font-size: 13px; }
     }
   </style>
 </head>
@@ -290,14 +338,23 @@
       </div>
     </section>
 
-    <!-- ============ Repeat the whole block for the next series ============ -->
+    <!-- ============ VLOGS — with artist filter ============
+         Tag each card with data-artists="Name1,Name2" (comma-separated).
+         The dropdown builds itself from these tags, so a new name
+         shows up automatically. Spelling must match exactly
+         ("NuNew" and "Nunew" would become two separate entries). -->
     <section class="rec-section">
-      <h2 class="rec-section-title">Vlogs</h2>
+      <div class="rec-section-head">
+        <h2 class="rec-section-title">Vlogs</h2>
+        <select class="rec-filter" aria-label="Filter vlogs by artist">
+          <option value="all">All artists</option>
+        </select>
+      </div>
 
       <div class="rec-slider-wrap">
         <button class="rec-arrow left" aria-label="Scroll left">&#8249;</button>
         <div class="rec-slider">
-          <a class="rec-card" href="https://www.youtube.com/watch?v=dz9A3uiwKkw" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Tle,FirstOne" href="https://www.youtube.com/watch?v=dz9A3uiwKkw" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/dz9A3uiwKkw/hqdefault.jpg" alt="" loading="lazy">
             </div>
@@ -305,7 +362,56 @@
               <p class="rec-card-title">1stVlog | TleFirstOne in Phuket</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=KIIRdKCtzJY" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Teetee,Por" href="https://www.youtube.com/watch?v=xdesgf3aXuI" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/xdesgf3aXuI/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">TeeTeePor 1st Vlog In Japan (Osaka)</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Teetee,Por" href="https://www.youtube.com/watch?v=-jnXAmdVluo" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/-jnXAmdVluo/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">TEETEE POR VLOG IN PARIS</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Zee,Nunew" href="https://www.youtube.com/watch?v=EI5GEcR2hOs" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/EI5GEcR2hOs/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">ZeeNuNew Vlog in Krabi</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Auau,Save" href="https://www.youtube.com/watch?v=mQ5pDUmtVKM" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/mQ5pDUmtVKM/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">AuAuSave 1st Vlog In China</p>
+            </div>
+          </a>
+
+          <a class="rec-card" data-artists="Net,JJ,Latte,Kim" href="https://www.youtube.com/watch?v=DMuEYjQzL3w" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/DMuEYjQzL3w/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Net JJ Latte Kim Vlog in Khao Yai</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Thomas,Kong,Wave" href="https://www.youtube.com/watch?v=m-UIdaUFuic" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/m-UIdaUFuic/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Thomas Kong & Wave Vlog at Seoul Fashion Week 2027</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="DMD" href="https://www.youtube.com/watch?v=KIIRdKCtzJY" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/KIIRdKCtzJY/hqdefault.jpg" alt="" loading="lazy">
             </div>
@@ -313,7 +419,7 @@
               <p class="rec-card-title">DMD in Japan Ep.1</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=H8wM9V_U6wk" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Latte,Kim" href="https://www.youtube.com/watch?v=H8wM9V_U6wk" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/H8wM9V_U6wk/hqdefault.jpg" alt="" loading="lazy">
             </div>
@@ -321,23 +427,23 @@
               <p class="rec-card-title">LatteKim Chiangmai Vlog</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=XDNrSq6Qzck" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Zee,NuNew" href="https://www.youtube.com/watch?v=XDNrSq6Qzck" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/XDNrSq6Qzck/hqdefault.jpg" alt="" loading="lazy">
             </div>
             <div class="rec-card-body">
-              <p class="rec-card-title">Zee NuNew Vlog in Samui</p>
+              <p class="rec-card-title">ZeeNunew Vlog in Samui</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=qu5gDrPlAu4" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Tutor,Yim" href="https://www.youtube.com/watch?v=qu5gDrPlAu4" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/qu5gDrPlAu4/hqdefault.jpg" alt="" loading="lazy">
             </div>
             <div class="rec-card-body">
-              <p class="rec-card-title">TuTor Yim Vlog In Berlin Ep 1</p>
+              <p class="rec-card-title">TuTorYim Vlog In Berlin Ep 1</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=wMT6dK1CvV4" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Tutor,Yim" href="https://www.youtube.com/watch?v=wMT6dK1CvV4" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/wMT6dK1CvV4/hqdefault.jpg" alt="" loading="lazy">
             </div>
@@ -345,7 +451,7 @@
               <p class="rec-card-title">TutorYim Vlog in Berlin</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=vthB0OjWBAE" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Max,Nat" href="https://www.youtube.com/watch?v=vthB0OjWBAE" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/vthB0OjWBAE/hqdefault.jpg" alt="" loading="lazy">
             </div>
@@ -353,16 +459,15 @@
               <p class="rec-card-title">MaxNat Vlog In Shanghai</p>
             </div>
           </a>
-          
-          <a class="rec-card" href="https://www.youtube.com/watch?v=TlMqAqXq41I" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Tle,FirstOne" href="https://www.youtube.com/watch?v=TlMqAqXq41I" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/TlMqAqXq41I/hqdefault.jpg" alt="" loading="lazy">
             </div>
             <div class="rec-card-body">
-              <p class="rec-card-title">Tle FirstOne Vlog in Sapporo</p>
+              <p class="rec-card-title">TleFirstOne Vlog in Sapporo</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=DeIHxM8-FDE" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Net,JJ" href="https://www.youtube.com/watch?v=DeIHxM8-FDE" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/DeIHxM8-FDE/hqdefault.jpg" alt="" loading="lazy">
             </div>
@@ -370,7 +475,7 @@
               <p class="rec-card-title">NetJJ 1st Vlog</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=QiOCFdHQEn0" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Tutor,Yim" href="https://www.youtube.com/watch?v=QiOCFdHQEn0" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/QiOCFdHQEn0/hqdefault.jpg" alt="" loading="lazy">
             </div>
@@ -378,14 +483,71 @@
               <p class="rec-card-title">Vlog Tutor Yim at Koh Larn</p>
             </div>
           </a>
-          <a class="rec-card" href="https://www.youtube.com/watch?v=C3RftAtOIhE" target="_blank" rel="noopener">
+          <a class="rec-card" data-artists="Keng,Namping" href="https://www.youtube.com/watch?v=C3RftAtOIhE" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/C3RftAtOIhE/hqdefault.jpg" alt="" loading="lazy">
             </div>
             <div class="rec-card-body">
-              <p class="rec-card-title">1st Vlog | Keng Namping</p>
+              <p class="rec-card-title">KengNamping | 1st Vlog</p>
             </div>
           </a>
+          <a class="rec-card" data-artists="Tutor,Yim" href="https://www.youtube.com/watch?v=HaIexMDHSd0" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/HaIexMDHSd0/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">TutorYim Fanmeeting In Osaka Vlog</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Keng,Namping" href="https://www.youtube.com/watch?v=dg_qaVfenzU" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/dg_qaVfenzU/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">KengNamping | 2st Vlog</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Thomas,Kong" href="https://www.youtube.com/watch?v=C-iA5g_pdkc" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/C-iA5g_pdkc/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">ThomasKong | 1st Vlog</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Thomas,Kong" href="https://www.youtube.com/watch?v=m-UIdaUFuic" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/m-UIdaUFuic/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">ThomasKong | 2st Vlog</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Max,Nat" href="https://www.youtube.com/watch?v=LxO9Se1buZ4" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/LxO9Se1buZ4/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">MaxNat | 2 days 1 night EP 1</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Max,Nat" href="https://www.youtube.com/watch?v=4qm5i0V6TwM" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/4qm5i0V6TwM/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">MaxNat | 2 days 1 night EP 2</p>
+            </div>
+          </a>
+          <a class="rec-card" data-artists="Thomas,Kong,Wave" href="https://www.youtube.com/watch?v=m-UIdaUFuic" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/m-UIdaUFuic/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">Thomas Kong & Wave Vlog at Seoul Fashion Week 2027</p>
+            </div>
+          </a>
+
 
           </div>
         <button class="rec-arrow right" aria-label="Scroll right">&#8250;</button>
@@ -427,6 +589,22 @@
       <div class="rec-slider-wrap">
         <button class="rec-arrow left" aria-label="Scroll left">&#8249;</button>
         <div class="rec-slider">
+          <a class="rec-card" href="https://www.youtube.com/watch?v=loOiEn4ZeFU" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/loOiEn4ZeFU/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">BORN TO BE NUNEW CONCERT | DAY 1</p>
+            </div>
+          </a>
+          <a class="rec-card" href="https://www.youtube.com/watch?v=XeHSDZN45AA" target="_blank" rel="noopener">
+            <div class="rec-thumb-wrap">
+              <img src="https://img.youtube.com/vi/XeHSDZN45AA/hqdefault.jpg" alt="" loading="lazy">
+            </div>
+            <div class="rec-card-body">
+              <p class="rec-card-title">BORN TO BE NUNEW CONCERT | DAY 2</p>
+            </div>
+          </a>
           <a class="rec-card" href="https://www.youtube.com/watch?v=54EkBS5QjLw" target="_blank" rel="noopener">
             <div class="rec-thumb-wrap">
               <img src="https://img.youtube.com/vi/54EkBS5QjLw/hqdefault.jpg" alt="" loading="lazy">
@@ -561,6 +739,48 @@
       });
       rightBtn && rightBtn.addEventListener('click', () => {
         slider.scrollBy({ left: scrollByAmount(), behavior: 'smooth' });
+      });
+    });
+
+    // ── Artist filter (NEW) ──
+    // Works for any section that has a <select class="rec-filter">.
+    // To add a filter to another row later, just add the <select> to its
+    // header and data-artists to its cards.
+    document.querySelectorAll('.rec-section').forEach(function (section) {
+      const select = section.querySelector('.rec-filter');
+      const slider = section.querySelector('.rec-slider');
+      if (!select || !slider) return;
+
+      const cards = slider.querySelectorAll('.rec-card');
+
+      // Read each card's tags once
+      const tagsFor = (card) =>
+        (card.dataset.artists || '')
+          .split(',')
+          .map(name => name.trim())
+          .filter(Boolean);
+
+      // Build the dropdown from every name used, A–Z
+      const names = new Set();
+      cards.forEach(card => tagsFor(card).forEach(n => names.add(n)));
+      [...names]
+        .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+        .forEach(name => {
+          const opt = document.createElement('option');
+          opt.value = name;
+          opt.textContent = name;
+          select.appendChild(opt);
+        });
+
+      // Strict match: show only cards tagged with the chosen name
+      select.addEventListener('change', function () {
+        const chosen = select.value;
+        cards.forEach(card => {
+          const show = chosen === 'all' || tagsFor(card).includes(chosen);
+          card.classList.toggle('is-hidden', !show);
+        });
+        // Jump back to the start so the row never looks empty
+        slider.scrollTo({ left: 0, behavior: 'auto' });
       });
     });
   </script>
