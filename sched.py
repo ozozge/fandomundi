@@ -101,7 +101,11 @@ else:
         raw = response.content[0].text.strip().replace("```json", "").replace("```", "")
         events = json.loads(raw)
         for event in events:
-            event['artists'] = correct_names(event['artists'])
+            # Fill in any field the vision model left as null
+            event['date'] = event.get('date') or ''
+            event['event'] = event.get('event') or ''
+            event['time'] = event.get('time') or 'TBA'
+            event['artists'] = correct_names(event.get('artists') or [])
         all_events.extend(events)
 
     print(f"\n{'DATE':<12} {'EVENT':<55} {'TIME':<10} {'ARTISTS'}")
