@@ -9,7 +9,7 @@
       "Latte",
       "Kim",
       "Copper",
-      "Jj",
+      "JJ",
       "Ohm"
     ]
   },
@@ -44,7 +44,7 @@
     "event": "MAYBELLINE NEW YORK TANGHULU LIVE FESTIVAL",
     "time": "12 PM",
     "artists": [
-      "Poppy (mc)",
+      "Poppy",
       "Ohae"
     ]
   },
@@ -53,7 +53,7 @@
     "event": "ALDO EMQUARTIER GRAND OPENING",
     "time": "1 PM",
     "artists": [
-      "Jj"
+      "JJ"
     ]
   },
   {
@@ -179,7 +179,7 @@
     "artists": [
       "Tle",
       "FirstOne",
-      "Poppy (mc)"
+      "Poppy"
     ]
   },
   {
@@ -317,20 +317,13 @@
     "date": "11/21/2026",
     "event": "THE D DORM SITCOM EP.10",
     "time": "6 PM / 7 PM",
-    "artists": [
-      "Sitcom cast"
-    ]
+    "artists": []
   },
   {
     "date": "11/21/2026",
     "event": "KHEMJIRA FOREVER FINAL EP.",
     "time": "8:30 PM / 9:30 PM",
-    "artists": [
-      "Keng",
-      "Namping",
-      "Tle",
-      "FirstOne"
-    ]
+    "artists": []
   },
   {
     "date": "11/21/2026",
@@ -389,7 +382,7 @@
     "time": "4 PM",
     "artists": [
       "Net",
-      "Jj"
+      "JJ"
     ]
   },
   {
@@ -413,8 +406,8 @@
     "event": "THAI SELECT FESTIVAL",
     "time": "7 PM (LA Time) / 10 AM (GMT+7, November 23)",
     "artists": [
-      "Kong",
-      "Kamping"
+      "Keng",
+      "Namping"
     ]
   },
   {
@@ -432,7 +425,7 @@
     "time": "5 PM",
     "artists": [
       "Ryujin",
-      "Paji"
+      "Patji"
     ]
   },
   {
@@ -530,7 +523,7 @@
     "time": "3 PM",
     "artists": [
       "Net",
-      "Jookroo"
+      "JookKroo"
     ]
   },
   {
