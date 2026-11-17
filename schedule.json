@@ -9,14 +9,14 @@
       "Latte",
       "Kim",
       "Copper",
-      "Jt",
+      "Jj",
       "Ohm"
     ]
   },
   {
     "date": "11/17/2026",
-    "event": "HEARTBEAT COLLISION & BUNNY JULIE & TEETEEPOR",
-    "time": "TBA",
+    "event": "HEARTBEAT COLLISION & BUNNYJULIE & TEETEEPOR",
+    "time": "7 PM",
     "artists": [
       "TeeTee",
       "Por"
@@ -44,7 +44,7 @@
     "event": "MAYBELLINE NEW YORK TANGHULU LIVE FESTIVAL",
     "time": "12 PM",
     "artists": [
-      "Poppy",
+      "Poppy (mc)",
       "Ohae"
     ]
   },
@@ -53,7 +53,7 @@
     "event": "ALDO EMQUARTIER GRAND OPENING",
     "time": "1 PM",
     "artists": [
-      "JJ"
+      "Jj"
     ]
   },
   {
@@ -134,7 +134,7 @@
   {
     "date": "11/20/2026",
     "event": "SWEET SIGNAL X TEETEEPOR",
-    "time": "TBA",
+    "time": "TBC",
     "artists": [
       "TeeTee",
       "Por"
@@ -142,7 +142,7 @@
   },
   {
     "date": "11/20/2026",
-    "event": "L'OREAL PARIS ELSEVE DAY WITH AUAU",
+    "event": "L'OR\u00c9AL PARIS ELSEVE DAY WITH AUAU",
     "time": "1 PM",
     "artists": [
       "AuAu"
@@ -159,7 +159,7 @@
   {
     "date": "11/20/2026",
     "event": "EVEANDBOY 21ST ANNIVERSARY",
-    "time": "1 PM",
+    "time": "TBA",
     "artists": [
       "Net"
     ]
@@ -170,6 +170,16 @@
     "time": "2 PM",
     "artists": [
       "NuNew"
+    ]
+  },
+  {
+    "date": "11/20/2026",
+    "event": "EVEANDBOY 21ST ANNIVERSARY GRAND SALE 2026",
+    "time": "5 PM",
+    "artists": [
+      "Tle",
+      "FirstOne",
+      "Poppy (mc)"
     ]
   },
   {
@@ -220,7 +230,7 @@
   },
   {
     "date": "11/21/2026",
-    "event": "FANSIGN IN ZHANGZHOU",
+    "event": "FANSIGN IN CHINA",
     "time": "TBC",
     "artists": [
       "North",
@@ -306,14 +316,21 @@
   {
     "date": "11/21/2026",
     "event": "THE D DORM SITCOM EP.10",
-    "time": "6 PM - 7 PM",
-    "artists": []
+    "time": "6 PM / 7 PM",
+    "artists": [
+      "Sitcom cast"
+    ]
   },
   {
     "date": "11/21/2026",
     "event": "KHEMJIRA FOREVER FINAL EP.",
-    "time": "8:30 PM - 9:30 PM",
-    "artists": []
+    "time": "8:30 PM / 9:30 PM",
+    "artists": [
+      "Keng",
+      "Namping",
+      "Tle",
+      "FirstOne"
+    ]
   },
   {
     "date": "11/21/2026",
@@ -345,7 +362,7 @@
   {
     "date": "11/22/2026",
     "event": "SIP & SMILE WITH SAVE 'AN AFTERNOON OF CHRISTMAS CHEER' PRESENTED BY PALIIN TONER PAD",
-    "time": "12 PM",
+    "time": "TBA",
     "artists": [
       "Save"
     ]
@@ -360,16 +377,24 @@
   },
   {
     "date": "11/22/2026",
-    "event": "THE SWEET RECIPE WITH NETJJ",
-    "time": "4 PM",
+    "event": "HEAVY SHOES",
+    "time": "3:30 PM",
     "artists": [
-      "Net",
-      "JJ"
+      "Teddy"
     ]
   },
   {
     "date": "11/22/2026",
-    "event": "LABX DEXX : THE PRIVATE SESSION N\u00b001",
+    "event": "THE SWEET RECIPE WITH NETJJ",
+    "time": "4 PM",
+    "artists": [
+      "Net",
+      "Jj"
+    ]
+  },
+  {
+    "date": "11/22/2026",
+    "event": "LABX DEXX: THE PRIVATE SESSION N\u00b001",
     "time": "4 PM",
     "artists": [
       "Dexx"
@@ -388,8 +413,8 @@
     "event": "THAI SELECT FESTIVAL",
     "time": "7 PM (LA Time) / 10 AM (GMT+7, November 23)",
     "artists": [
-      "Keng",
-      "Namping"
+      "Kong",
+      "Kamping"
     ]
   },
   {
@@ -407,13 +432,13 @@
     "time": "5 PM",
     "artists": [
       "Ryujin",
-      "Patji"
+      "Paji"
     ]
   },
   {
     "date": "11/24/2026",
     "event": "GRABFOOD MEGA GALE TLE-FIRSTONE \"MY MER-MEAL\"",
-    "time": "TBA",
+    "time": "7 PM",
     "artists": [
       "Tle",
       "FirstOne"
@@ -439,7 +464,7 @@
   },
   {
     "date": "11/25/2026",
-    "event": "SKIN EDITOR LIVE PAY DAY, PLAY DAY! WITH FIFA&REEOON",
+    "event": "SKIN EDITOR LIVE PAY DAY, PLAY DAY! WITH FIFA&REEONN",
     "time": "7 PM",
     "artists": [
       "Fifa",
@@ -457,7 +482,7 @@
   },
   {
     "date": "11/26/2026",
-    "event": "",
+    "event": "AUAU SAVE EVENT",
     "time": "7 PM",
     "artists": [
       "AuAu",
@@ -492,7 +517,7 @@
   },
   {
     "date": "11/28/2026",
-    "event": "B2S LIVE PLAYFUL X TLEFIRSTONE ART & GIFT WORKSHOP SEA GLASS",
+    "event": "B2S LIVE PLAYFUL x TLEFIRSTONE ART & GIFT WORKSHOP SEA GLASS",
     "time": "3 PM",
     "artists": [
       "Tle",
@@ -501,11 +526,11 @@
   },
   {
     "date": "11/28/2026",
-    "event": "SCOOPIFY RUM RAISIN WITH NET & JOOKKROO",
+    "event": "SCOOPIFY RUM RAISIN WITH NET & JOOKROO",
     "time": "3 PM",
     "artists": [
       "Net",
-      "Jookkroo"
+      "Jookroo"
     ]
   },
   {
@@ -537,8 +562,8 @@
   },
   {
     "date": "11/28/2026",
-    "event": "THE D DORM SITCOM EP.11",
-    "time": "6 PM - 7 PM",
+    "event": "HOT TUAT DEE THE D DORM SITCOM EP.11",
+    "time": "7 PM",
     "artists": []
   },
   {
@@ -562,7 +587,7 @@
   {
     "date": "11/29/2026",
     "event": "NUNEW INVITES U TO MUAN-A FAIR FULL OF LOVE",
-    "time": "1 PM",
+    "time": "TBC",
     "artists": [
       "NuNew"
     ]
@@ -592,6 +617,15 @@
     "artists": [
       "Thomas",
       "Kong"
+    ]
+  },
+  {
+    "date": "11/29/2026",
+    "event": "SKIN UP LIVE EXPERIENCE WITH TLE-FIRSTONE",
+    "time": "7 PM",
+    "artists": [
+      "Tle",
+      "FirstOne"
     ]
   },
   {
