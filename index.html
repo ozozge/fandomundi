@@ -73,7 +73,169 @@
       color: #D46A1F;
     }
 
+    /* ── HOME BOXES (Today in Bangkok + Currently on air) ── */
+    .home-boxes {
+      margin: 50px 60px 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      align-items: stretch;
+    }
+
+    .home-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-family: 'Nunito', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .home-box-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .home-box h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 26px;
+      color: #D46A1F;
+      letter-spacing: 2px;
+      line-height: 1;
+      margin: 0;
+      font-weight: 400;
+    }
+
+    .box-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .box-link {
+      margin-top: auto;
+      padding-top: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #D46A1F;
+      text-decoration: none;
+    }
+
+    .box-link:hover { color: #f26a00; }
+
+    /* today's events */
+    .today-list { list-style: none; padding: 0; margin: 0; }
+
+    .today-item {
+      display: grid;
+      grid-template-columns: 78px minmax(0, 1fr);
+      gap: 12px;
+      padding: 9px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .today-item:first-child { border-top: none; }
+    .today-item.past { opacity: 0.4; }
+
+    .today-time {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;
+      color: #f26a00;
+      line-height: 1.15;
+    }
+
+    .today-event {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .today-artists {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin-top: 2px;
+    }
+
+    .today-more, .today-empty {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      padding-top: 8px;
+    }
+
+    /* on air */
+    .onair-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #e24b4a;
+      margin-right: 8px;
+      vertical-align: 3px;
+      animation: onairPulse 1.6s ease-in-out infinite;
+    }
+
+    @keyframes onairPulse { 50% { opacity: 0.35; } }
+
+    .onair-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .onair-item:first-child { border-top: none; padding-top: 0; }
+
+    .onair-poster {
+      width: 76px;
+      aspect-ratio: 2/3;
+      object-fit: cover;
+      border-radius: 8px;
+      flex-shrink: 0;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .onair-info { min-width: 0; display: flex; flex-direction: column; gap: 5px; }
+    .onair-title { font-size: 15px; font-weight: 700; line-height: 1.3; }
+    .onair-cast { font-size: 12px; color: rgba(255,255,255,0.6); }
+    .onair-note { font-size: 12px; color: #fff; }
+    .onair-next { font-size: 12px; color: #f26a00; font-weight: 700; }
+
+    .onair-scores { display: flex; gap: 6px; flex-wrap: wrap; }
+
+    .onair-pill {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    .onair-pill.imdb { background: #f5c518; color: #1a1a1a; }
+    .onair-pill.mdl  { background: #2a6ab5; color: #fff; }
+
+    .onair-watch {
+      font-size: 12px;
+      font-weight: 700;
+      color: #D46A1F;
+      text-decoration: none;
+    }
+
+    .onair-watch:hover { color: #f26a00; }
+
     @media (max-width: 720px) {
+      .home-boxes { grid-template-columns: 1fr; margin: 36px 16px 0; gap: 14px; }
+      .home-box { padding: 14px 16px; }
+      .home-box h2 { font-size: 22px; }
+      .today-item { grid-template-columns: 64px minmax(0, 1fr); gap: 10px; }
       .whats-new { margin: 50px 16px 40px; }
       .whats-new h2 { font-size: 16px; }
       .update-list li { font-size: 13px; }
@@ -129,6 +291,26 @@
     <div class="peek-dots" id="peekDots"></div>
   </div>
 
+  <!-- ── HOME BOXES ── today's events come from schedule.json, on-air dramas from the ON_AIR list in the script at the bottom -->
+  <section class="home-boxes">
+    <div class="home-box">
+      <div class="home-box-head">
+        <h2>Today in Bangkok</h2>
+        <span class="box-sub" id="todayDate"></span>
+      </div>
+      <ul class="today-list" id="todayList"></ul>
+      <a href="schedule.html" class="box-link">For full schedule events →</a>
+    </div>
+
+    <div class="home-box">
+      <div class="home-box-head">
+        <h2><span class="onair-dot"></span>Currently on air</h2>
+      </div>
+      <div id="onAirList"></div>
+      <a href="dramas.html" class="box-link">All dramas →</a>
+    </div>
+  </section>
+
   <!-- ── WHAT'S NEW ── add newest updates at the top -->
   <section class="whats-new">
     <h2>What's New</h2>
@@ -161,6 +343,146 @@
     </ul>
   </section>
   </main>
+  <script>
+  // ─────────────────────────────────────────────
+  // CURRENTLY ON AIR — edit this list when a drama starts or ends
+  // imdb/mdl: number or null · airing: short note (optional)
+  // ─────────────────────────────────────────────
+  const ON_AIR = [
+    {
+      title: "Khemjira Forever",
+      poster: "posters/khemfo.jpg",
+      airing: "Final episode this Saturday",
+      links: [
+        { label: "iQIYI", url: "https://www.iq.com/album/khemjira-forever-2026-1fe1edogkkt?lang=en_us" }
+      ]
+    },
+    {
+      title: "The D Dorm",
+      poster: "posters/ddorm.jpg",
+      airing: "New episodes every Saturday",
+      links: [
+        { label: "iQIYI", url: "https://www.iq.com/album/the-d-dorm-2026-13fyuv1tyld?lang=en_us" }
+      ]
+    },
+  ];
+
+  // ─────────────────────────────────────────────
+  // TODAY IN BANGKOK + CURRENTLY ON AIR
+  // ─────────────────────────────────────────────
+  const BKK = 'Asia/Bangkok';
+  const TODAY_LIMIT = 6; // max events shown before "+ N more"
+
+  function escapeHTML(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+  }
+
+  // "11/18/2026" for today in Bangkok (matches schedule.json format)
+  const todayBKK = new Date().toLocaleDateString('en-US', { timeZone: BKK, year: 'numeric', month: '2-digit', day: '2-digit' });
+
+  // current Bangkok time in minutes since midnight
+  const nowParts = new Intl.DateTimeFormat('en-GB', { timeZone: BKK, hour: '2-digit', minute: '2-digit', hour12: false }).formatToParts(new Date());
+  const nowMinBKK = Number(nowParts.find(p => p.type === 'hour').value) % 24 * 60 + Number(nowParts.find(p => p.type === 'minute').value);
+
+  // "MM/DD/YYYY" -> "YYYYMMDD" so dates compare as strings
+  const dateKey = d => { const [m, day, y] = d.split('/'); return y + m.padStart(2, '0') + day.padStart(2, '0'); };
+
+  // first time in a string like "7:30 PM" or "6 PM / 7 PM" -> minutes; TBC/TBA -> null
+  function timeToMin(t) {
+    const m = String(t).match(/(\d{1,2})(?::(\d{2}))?\s*(AM|PM)/i);
+    if (!m) return null;
+    let h = Number(m[1]) % 12;
+    if (m[3].toUpperCase() === 'PM') h += 12;
+    return h * 60 + Number(m[2] || 0);
+  }
+
+  document.getElementById('todayDate').textContent =
+    new Date().toLocaleDateString('en-US', { timeZone: BKK, weekday: 'short', month: 'short', day: 'numeric' });
+
+  function renderToday(schedule) {
+    const list = document.getElementById('todayList');
+    const today = schedule
+      .filter(e => e.date === todayBKK)
+      .sort((a, b) => (timeToMin(a.time) ?? 9999) - (timeToMin(b.time) ?? 9999));
+
+    if (today.length === 0) {
+      list.innerHTML = `<li class="today-empty">No events today. Check the full schedule for what's coming up.</li>`;
+      return;
+    }
+
+    const shown = today.slice(0, TODAY_LIMIT);
+    list.innerHTML = shown.map(e => {
+      const start = timeToMin(e.time);
+      const past = start !== null && nowMinBKK - start > 60; // dim events that started 1+ hours ago
+      const artists = (e.artists || []).join(', ');
+      return `<li class="today-item${past ? ' past' : ''}">
+        <span class="today-time">${escapeHTML(e.time)}</span>
+        <div>
+          <div class="today-event">${escapeHTML(e.event)}</div>
+          ${artists ? `<div class="today-artists">${escapeHTML(artists)}</div>` : ''}
+        </div>
+      </li>`;
+    }).join('');
+
+    if (today.length > TODAY_LIMIT) {
+      list.innerHTML += `<li class="today-more">+ ${today.length - TODAY_LIMIT} more today</li>`;
+    }
+  }
+
+  function renderOnAir(schedule) {
+    const box = document.getElementById('onAirList');
+    const onAir = ON_AIR;
+
+    if (onAir.length === 0) {
+      box.innerHTML = `<p class="today-empty">Nothing airing right now. Browse all dramas below.</p>`;
+      return;
+    }
+
+    const todayKey = dateKey(todayBKK);
+
+    box.innerHTML = onAir.map(d => {
+      // next airing: first upcoming schedule event whose name contains the drama title
+      const next = schedule
+        .filter(e => e.event.toUpperCase().includes(d.title.toUpperCase()) && dateKey(e.date) >= todayKey)
+        .sort((a, b) => dateKey(a.date).localeCompare(dateKey(b.date)) ||
+                        (timeToMin(a.time) ?? 9999) - (timeToMin(b.time) ?? 9999))[0];
+
+      let nextHTML = '';
+      if (next) {
+        const [m, day, y] = next.date.split('/').map(Number);
+        const label = new Date(y, m - 1, day).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+      }
+
+      const scores = [];
+      if (d.imdb !== null && d.imdb !== undefined) scores.push(`<span class="onair-pill imdb">⭑ ${d.imdb}</span>`);
+      if (d.mdl !== null && d.mdl !== undefined)   scores.push(`<span class="onair-pill mdl">MDL ${d.mdl}</span>`);
+
+      const watch = (d.links || []).map(l =>
+        `<a href="${l.url}" target="_blank" class="onair-watch">▶ Watch on ${escapeHTML(l.label)}</a>`
+      ).join(' ');
+
+      return `<div class="onair-item">
+        <img src="${d.poster}" alt="${escapeHTML(d.title)}" class="onair-poster" onerror="this.style.visibility='hidden'" />
+        <div class="onair-info">
+          <div class="onair-title">${escapeHTML(d.title)}</div>
+          ${d.main && d.main.length ? `<div class="onair-cast">${escapeHTML(d.main.join(', '))}</div>` : ''}
+          ${scores.length ? `<div class="onair-scores">${scores.join('')}</div>` : ''}
+          ${d.airing ? `<div class="onair-note">${escapeHTML(d.airing)}</div>` : ''}
+          ${nextHTML}
+          ${watch}
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  fetch('schedule.json')
+    .then(r => r.json())
+    .catch(() => [])
+    .then(schedule => {
+      renderToday(schedule);
+      renderOnAir(schedule);
+    });
+  </script>
   <script>
   const peekSlides = document.querySelectorAll('.peek-slide');
   const peekTrack  = document.getElementById('peekTrack');
